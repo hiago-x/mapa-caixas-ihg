@@ -44,14 +44,12 @@ async function api(path, options = {}) {
 }
 
 async function ensureAdmin() {
-  if (sessionStorage.getItem('ihg_admin_authenticated') === '1') return true
   const username = window.prompt('Digite o nome de usuário de administrador:')
   if (!username) return false
   const password = window.prompt('Digite a senha de administrador para editar o inventário:')
   if (!password) return false
   try {
-    await api('/api/admin/login', { method: 'POST', body: JSON.stringify({ username, password }) })
-    sessionStorage.setItem('ihg_admin_authenticated', '1')
+    await api('/api/admin/login', { method: 'POST', body: JSON.stringify({ username: username.trim(), password }) })
     return true
   } catch (error) { window.alert(error.message); return false }
 }

@@ -75,7 +75,7 @@ function passwordMatches(value) {
   return crypto.timingSafeEqual(received, expected)
 }
 function usernameMatches(value) {
-  const received = crypto.createHash('sha256').update(String(value || '')).digest()
+  const received = crypto.createHash('sha256').update(String(value || '').trim()).digest()
   const expected = crypto.createHash('sha256').update(adminUsername).digest()
   return crypto.timingSafeEqual(received, expected)
 }
