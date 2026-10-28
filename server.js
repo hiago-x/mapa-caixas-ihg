@@ -9,6 +9,7 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url))
 const app = express()
 const port = Number(process.env.PORT || 3000)
 const pool = mysql.createPool(process.env.DATABASE_URL || process.env.DRIZZLE_DATABASE_URL || '')
+const adminUsername = process.env.ADMIN_USERNAME || ''
 const adminPassword = process.env.ADMIN_PASSWORD || ''
 const adminCookie = 'ihg_admin_session'
 
@@ -17,6 +18,7 @@ app.use(express.json({ limit: '100kb' }))
 
 async function ensureSchema() {
   if (!process.env.DATABASE_URL && !process.env.DRIZZLE_DATABASE_URL) throw new Error('DATABASE_URL não configurada')
+  if (!adminUsername) throw new Error('ADMIN_USERNAME não configurada')
   if (!adminPassword) throw new Error('ADMIN_PASSWORD não configurada')
   await pool.query(`CREATE TABLE IF NOT EXISTS boxes (
     record_id VARCHAR(80) PRIMARY KEY,
@@ -72,6 +74,11 @@ function passwordMatches(value) {
   const expected = crypto.createHash('sha256').update(adminPassword).digest()
   return crypto.timingSafeEqual(received, expected)
 }
+function usernameMatches(value) {
+  const received = crypto.createHash('sha256').update(String(value || '')).digest()
+  const expected = crypto.createHash('sha256').update(adminUsername).digest()
+  return crypto.timingSafeEqual(received, expected)
+}
 
 app.get('/_app/health', async (_req, res) => {
   try { await pool.query('SELECT 1'); res.json({ ok: true }) } catch (error) { res.status(503).json({ ok: false, error: error.message }) }
@@ -91,7 +98,7 @@ app.get('/api/inventory', async (_req, res) => {
 })
 
 app.post('/api/admin/login', (req, res) => {
-  if (!passwordMatches(req.body?.password)) return res.status(401).json({ error: 'Senha de administrador inválida.' })
+  if (!usernameMatches(req.body?.username) || !passwordMatches(req.body?.password)) return res.status(401).json({ error: 'Nome de usuário ou senha inválidos.' })
   const secure = req.secure || req.headers['x-forwarded-proto'] === 'https'
   res.setHeader('Set-Cookie', `${adminCookie}=${encodeURIComponent(sessionToken())}; Path=/; HttpOnly; Max-Age=28800; SameSite=${secure ? 'None' : 'Lax'}${secure ? '; Secure' : ''}`)
   res.json({ ok: true })
@@ -121,8 +128,9 @@ app.post('/api/boxes/:recordId/move', requireAdmin, async (req, res) => {
     const [[current]] = await pool.query('SELECT record_id, armario, posicao FROM boxes WHERE record_id = ?', [req.params.recordId])
     if (!current) return res.status(404).json({ error: 'Registro não encontrado.' })
     if (String(current.armario).padStart(2, '0') === armario && String(current.posicao).padStart(2, '0') === posicao) return res.json({ ok: true, armario, posicao })
-    const [[dup]] = await pool.query('SELECT COALESCE(MAX(duplicate_index), 0) AS max_index FROM boxes WHERE armario = ? AND posicao = ? AND record_id <> ?', [armario, posicao, req.params.recordId])
-    await pool.query('UPDATE boxes SET armario = ?, posicao = ?, duplicate_index = ? WHERE record_id = ?', [armario, posicao, Number(dup.max_index) + 1, req.params.recordId])
+    const [[occupied]] = await pool.query('SELECT record_id FROM boxes WHERE armario = ? AND posicao = ? AND record_id <> ? LIMIT 1', [armario, posicao, req.params.recordId])
+    if (occupied) return res.status(409).json({ code: 'occupied', error: `Destino ocupado: armário ${armario}, posição ${posicao}. Escolha outra posição.` })
+    await pool.query('UPDATE boxes SET armario = ?, posicao = ?, duplicate_index = 1 WHERE record_id = ?', [armario, posicao, req.params.recordId])
     res.json({ ok: true, armario, posicao })
   } catch (error) { res.status(500).json({ error: error.message }) }
 })

@@ -14,3 +14,8 @@
 - [x] Reposicionamento de uma caixa para outro armário e posição, preservando a localização atualizada.
 - [x] Exclusão de registro com confirmação e atualização do mapa após a operação.
 - [x] Senha de administrador armazenada como segredo do projeto e exigida antes de editar, excluir ou reposicionar.
+- [x] Login administrativo solicitando nome de usuário e senha antes de alterações.
+- [x] Mapa da sala com os 19 armários e todas as posições das caixas.
+- [x] Arrastar e soltar uma caixa entre posições no mapa e na página do armário.
+- [x] Atualização automática do armário e da posição de destino após movimentação.
+- [x] Aviso e bloqueio quando a posição de destino já estiver ocupada.

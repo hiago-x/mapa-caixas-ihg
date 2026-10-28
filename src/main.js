@@ -39,16 +39,18 @@ async function api(path, options = {}) {
   const response = await fetch(path, { headers: { 'Content-Type': 'application/json', ...(options.headers || {}) }, ...options })
   const data = await response.json().catch(() => ({}))
   if (response.status === 401) sessionStorage.removeItem('ihg_admin_authenticated')
-  if (!response.ok) throw new Error(data.error || 'Não foi possível concluir a operação.')
+  if (!response.ok) { const error = new Error(data.error || 'Não foi possível concluir a operação.'); error.status = response.status; error.code = data.code; throw error }
   return data
 }
 
 async function ensureAdmin() {
   if (sessionStorage.getItem('ihg_admin_authenticated') === '1') return true
+  const username = window.prompt('Digite o nome de usuário de administrador:')
+  if (!username) return false
   const password = window.prompt('Digite a senha de administrador para editar o inventário:')
   if (!password) return false
   try {
-    await api('/api/admin/login', { method: 'POST', body: JSON.stringify({ password }) })
+    await api('/api/admin/login', { method: 'POST', body: JSON.stringify({ username, password }) })
     sessionStorage.setItem('ihg_admin_authenticated', '1')
     return true
   } catch (error) { window.alert(error.message); return false }
@@ -80,11 +82,11 @@ function statCard(value, label, accent) {
   return `<div class="stat-card ${accent}"><strong>${escapeHtml(value)}</strong><span>${escapeHtml(label)}</span></div>`
 }
 
-function positionCard(armId, box) {
+function positionCard(armId, box, draggable = false) {
   const period = box.raw.data || 'Sem data'
   const part = box.raw.parte ? `Parte: ${box.raw.parte}` : 'Parte não informada'
   const duplicate = box.duplicateIndex > 1 ? ` · registro ${box.duplicateIndex}` : ''
-  return `<a class="position-card ${tone(box)}" href="${boxRoute(armId, box.recordId)}" aria-label="Armário ${armId}, posição ${box.id}">
+  return `<a class="position-card ${tone(box)}" ${draggable ? 'draggable="true"' : ''} data-record-id="${escapeHtml(box.recordId)}" data-arm-id="${armId}" data-position-id="${box.id}" href="${boxRoute(armId, box.recordId)}" aria-label="Armário ${armId}, posição ${box.id}">
     <span class="position-number">${box.id}</span>
     <strong>${escapeHtml(shortLabel(box))}</strong>
     <span>${escapeHtml(period)}</span>
@@ -92,8 +94,8 @@ function positionCard(armId, box) {
   </a>`
 }
 
-function armarioCard(armario) {
-  const preview = armario.positions.slice(0, 8).map(box => positionCard(armario.id, box)).join('')
+function armarioCard(armario, full = false) {
+  const preview = (full ? armario.positions : armario.positions.slice(0, 8)).map(box => positionCard(armario.id, box, full)).join('')
   return `<section class="armario-card">
     <div class="armario-card-head">
       <div><span class="section-kicker">ARMÁRIO</span><h3>${armario.id}</h3></div>
@@ -118,7 +120,7 @@ function filters() {
 
 function resultCard(item) {
   const { armario, position } = item
-  return `<a class="result-row ${tone(position)}" href="${boxRoute(armario.id, position.id)}">
+  return `<a class="result-row ${tone(position)}" href="${boxRoute(armario.id, position.recordId)}">
     <span class="result-location"><b>Armário ${armario.id}</b><em>Posição ${position.id}</em></span>
     <span class="result-main"><strong>${escapeHtml(shortLabel(position))}</strong><span>${escapeHtml(categoryText(position) || 'Sem categoria')}</span></span>
     <span class="result-period">${escapeHtml(position.raw.data || 'Sem data')}</span>
@@ -163,13 +165,35 @@ function homePage() {
 }
 
 function mapPage() {
-  shell(`<section class="page-intro"><span class="section-kicker">VISÃO ESPACIAL</span><h2>Mapa dos armários</h2><p>Cada página do PDF corresponde a um armário e cada quadrado do rodapé corresponde à posição da caixa.</p></section><div class="legend"><span><i class="dot dot-blue"></i> IMAS</span><span><i class="dot dot-orange"></i> IPASGO</span><span><i class="dot dot-green"></i> UNIMED</span><span><i class="dot dot-yellow"></i> Conferir / ilegível</span></div><div class="armario-grid full-map">${inventory.armarios.map(armarioCard).join('')}</div>`, 'mapa')
+  shell(`<section class="page-intro"><span class="section-kicker">VISÃO ESPACIAL</span><h2>Mapa da sala</h2><p>Os armários aparecem abaixo com todas as posições das caixas. Arraste uma caixa para outra posição para mudar sua localização física.</p></section><div class="legend"><span><i class="dot dot-blue"></i> IMAS</span><span><i class="dot dot-orange"></i> IPASGO</span><span><i class="dot dot-green"></i> UNIMED</span><span><i class="dot dot-yellow"></i> Conferir / ilegível</span></div><div class="drag-help">Para mover: mantenha o dedo ou o mouse pressionado sobre uma caixa e solte na posição de destino. O sistema avisa se o destino já estiver ocupado.</div><div class="armario-grid full-map">${inventory.armarios.map(armario => armarioCard(armario, true)).join('')}</div>`, 'mapa')
+  enableDragAndDrop()
 }
 
 function armarioPage(id) {
   const armario = getArmario(id)
   if (!armario) return notFound()
-  shell(`<div class="breadcrumbs"><a href="#/">Visão geral</a><span>/</span><span>Armário ${armario.id}</span></div><section class="page-intro split-intro"><div><span class="section-kicker">ARMÁRIO ${armario.id}</span><h2>Posições do armário</h2><p>Selecione uma posição para ver o conteúdo detalhado da caixa.</p></div><a class="outline-button" href="#/qrcodes">QR Code geral</a></section><div class="armario-stats"><strong>${armario.positions.length}</strong><span>registros neste armário</span></div><div class="position-grid large-grid">${armario.positions.map(box => positionCard(armario.id, box)).join('')}</div>`, 'mapa')
+  shell(`<div class="breadcrumbs"><a href="#/">Visão geral</a><span>/</span><span>Armário ${armario.id}</span></div><section class="page-intro split-intro"><div><span class="section-kicker">ARMÁRIO ${armario.id}</span><h2>Posições do armário</h2><p>Selecione uma posição ou arraste uma caixa para outra posição.</p></div><a class="outline-button" href="#/qrcodes">QR Code geral</a></section><div class="armario-stats"><strong>${armario.positions.length}</strong><span>registros neste armário</span></div><div class="drag-help">Arraste uma caixa para uma posição livre. Para mover entre armários, use o mapa da sala.</div><div class="position-grid large-grid">${armario.positions.map(box => positionCard(armario.id, box, true)).join('')}</div>`, 'mapa')
+  enableDragAndDrop()
+}
+
+function enableDragAndDrop() {
+  let draggedRecord = ''
+  document.querySelectorAll('.position-card[draggable="true"]').forEach(card => {
+    card.addEventListener('dragstart', event => { draggedRecord = card.dataset.recordId; card.classList.add('dragging'); event.dataTransfer.effectAllowed = 'move'; event.dataTransfer.setData('text/plain', draggedRecord) })
+    card.addEventListener('dragend', () => { draggedRecord = ''; card.classList.remove('dragging'); document.querySelectorAll('.position-card.drag-over').forEach(item => item.classList.remove('drag-over')) })
+    card.addEventListener('dragover', event => { if (draggedRecord && card.dataset.recordId !== draggedRecord) { event.preventDefault(); card.classList.add('drag-over') } })
+    card.addEventListener('dragleave', () => card.classList.remove('drag-over'))
+    card.addEventListener('drop', async event => {
+      event.preventDefault(); card.classList.remove('drag-over')
+      const recordId = event.dataTransfer.getData('text/plain') || draggedRecord
+      if (!recordId || recordId === card.dataset.recordId) return
+      if (!(await ensureAdmin())) return
+      try {
+        await api(`/api/boxes/${encodeURIComponent(recordId)}/move`, { method: 'POST', body: JSON.stringify({ armario: card.dataset.armId, posicao: card.dataset.positionId }) })
+        await reloadInventory(); render()
+      } catch (error) { window.alert(error.status === 409 ? error.message : `Não foi possível mover: ${error.message}`) }
+    })
+  })
 }
 
 function detailRow(label, value) {
