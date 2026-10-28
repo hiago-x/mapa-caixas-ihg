@@ -13,3 +13,4 @@
 - [x] Formulário para editar título, convênio, nome, período, parte e texto completo do registro.
 - [x] Reposicionamento de uma caixa para outro armário e posição, preservando a localização atualizada.
 - [x] Exclusão de registro com confirmação e atualização do mapa após a operação.
+- [x] Senha de administrador armazenada como segredo do projeto e exigida antes de editar, excluir ou reposicionar.

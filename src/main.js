@@ -38,8 +38,20 @@ const formatCount = value => new Intl.NumberFormat('pt-BR').format(value)
 async function api(path, options = {}) {
   const response = await fetch(path, { headers: { 'Content-Type': 'application/json', ...(options.headers || {}) }, ...options })
   const data = await response.json().catch(() => ({}))
+  if (response.status === 401) sessionStorage.removeItem('ihg_admin_authenticated')
   if (!response.ok) throw new Error(data.error || 'Não foi possível concluir a operação.')
   return data
+}
+
+async function ensureAdmin() {
+  if (sessionStorage.getItem('ihg_admin_authenticated') === '1') return true
+  const password = window.prompt('Digite a senha de administrador para editar o inventário:')
+  if (!password) return false
+  try {
+    await api('/api/admin/login', { method: 'POST', body: JSON.stringify({ password }) })
+    sessionStorage.setItem('ihg_admin_authenticated', '1')
+    return true
+  } catch (error) { window.alert(error.message); return false }
 }
 
 function shell(content, active = 'inicio') {
@@ -170,8 +182,8 @@ function boxPage(armId, recordId) {
   if (!armario || !box) return notFound()
   const rawLines = escapeHtml(box.rawText || '').replaceAll('\n', '<br/>')
   shell(`<div class="breadcrumbs"><a href="#/">Visão geral</a><span>/</span><a href="${armRoute(armId)}">Armário ${armId}</a><span>/</span><span>Posição ${box.id}</span></div><section class="detail-header"><div><span class="section-kicker">LOCALIZAÇÃO DA CAIXA</span><h2>Armário ${armId} · Posição ${box.id}</h2><p>Esta é a ficha detalhada da posição selecionada.</p></div><div class="location-badge ${tone(box)}"><span>POSIÇÃO</span><strong>${box.id}</strong></div></section><div class="detail-layout"><article class="detail-card"><div class="detail-card-title"><span class="box-mark ${tone(box)}">${box.id}</span><div><span class="section-kicker">CONTEÚDO VERIFICADO</span><h3>${escapeHtml(shortLabel(box))}</h3></div></div><dl>${detailRow('Categoria / título', box.raw.titulo)}${detailRow('Convênio', box.raw.convenio)}${detailRow('Nome', box.raw.nome)}${detailRow('Período / data', box.raw.data)}${detailRow('Parte', box.raw.parte)}</dl><div class="raw-transcription"><span class="section-kicker">TEXTO DO PDF VERIFICADO</span><div>${rawLines || '<span>Sem texto identificado.</span>'}</div></div><div class="source-note">Localização no PDF: página ${box.sourcePage} = armário ${armId} · quadrado ${box.sourcePosition} = posição ${box.id}${box.duplicateIndex > 1 ? ` · registro ${box.duplicateIndex}` : ''}</div></article><aside class="detail-aside"><div class="aside-card"><span class="section-kicker">CAMINHO FÍSICO</span><strong>5º andar</strong><span>Armário ${armId}</span><span>Posição ${box.id}</span></div><div class="aside-card"><span class="section-kicker">QR CODE</span><strong>1 QR geral</strong><span>Use o QR Code geral para abrir o site e pesquisar esta posição.</span><a class="text-link" href="#/qrcodes">Abrir QR geral →</a></div><div class="aside-card admin-card"><span class="section-kicker">GESTÃO DO INVENTÁRIO</span><button class="solid-button full-button" id="edit-box">Editar informações</button><button class="outline-button full-button danger-button" id="delete-box">Excluir este registro</button><span class="admin-hint">As alterações ficam salvas para todos no site.</span></div></aside></div>`, 'mapa')
-  document.querySelector('#edit-box')?.addEventListener('click', () => openEditDialog(armId, box))
-  document.querySelector('#delete-box')?.addEventListener('click', () => deleteBox(armId, box))
+  document.querySelector('#edit-box')?.addEventListener('click', async () => { if (await ensureAdmin()) openEditDialog(armId, box) })
+  document.querySelector('#delete-box')?.addEventListener('click', async () => { if (await ensureAdmin()) deleteBox(armId, box) })
 }
 
 function openEditDialog(armId, box) {

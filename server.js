@@ -2,17 +2,22 @@ import express from 'express'
 import mysql from 'mysql2/promise'
 import fs from 'node:fs/promises'
 import path from 'node:path'
+import crypto from 'node:crypto'
 import { fileURLToPath } from 'node:url'
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url))
 const app = express()
 const port = Number(process.env.PORT || 3000)
 const pool = mysql.createPool(process.env.DATABASE_URL || process.env.DRIZZLE_DATABASE_URL || '')
+const adminPassword = process.env.ADMIN_PASSWORD || ''
+const adminCookie = 'ihg_admin_session'
 
+app.set('trust proxy', 1)
 app.use(express.json({ limit: '100kb' }))
 
 async function ensureSchema() {
   if (!process.env.DATABASE_URL && !process.env.DRIZZLE_DATABASE_URL) throw new Error('DATABASE_URL não configurada')
+  if (!adminPassword) throw new Error('ADMIN_PASSWORD não configurada')
   await pool.query(`CREATE TABLE IF NOT EXISTS boxes (
     record_id VARCHAR(80) PRIMARY KEY,
     armario VARCHAR(8) NOT NULL,
@@ -47,15 +52,25 @@ async function ensureSchema() {
 
 function normalize(row) {
   return {
-    id: String(row.posicao).padStart(2, '0'),
-    recordId: row.record_id,
-    duplicateIndex: Number(row.duplicate_index || 1),
+    id: String(row.posicao).padStart(2, '0'), recordId: row.record_id, duplicateIndex: Number(row.duplicate_index || 1),
     raw: { titulo: row.titulo || '', convenio: row.convenio || '', nome: row.nome || '', data: row.data_text || '', parte: row.parte || '' },
-    rawText: row.raw_text || '',
-    sourcePage: Number(row.source_page || row.armario),
-    sourcePosition: Number(row.source_position || row.posicao),
-    armario: String(row.armario).padStart(2, '0')
+    rawText: row.raw_text || '', sourcePage: Number(row.source_page || row.armario), sourcePosition: Number(row.source_position || row.posicao), armario: String(row.armario).padStart(2, '0')
   }
+}
+
+function sessionToken() { return crypto.createHmac('sha256', adminPassword).update('centro-oncologia-ihg-admin').digest('hex') }
+function cookieValue(req, name) {
+  const item = String(req.headers.cookie || '').split(';').map(value => value.trim()).find(value => value.startsWith(`${name}=`))
+  return item ? decodeURIComponent(item.slice(name.length + 1)) : ''
+}
+function requireAdmin(req, res, next) {
+  if (cookieValue(req, adminCookie) === sessionToken()) return next()
+  return res.status(401).json({ error: 'Faça login de administrador para alterar o inventário.' })
+}
+function passwordMatches(value) {
+  const received = crypto.createHash('sha256').update(String(value || '')).digest()
+  const expected = crypto.createHash('sha256').update(adminPassword).digest()
+  return crypto.timingSafeEqual(received, expected)
 }
 
 app.get('/_app/health', async (_req, res) => {
@@ -75,10 +90,20 @@ app.get('/api/inventory', async (_req, res) => {
   } catch (error) { res.status(500).json({ error: error.message }) }
 })
 
-app.put('/api/boxes/:recordId', async (req, res) => {
-  const fields = req.body || {}
-  const allowed = ['titulo', 'convenio', 'nome', 'data', 'parte', 'rawText']
-  const updates = []; const values = []
+app.post('/api/admin/login', (req, res) => {
+  if (!passwordMatches(req.body?.password)) return res.status(401).json({ error: 'Senha de administrador inválida.' })
+  const secure = req.secure || req.headers['x-forwarded-proto'] === 'https'
+  res.setHeader('Set-Cookie', `${adminCookie}=${encodeURIComponent(sessionToken())}; Path=/; HttpOnly; Max-Age=28800; SameSite=${secure ? 'None' : 'Lax'}${secure ? '; Secure' : ''}`)
+  res.json({ ok: true })
+})
+
+app.post('/api/admin/logout', (_req, res) => {
+  res.setHeader('Set-Cookie', `${adminCookie}=; Path=/; HttpOnly; Max-Age=0; SameSite=Lax`)
+  res.json({ ok: true })
+})
+
+app.put('/api/boxes/:recordId', requireAdmin, async (req, res) => {
+  const fields = req.body || {}; const allowed = ['titulo', 'convenio', 'nome', 'data', 'parte', 'rawText']; const updates = []; const values = []
   for (const key of allowed) if (Object.prototype.hasOwnProperty.call(fields, key)) { updates.push(`${key === 'rawText' ? 'raw_text' : key === 'data' ? 'data_text' : key} = ?`); values.push(String(fields[key] ?? '')) }
   if (!updates.length) return res.status(400).json({ error: 'Nenhum campo para atualizar.' })
   values.push(req.params.recordId)
@@ -89,9 +114,8 @@ app.put('/api/boxes/:recordId', async (req, res) => {
   } catch (error) { res.status(500).json({ error: error.message }) }
 })
 
-app.post('/api/boxes/:recordId/move', async (req, res) => {
-  const armario = String(req.body?.armario || '').replace(/\D/g, '').padStart(2, '0')
-  const posicao = String(req.body?.posicao || '').replace(/\D/g, '').padStart(2, '0')
+app.post('/api/boxes/:recordId/move', requireAdmin, async (req, res) => {
+  const armario = String(req.body?.armario || '').replace(/\D/g, '').padStart(2, '0'); const posicao = String(req.body?.posicao || '').replace(/\D/g, '').padStart(2, '0')
   if (!/^\d{2}$/.test(armario) || !/^\d{2}$/.test(posicao)) return res.status(400).json({ error: 'Informe armário e posição com dois números.' })
   try {
     const [[current]] = await pool.query('SELECT record_id, armario, posicao FROM boxes WHERE record_id = ?', [req.params.recordId])
@@ -103,7 +127,7 @@ app.post('/api/boxes/:recordId/move', async (req, res) => {
   } catch (error) { res.status(500).json({ error: error.message }) }
 })
 
-app.delete('/api/boxes/:recordId', async (req, res) => {
+app.delete('/api/boxes/:recordId', requireAdmin, async (req, res) => {
   try {
     const [result] = await pool.query('DELETE FROM boxes WHERE record_id = ?', [req.params.recordId])
     if (!result.affectedRows) return res.status(404).json({ error: 'Registro não encontrado.' })
