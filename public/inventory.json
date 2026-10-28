@@ -1,151 +1,203 @@
 {
-  "version": 1,
-  "source": "caixas-5andar.docx",
+  "version": 2,
+  "source": "caixa5anda-verificadas.pdf",
+  "locationRule": "página = armário; quadrado = posição",
   "armarios": [
     {
       "id": "01",
       "positions": [
         {
           "id": "01",
+          "recordId": "01-01-1",
+          "duplicateIndex": 1,
           "raw": {
-            "titulo": "Prontuario",
+            "titulo": "BRASINDICE ARTIGOS",
+            "convenio": "",
+            "nome": "",
+            "data": "",
+            "parte": ""
+          },
+          "rawText": "BRASINDICE\nARTIGOS",
+          "sourcePage": 1,
+          "sourcePosition": 1
+        },
+        {
+          "id": "01",
+          "recordId": "01-01-2",
+          "duplicateIndex": 2,
+          "raw": {
+            "titulo": "PRONTUÁRIOS",
             "convenio": "IMAS",
             "nome": "",
             "data": "01/2025",
             "parte": "5 e 6"
           },
+          "rawText": "PRONTUÁRIOS\nCONVÊNIO:\nIMAS\nDATA 01/2025\nPARTE: 5 e 6",
           "sourcePage": 1,
           "sourcePosition": 1
         },
         {
           "id": "02",
+          "recordId": "01-02-1",
+          "duplicateIndex": 1,
           "raw": {
-            "titulo": "IMAS",
-            "convenio": "",
+            "titulo": "PRONTUÁRIOS",
+            "convenio": "IMAS",
             "nome": "",
             "data": "01/2025",
             "parte": "03 e 04"
           },
+          "rawText": "PRONTUÁRIOS\nCONVÊNIO:\nIMAS\nDATA 01/2025\nPARTE: 03 e 04",
           "sourcePage": 1,
           "sourcePosition": 2
         },
         {
           "id": "03",
+          "recordId": "01-03-1",
+          "duplicateIndex": 1,
           "raw": {
-            "titulo": "IMAS",
-            "convenio": "",
+            "titulo": "PRONTUÁRIOS",
+            "convenio": "IMAS",
             "nome": "",
             "data": "01/2025",
             "parte": "01 e 02"
           },
+          "rawText": "PRONTUÁRIOS\nCONVÊNIO:\nIMAS\nDATA 01/2025\nPARTE: 01 e 02",
           "sourcePage": 1,
           "sourcePosition": 3
         },
         {
           "id": "04",
+          "recordId": "01-04-1",
+          "duplicateIndex": 1,
           "raw": {
-            "titulo": "Repasses",
+            "titulo": "REPASSES MEDICOS",
             "convenio": "",
-            "nome": "Médicos",
+            "nome": "",
             "data": "2025",
             "parte": ""
           },
+          "rawText": "REPASSES\nMEDICOS\nDATA 2025",
           "sourcePage": 1,
           "sourcePosition": 4
         },
         {
           "id": "05",
+          "recordId": "01-05-1",
+          "duplicateIndex": 1,
           "raw": {
-            "titulo": "IMAS",
-            "convenio": "",
+            "titulo": "PRONTUÁRIOS",
+            "convenio": "IMAS",
             "nome": "",
             "data": "05/2025",
             "parte": "01 e 02"
           },
+          "rawText": "PRONTUÁRIOS\nCONVÊNIO:\nIMAS\nDATA 05/2025\nPARTE: 01 e 02",
           "sourcePage": 1,
           "sourcePosition": 5
         },
         {
           "id": "06",
+          "recordId": "01-06-1",
+          "duplicateIndex": 1,
           "raw": {
-            "titulo": "IMAS",
-            "convenio": "",
+            "titulo": "PRONTUÁRIOS",
+            "convenio": "IMAS",
             "nome": "",
             "data": "03/2025",
             "parte": "05 e 06"
           },
+          "rawText": "PRONTUÁRIOS\nCONVÊNIO:\nIMAS\nDATA 03/2025\nPARTE: 05 e 06",
           "sourcePage": 1,
           "sourcePosition": 6
         },
         {
           "id": "07",
+          "recordId": "01-07-1",
+          "duplicateIndex": 1,
           "raw": {
-            "titulo": "IMAS",
-            "convenio": "",
+            "titulo": "PRONTUÁRIOS",
+            "convenio": "IMAS",
             "nome": "",
             "data": "02/2025",
             "parte": "03 e 04"
           },
+          "rawText": "PRONTUÁRIOS\nCONVÊNIO:\nIMAS\nDATA 02/2025\nPARTE: 03 e 04",
           "sourcePage": 1,
           "sourcePosition": 7
         },
         {
           "id": "08",
+          "recordId": "01-08-1",
+          "duplicateIndex": 1,
           "raw": {
-            "titulo": "IMAS",
-            "convenio": "",
+            "titulo": "PRONTUÁRIOS",
+            "convenio": "IMAS",
             "nome": "",
             "data": "02/2025",
             "parte": "01 e 02"
           },
+          "rawText": "PRONTUÁRIOS\nCONVÊNIO:\nIMAS\nDATA 02/2025\nPARTE: 01 e 02",
           "sourcePage": 1,
           "sourcePosition": 8
         },
         {
           "id": "09",
+          "recordId": "01-09-1",
+          "duplicateIndex": 1,
           "raw": {
-            "titulo": "IMAS",
-            "convenio": "",
+            "titulo": "PRONTUÁRIOS",
+            "convenio": "IMAS",
             "nome": "",
             "data": "06/2025",
             "parte": "02"
           },
+          "rawText": "PRONTUÁRIOS\nCONVÊNIO:\nIMAS\nDATA 06/2025\nPARTE: 02",
           "sourcePage": 1,
           "sourcePosition": 9
         },
         {
           "id": "10",
+          "recordId": "01-10-1",
+          "duplicateIndex": 1,
           "raw": {
-            "titulo": "IMAS",
-            "convenio": "",
+            "titulo": "PRONTUÁRIOS",
+            "convenio": "IMAS",
             "nome": "",
             "data": "06/2025",
             "parte": "01"
           },
+          "rawText": "PRONTUÁRIOS\nCONVÊNIO:\nIMAS\nDATA 06/2025\nPARTE: 01",
           "sourcePage": 1,
           "sourcePosition": 10
         },
         {
           "id": "11",
+          "recordId": "01-11-1",
+          "duplicateIndex": 1,
           "raw": {
-            "titulo": "IMAS",
-            "convenio": "",
+            "titulo": "PRONTUÁRIOS",
+            "convenio": "IMAS",
             "nome": "",
             "data": "05/2025",
             "parte": "05"
           },
+          "rawText": "PRONTUÁRIOS\nCONVÊNIO:\nIMAS\nDATA 05/2025\nPARTE: 05",
           "sourcePage": 1,
           "sourcePosition": 11
         },
         {
           "id": "12",
+          "recordId": "01-12-1",
+          "duplicateIndex": 1,
           "raw": {
-            "titulo": "IMAS",
-            "convenio": "",
+            "titulo": "PRONTUÁRIOS",
+            "convenio": "IMAS",
             "nome": "",
             "data": "05/2025",
-            "parte": "03/04"
+            "parte": "03 e 04"
           },
+          "rawText": "PRONTUÁRIOS\nCONVÊNIO:\nIMAS\nDATA 05/2025\nPARTE: 03 e 04",
           "sourcePage": 1,
           "sourcePosition": 12
         }
@@ -156,193 +208,241 @@
       "positions": [
         {
           "id": "01",
+          "recordId": "02-01-1",
+          "duplicateIndex": 1,
           "raw": {
-            "titulo": "IMAS",
-            "convenio": "",
+            "titulo": "PRONTUÁRIOS",
+            "convenio": "IMAS",
             "nome": "",
             "data": "08/2025",
             "parte": "01 e 02"
           },
+          "rawText": "PRONTUÁRIOS\nCONVÊNIO:\nIMAS\nDATA 08/2025\nPARTE: 01 e 02",
           "sourcePage": 2,
           "sourcePosition": 1
         },
         {
           "id": "02",
+          "recordId": "02-02-1",
+          "duplicateIndex": 1,
           "raw": {
-            "titulo": "IMAS",
-            "convenio": "",
+            "titulo": "PRONTUÁRIOS",
+            "convenio": "IMAS",
             "nome": "",
             "data": "07/2025",
             "parte": "3 até 4"
           },
+          "rawText": "PRONTUÁRIOS\nCONVÊNIO:\nIMAS\nDATA 07/2025\nPARTE: 3 até 4",
           "sourcePage": 2,
           "sourcePosition": 2
         },
         {
           "id": "03",
+          "recordId": "02-03-1",
+          "duplicateIndex": 1,
           "raw": {
-            "titulo": "IMAS",
-            "convenio": "",
+            "titulo": "PRONTUÁRIOS",
+            "convenio": "IMAS",
             "nome": "",
             "data": "07/2025",
             "parte": "01 até 02"
           },
+          "rawText": "PRONTUÁRIOS\nCONVÊNIO:\nIMAS\nDATA 07/2025\nPARTE: 01 até 02",
           "sourcePage": 2,
           "sourcePosition": 3
         },
         {
           "id": "04",
+          "recordId": "02-04-1",
+          "duplicateIndex": 1,
           "raw": {
-            "titulo": "IMAS",
-            "convenio": "",
+            "titulo": "PRONTUÁRIOS",
+            "convenio": "IMAS",
             "nome": "",
             "data": "06/2025",
             "parte": "03 e 04"
           },
+          "rawText": "PRONTUÁRIOS\nCONVÊNIO:\nIMAS\nDATA 06/2025\nPARTE: 03 e 04",
           "sourcePage": 2,
           "sourcePosition": 4
         },
         {
           "id": "05",
+          "recordId": "02-05-1",
+          "duplicateIndex": 1,
           "raw": {
-            "titulo": "IMAS",
-            "convenio": "",
+            "titulo": "PRONTUÁRIOS",
+            "convenio": "IMAS",
             "nome": "",
             "data": "10/2028",
             "parte": "1 e 2"
           },
+          "rawText": "PRONTUÁRIOS\nCONVÊNIO:\nIMAS\nDATA 10/2028\nPARTE: 1 e 2",
           "sourcePage": 2,
           "sourcePosition": 5
         },
         {
           "id": "06",
+          "recordId": "02-06-1",
+          "duplicateIndex": 1,
           "raw": {
-            "titulo": "IMAS",
-            "convenio": "",
+            "titulo": "PRONTUÁRIOS",
+            "convenio": "IMAS",
             "nome": "",
             "data": "09/2025",
             "parte": "03 e 04"
           },
+          "rawText": "PRONTUÁRIOS\nCONVÊNIO:\nIMAS\nDATA 09/2025\nPARTE: 03 e 04",
           "sourcePage": 2,
           "sourcePosition": 6
         },
         {
           "id": "07",
+          "recordId": "02-07-1",
+          "duplicateIndex": 1,
           "raw": {
-            "titulo": "IMAS",
-            "convenio": "",
+            "titulo": "PRONTUÁRIOS",
+            "convenio": "IMAS",
             "nome": "",
             "data": "09/2025",
             "parte": "01 e 02"
           },
+          "rawText": "PRONTUÁRIOS\nCONVÊNIO:\nIMAS\nDATA 09/2025\nPARTE: 01 e 02",
           "sourcePage": 2,
           "sourcePosition": 7
         },
         {
           "id": "08",
+          "recordId": "02-08-1",
+          "duplicateIndex": 1,
           "raw": {
-            "titulo": "IMAS",
-            "convenio": "",
+            "titulo": "PRONTUÁRIOS",
+            "convenio": "IMAS",
             "nome": "",
             "data": "08/2025",
             "parte": "03 e 04"
           },
+          "rawText": "PRONTUÁRIOS\nCONVÊNIO:\nIMAS\nDATA 08/2025\nPARTE: 03 e 04",
           "sourcePage": 2,
           "sourcePosition": 8
         },
         {
           "id": "09",
+          "recordId": "02-09-1",
+          "duplicateIndex": 1,
           "raw": {
-            "titulo": "IMAS",
-            "convenio": "",
+            "titulo": "PRONTUÁRIOS",
+            "convenio": "IMAS",
             "nome": "",
             "data": "11/2025",
             "parte": "03, 04 e 05"
           },
+          "rawText": "PRONTUÁRIOS\nCONVÊNIO:\nIMAS\nDATA 11/2025\nPARTE: 03, 04 e 05",
           "sourcePage": 2,
           "sourcePosition": 9
         },
         {
           "id": "10",
+          "recordId": "02-10-1",
+          "duplicateIndex": 1,
           "raw": {
-            "titulo": "IMAS",
-            "convenio": "",
+            "titulo": "PRONTUÁRIOS",
+            "convenio": "IMAS",
             "nome": "",
             "data": "11/2025",
             "parte": "01 e 02"
           },
+          "rawText": "PRONTUÁRIOS\nCONVÊNIO:\nIMAS\nDATA 11/2025\nPARTE: 01 e 02",
           "sourcePage": 2,
           "sourcePosition": 10
         },
         {
           "id": "11",
+          "recordId": "02-11-1",
+          "duplicateIndex": 1,
           "raw": {
-            "titulo": "IMAS",
-            "convenio": "",
+            "titulo": "PRONTUÁRIOS",
+            "convenio": "IMAS",
             "nome": "",
             "data": "10/2025",
             "parte": "05"
           },
+          "rawText": "PRONTUÁRIOS\nCONVÊNIO:\nIMAS\nDATA 10/2025\nPARTE: 05",
           "sourcePage": 2,
           "sourcePosition": 11
         },
         {
           "id": "12",
+          "recordId": "02-12-1",
+          "duplicateIndex": 1,
           "raw": {
-            "titulo": "IMAS",
-            "convenio": "",
+            "titulo": "PRONTUÁRIOS",
+            "convenio": "IMAS",
             "nome": "",
             "data": "10/2025",
             "parte": "03 e 04"
           },
+          "rawText": "PRONTUÁRIOS\nCONVÊNIO:\nIMAS\nDATA 10/2025\nPARTE: 03 e 04",
           "sourcePage": 2,
           "sourcePosition": 12
         },
         {
           "id": "13",
+          "recordId": "02-13-1",
+          "duplicateIndex": 1,
           "raw": {
-            "titulo": "IPASGO",
-            "convenio": "",
+            "titulo": "PRONTUÁRIOS",
+            "convenio": "IPASGO",
             "nome": "",
             "data": "01/2025",
             "parte": "03 e 04"
           },
+          "rawText": "PRONTUÁRIOS\nCONVÊNIO:\nIPASGO\nDATA 01/2025\nPARTE: 03 e 04",
           "sourcePage": 2,
           "sourcePosition": 13
         },
         {
           "id": "14",
+          "recordId": "02-14-1",
+          "duplicateIndex": 1,
           "raw": {
-            "titulo": "IPASGO",
-            "convenio": "",
+            "titulo": "PRONTUÁRIOS",
+            "convenio": "IPASGO",
             "nome": "",
             "data": "01/2025",
             "parte": "01 e 02"
           },
+          "rawText": "PRONTUÁRIOS\nCONVÊNIO:\nIPASGO\nDATA 01/2025\nPARTE: 01 e 02",
           "sourcePage": 2,
           "sourcePosition": 14
         },
         {
           "id": "15",
+          "recordId": "02-15-1",
+          "duplicateIndex": 1,
           "raw": {
-            "titulo": "IMAS",
-            "convenio": "",
+            "titulo": "PRONTUÁRIOS",
+            "convenio": "IMAS",
             "nome": "",
             "data": "12/2025",
             "parte": "03, 04 e 05"
           },
+          "rawText": "PRONTUÁRIOS\nCONVÊNIO:\nIMAS\nDATA 12/2025\nPARTE: 03, 04 e 05",
           "sourcePage": 2,
           "sourcePosition": 15
         },
         {
           "id": "16",
+          "recordId": "02-16-1",
+          "duplicateIndex": 1,
           "raw": {
-            "titulo": "IMAS",
-            "convenio": "",
+            "titulo": "PRONTUÁRIOS",
+            "convenio": "IMAS",
             "nome": "",
             "data": "12/2025",
             "parte": "01 e 02"
           },
+          "rawText": "PRONTUÁRIOS\nCONVÊNIO:\nIMAS\nDATA 12/2025\nPARTE: 01 e 02",
           "sourcePage": 2,
           "sourcePosition": 16
         }
@@ -353,193 +453,241 @@
       "positions": [
         {
           "id": "01",
+          "recordId": "03-01-1",
+          "duplicateIndex": 1,
           "raw": {
-            "titulo": "",
-            "convenio": "",
-            "nome": "Mais Saude",
+            "titulo": "PRONTUÁRIOS",
+            "convenio": "Mais Saude",
+            "nome": "",
             "data": "12/2025; 01/2026",
             "parte": ""
           },
+          "rawText": "PRONTUÁRIOS\nCONVÊNIO:\nMais Saude\nDATA 12/2025; 01/2026\nPARTE:",
           "sourcePage": 3,
           "sourcePosition": 1
         },
         {
           "id": "02",
+          "recordId": "03-02-1",
+          "duplicateIndex": 1,
           "raw": {
-            "titulo": "",
-            "convenio": "",
-            "nome": "Mais Saude",
+            "titulo": "PRONTUÁRIOS",
+            "convenio": "Mais Saude",
+            "nome": "",
             "data": "10 e 11; 2025",
             "parte": ""
           },
+          "rawText": "PRONTUÁRIOS\nCONVÊNIO:\nMais Saude\nDATA 10 e 11; 2025\nPARTE:",
           "sourcePage": 3,
           "sourcePosition": 2
         },
         {
           "id": "03",
+          "recordId": "03-03-1",
+          "duplicateIndex": 1,
           "raw": {
-            "titulo": "",
-            "convenio": "",
-            "nome": "Mais Saude",
+            "titulo": "PRONTUÁRIOS",
+            "convenio": "Mais Saude",
+            "nome": "",
             "data": "06 e 07; 2025",
             "parte": ""
           },
+          "rawText": "PRONTUÁRIOS\nCONVÊNIO:\nMais Saude\nDATA 06 e 07; 2025\nPARTE:",
           "sourcePage": 3,
           "sourcePosition": 3
         },
         {
           "id": "04",
+          "recordId": "03-04-1",
+          "duplicateIndex": 1,
           "raw": {
-            "titulo": "",
-            "convenio": "",
-            "nome": "Mais Saude",
+            "titulo": "PRONTUÁRIOS",
+            "convenio": "Mais Saude",
+            "nome": "",
             "data": "08 e 09; 2025",
             "parte": ""
           },
+          "rawText": "PRONTUÁRIOS\nCONVÊNIO:\nMais Saude\nDATA 08 e 09; 2025\nPARTE:",
           "sourcePage": 3,
           "sourcePosition": 4
         },
         {
           "id": "05",
+          "recordId": "03-05-1",
+          "duplicateIndex": 1,
           "raw": {
-            "titulo": "",
+            "titulo": "PRONTUÁRIOS",
             "convenio": "Convenios",
             "nome": "",
             "data": "2025",
             "parte": "1 A 12"
           },
+          "rawText": "PRONTUÁRIOS\nCONVÊNIO:\nConvenios\nDATA 2025\nPARTE: 1 A 12",
           "sourcePage": 3,
           "sourcePosition": 5
         },
         {
           "id": "06",
+          "recordId": "03-06-1",
+          "duplicateIndex": 1,
           "raw": {
-            "titulo": "",
+            "titulo": "PRONTUÁRIOS",
             "convenio": "Convenios",
             "nome": "",
             "data": "2025",
             "parte": "1 A 12"
           },
+          "rawText": "PRONTUÁRIOS\nCONVÊNIO:\nConvenios\nDATA 2025\nPARTE: 1 A 12",
           "sourcePage": 3,
           "sourcePosition": 6
         },
         {
           "id": "07",
+          "recordId": "03-07-1",
+          "duplicateIndex": 1,
           "raw": {
-            "titulo": "",
-            "convenio": "",
-            "nome": "Unimed",
+            "titulo": "PRONTUÁRIOS",
+            "convenio": "Unimed",
+            "nome": "",
             "data": "4, 05, 06 e 07; 2025",
             "parte": ""
           },
+          "rawText": "PRONTUÁRIOS\nCONVÊNIO:\nUnimed\nDATA 4, 05, 06 e 07; 2025\nPARTE:",
           "sourcePage": 3,
           "sourcePosition": 7
         },
         {
           "id": "08",
+          "recordId": "03-08-1",
+          "duplicateIndex": 1,
           "raw": {
-            "titulo": "",
-            "convenio": "",
-            "nome": "Unimed",
+            "titulo": "PRONTUÁRIOS",
+            "convenio": "Unimed",
+            "nome": "",
             "data": "01/2025 a 03/2025",
             "parte": ""
           },
+          "rawText": "PRONTUÁRIOS\nCONVÊNIO:\nUnimed\nDATA 01/2025 a 03/2025\nPARTE:",
           "sourcePage": 3,
           "sourcePosition": 8
         },
         {
           "id": "09",
+          "recordId": "03-09-1",
+          "duplicateIndex": 1,
           "raw": {
-            "titulo": "IMAS",
-            "convenio": "",
+            "titulo": "PRONTUÁRIOS",
+            "convenio": "IMAS",
             "nome": "",
             "data": "03/24; 2024",
             "parte": "Parte 03 e 04"
           },
+          "rawText": "PRONTUÁRIOS\nCONVÊNIO:\nIMAS\nDATA 03/24; 2024\nPARTE: Parte 03 e 04",
           "sourcePage": 3,
           "sourcePosition": 9
         },
         {
           "id": "10",
+          "recordId": "03-10-1",
+          "duplicateIndex": 1,
           "raw": {
-            "titulo": "IMAS",
-            "convenio": "",
+            "titulo": "PRONTUÁRIOS",
+            "convenio": "IMAS",
             "nome": "",
             "data": "03/2024; 2024",
             "parte": "Parte 1 e 2"
           },
+          "rawText": "PRONTUÁRIOS\nCONVÊNIO:\nIMAS\nDATA 03/2024; 2024\nPARTE: Parte 1 e 2",
           "sourcePage": 3,
           "sourcePosition": 10
         },
         {
           "id": "11",
+          "recordId": "03-11-1",
+          "duplicateIndex": 1,
           "raw": {
-            "titulo": "IMAS",
-            "convenio": "",
+            "titulo": "PRONTUÁRIOS",
+            "convenio": "IMAS",
             "nome": "",
-            "data": "01 até 02; 2024",
+            "data": "01 e 02; 2024",
             "parte": ""
           },
+          "rawText": "PRONTUÁRIOS\nCONVÊNIO:\nIMAS\nDATA 01 e 02; 2024\nPARTE:",
           "sourcePage": 3,
           "sourcePosition": 11
         },
         {
           "id": "12",
+          "recordId": "03-12-1",
+          "duplicateIndex": 1,
           "raw": {
-            "titulo": "",
-            "convenio": "",
-            "nome": "Particular",
+            "titulo": "PRONTUÁRIOS",
+            "convenio": "Particular",
+            "nome": "",
             "data": "01/2025 até 12/2025",
             "parte": ""
           },
+          "rawText": "PRONTUÁRIOS\nCONVÊNIO:\nParticular\nDATA 01/2025 até 12/2025\nPARTE:",
           "sourcePage": 3,
           "sourcePosition": 12
         },
         {
           "id": "13",
+          "recordId": "03-13-1",
+          "duplicateIndex": 1,
           "raw": {
-            "titulo": "IMAS",
-            "convenio": "",
+            "titulo": "PRONTUÁRIOS",
+            "convenio": "IMAS",
             "nome": "",
             "data": "04/2024; 2024",
-            "parte": "03, 04 e 05 partes"
+            "parte": "03, 04 e 05"
           },
+          "rawText": "PRONTUÁRIOS\nCONVÊNIO:\nIMAS\nDATA 04/2024; 2024\nPARTE: 03, 04 e 05",
           "sourcePage": 3,
           "sourcePosition": 13
         },
         {
           "id": "14",
+          "recordId": "03-14-1",
+          "duplicateIndex": 1,
           "raw": {
-            "titulo": "IMAS",
-            "convenio": "",
+            "titulo": "PRONTUÁRIOS",
+            "convenio": "IMAS",
             "nome": "",
             "data": "04/2024",
             "parte": ""
           },
+          "rawText": "PRONTUÁRIOS\nCONVÊNIO:\nIMAS\nDATA 04/2024\nPARTE:",
           "sourcePage": 3,
           "sourcePosition": 14
         },
         {
           "id": "15",
+          "recordId": "03-15-1",
+          "duplicateIndex": 1,
           "raw": {
-            "titulo": "IMAS",
-            "convenio": "",
+            "titulo": "PRONTUÁRIOS",
+            "convenio": "IMAS",
             "nome": "",
             "data": "04/2024",
             "parte": "Partes 1 e 2"
           },
+          "rawText": "PRONTUÁRIOS\nCONVÊNIO:\nIMAS\nDATA 04/2024\nPARTE: Partes 1 e 2",
           "sourcePage": 3,
           "sourcePosition": 15
         },
         {
           "id": "16",
+          "recordId": "03-16-1",
+          "duplicateIndex": 1,
           "raw": {
-            "titulo": "IMAS",
-            "convenio": "",
+            "titulo": "PRONTUÁRIOS",
+            "convenio": "IMAS",
             "nome": "",
             "data": "03/24; 2024",
             "parte": ""
           },
+          "rawText": "PRONTUÁRIOS\nCONVÊNIO:\nIMAS\nDATA 03/24; 2024\nPARTE:",
           "sourcePage": 3,
           "sourcePosition": 16
         }
@@ -550,193 +698,241 @@
       "positions": [
         {
           "id": "01",
+          "recordId": "04-01-1",
+          "duplicateIndex": 1,
           "raw": {
-            "titulo": "IMAS",
-            "convenio": "",
+            "titulo": "PRONTUÁRIOS",
+            "convenio": "IMAS",
             "nome": "",
             "data": "05/2024",
             "parte": ""
           },
+          "rawText": "PRONTUÁRIOS\nCONVÊNIO:\nIMAS\nDATA 05/2024\nPARTE:",
           "sourcePage": 4,
           "sourcePosition": 1
         },
         {
           "id": "02",
+          "recordId": "04-02-1",
+          "duplicateIndex": 1,
           "raw": {
-            "titulo": "IMAS",
-            "convenio": "",
+            "titulo": "PRONTUÁRIOS",
+            "convenio": "IMAS",
             "nome": "",
             "data": "05/24",
             "parte": ""
           },
+          "rawText": "PRONTUÁRIOS\nCONVÊNIO:\nIMAS\nDATA 05/24\nPARTE:",
           "sourcePage": 4,
           "sourcePosition": 2
         },
         {
           "id": "03",
+          "recordId": "04-03-1",
+          "duplicateIndex": 1,
           "raw": {
-            "titulo": "IMAS",
-            "convenio": "",
+            "titulo": "PRONTUÁRIOS",
+            "convenio": "IMAS",
             "nome": "",
             "data": "06/24",
             "parte": "A a i"
           },
+          "rawText": "PRONTUÁRIOS\nCONVÊNIO:\nIMAS\nDATA 06/24\nPARTE: A a i",
           "sourcePage": 4,
           "sourcePosition": 3
         },
         {
           "id": "04",
+          "recordId": "04-04-1",
+          "duplicateIndex": 1,
           "raw": {
-            "titulo": "IMAS",
-            "convenio": "",
+            "titulo": "PRONTUÁRIOS",
+            "convenio": "IMAS",
             "nome": "",
             "data": "06/24",
             "parte": "J a M"
           },
+          "rawText": "PRONTUÁRIOS\nCONVÊNIO:\nIMAS\nDATA 06/24\nPARTE: J a M",
           "sourcePage": 4,
           "sourcePosition": 4
         },
         {
           "id": "05",
+          "recordId": "04-05-1",
+          "duplicateIndex": 1,
           "raw": {
-            "titulo": "IMAS",
-            "convenio": "",
+            "titulo": "PRONTUÁRIOS",
+            "convenio": "IMAS",
             "nome": "",
             "data": "06/24",
             "parte": "N a Z"
           },
+          "rawText": "PRONTUÁRIOS\nCONVÊNIO:\nIMAS\nDATA 06/24\nPARTE: N a Z",
           "sourcePage": 4,
           "sourcePosition": 5
         },
         {
           "id": "06",
+          "recordId": "04-06-1",
+          "duplicateIndex": 1,
           "raw": {
-            "titulo": "IMAS",
-            "convenio": "",
+            "titulo": "PRONTUÁRIOS",
+            "convenio": "IMAS",
             "nome": "",
             "data": "07/24",
             "parte": "Parte 1"
           },
+          "rawText": "PRONTUÁRIOS\nCONVÊNIO:\nIMAS\nDATA 07/24\nPARTE: Parte 1",
           "sourcePage": 4,
           "sourcePosition": 6
         },
         {
           "id": "07",
+          "recordId": "04-07-1",
+          "duplicateIndex": 1,
           "raw": {
-            "titulo": "IMAS",
-            "convenio": "",
+            "titulo": "PRONTUÁRIOS",
+            "convenio": "IMAS",
             "nome": "",
             "data": "07/24",
             "parte": "Parte 2"
           },
+          "rawText": "PRONTUÁRIOS\nCONVÊNIO:\nIMAS\nDATA 07/24\nPARTE: Parte 2",
           "sourcePage": 4,
           "sourcePosition": 7
         },
         {
           "id": "08",
+          "recordId": "04-08-1",
+          "duplicateIndex": 1,
           "raw": {
-            "titulo": "IMAS",
-            "convenio": "",
+            "titulo": "PRONTUÁRIOS",
+            "convenio": "IMAS",
             "nome": "",
             "data": "07/24",
             "parte": "Parte 3"
           },
+          "rawText": "PRONTUÁRIOS\nCONVÊNIO:\nIMAS\nDATA 07/24\nPARTE: Parte 3",
           "sourcePage": 4,
           "sourcePosition": 8
         },
         {
           "id": "09",
+          "recordId": "04-09-1",
+          "duplicateIndex": 1,
           "raw": {
-            "titulo": "IMAS",
-            "convenio": "",
+            "titulo": "PRONTUÁRIOS",
+            "convenio": "IMAS",
             "nome": "",
             "data": "07/24",
             "parte": "Parte 4 e 5"
           },
+          "rawText": "PRONTUÁRIOS\nCONVÊNIO:\nIMAS\nDATA 07/24\nPARTE: Parte 4 e 5",
           "sourcePage": 4,
           "sourcePosition": 9
         },
         {
           "id": "10",
+          "recordId": "04-10-1",
+          "duplicateIndex": 1,
           "raw": {
-            "titulo": "IMAS",
-            "convenio": "",
+            "titulo": "PRONTUÁRIOS",
+            "convenio": "IMAS",
             "nome": "",
             "data": "08/24",
             "parte": "Parte 1, 2 e 3"
           },
+          "rawText": "PRONTUÁRIOS\nCONVÊNIO:\nIMAS\nDATA 08/24\nPARTE: Parte 1, 2 e 3",
           "sourcePage": 4,
           "sourcePosition": 10
         },
         {
           "id": "11",
+          "recordId": "04-11-1",
+          "duplicateIndex": 1,
           "raw": {
-            "titulo": "IMAS",
-            "convenio": "",
+            "titulo": "PRONTUÁRIOS",
+            "convenio": "IMAS",
             "nome": "",
             "data": "08/24",
             "parte": "Parte 04 e 05"
           },
+          "rawText": "PRONTUÁRIOS\nCONVÊNIO:\nIMAS\nDATA 08/24\nPARTE: Parte 04 e 05",
           "sourcePage": 4,
           "sourcePosition": 11
         },
         {
           "id": "12",
+          "recordId": "04-12-1",
+          "duplicateIndex": 1,
           "raw": {
-            "titulo": "IMAS",
-            "convenio": "",
+            "titulo": "PRONTUÁRIOS",
+            "convenio": "IMAS",
             "nome": "",
             "data": "09/24",
             "parte": "Parte 1 e 2"
           },
+          "rawText": "PRONTUÁRIOS\nCONVÊNIO:\nIMAS\nDATA 09/24\nPARTE: Parte 1 e 2",
           "sourcePage": 4,
           "sourcePosition": 12
         },
         {
           "id": "13",
+          "recordId": "04-13-1",
+          "duplicateIndex": 1,
           "raw": {
-            "titulo": "IMAS",
-            "convenio": "",
+            "titulo": "PRONTUÁRIOS",
+            "convenio": "IMAS",
             "nome": "",
             "data": "10/24",
             "parte": "Parte 04 e 05"
           },
+          "rawText": "PRONTUÁRIOS\nCONVÊNIO:\nIMAS\nDATA 10/24\nPARTE: Parte 04 e 05",
           "sourcePage": 4,
           "sourcePosition": 13
         },
         {
           "id": "14",
+          "recordId": "04-14-1",
+          "duplicateIndex": 1,
           "raw": {
-            "titulo": "IMAS",
-            "convenio": "",
+            "titulo": "PRONTUÁRIOS",
+            "convenio": "IMAS",
             "nome": "",
             "data": "10/24",
             "parte": "Parte 03"
           },
+          "rawText": "PRONTUÁRIOS\nCONVÊNIO:\nIMAS\nDATA 10/24\nPARTE: Parte 03",
           "sourcePage": 4,
           "sourcePosition": 14
         },
         {
           "id": "15",
+          "recordId": "04-15-1",
+          "duplicateIndex": 1,
           "raw": {
-            "titulo": "IMAS",
-            "convenio": "",
+            "titulo": "PRONTUÁRIOS",
+            "convenio": "IMAS",
             "nome": "",
             "data": "10/24",
             "parte": "Parte 01 e 02"
           },
+          "rawText": "PRONTUÁRIOS\nCONVÊNIO:\nIMAS\nDATA 10/24\nPARTE: Parte 01 e 02",
           "sourcePage": 4,
           "sourcePosition": 15
         },
         {
           "id": "16",
+          "recordId": "04-16-1",
+          "duplicateIndex": 1,
           "raw": {
-            "titulo": "IMAS",
-            "convenio": "",
+            "titulo": "PRONTUÁRIOS",
+            "convenio": "IMAS",
             "nome": "",
             "data": "09/2024",
             "parte": "Parte 03 e 04"
           },
+          "rawText": "PRONTUÁRIOS\nCONVÊNIO:\nIMAS\nDATA 09/2024\nPARTE: Parte 03 e 04",
           "sourcePage": 4,
           "sourcePosition": 16
         }
@@ -747,193 +943,241 @@
       "positions": [
         {
           "id": "01",
+          "recordId": "05-01-1",
+          "duplicateIndex": 1,
           "raw": {
-            "titulo": "IPASGO",
-            "convenio": "",
+            "titulo": "PRONTUÁRIOS",
+            "convenio": "IPASGO",
             "nome": "",
             "data": "04/2025",
             "parte": "02 e 03"
           },
+          "rawText": "PRONTUÁRIOS\nCONVÊNIO:\nIPASGO\nDATA 04/2025\nPARTE: 02 e 03",
           "sourcePage": 5,
           "sourcePosition": 1
         },
         {
           "id": "02",
+          "recordId": "05-02-1",
+          "duplicateIndex": 1,
           "raw": {
-            "titulo": "IPASGO",
-            "convenio": "",
+            "titulo": "PRONTUÁRIOS",
+            "convenio": "IPASGO",
             "nome": "",
             "data": "04/2025",
             "parte": "01"
           },
+          "rawText": "PRONTUÁRIOS\nCONVÊNIO:\nIPASGO\nDATA 04/2025\nPARTE: 01",
           "sourcePage": 5,
           "sourcePosition": 2
         },
         {
           "id": "03",
+          "recordId": "05-03-1",
+          "duplicateIndex": 1,
           "raw": {
-            "titulo": "IPASGO",
-            "convenio": "",
+            "titulo": "PRONTUÁRIOS",
+            "convenio": "IPASGO",
             "nome": "",
             "data": "02/2025",
             "parte": "03"
           },
+          "rawText": "PRONTUÁRIOS\nCONVÊNIO:\nIPASGO\nDATA 02/2025\nPARTE: 03",
           "sourcePage": 5,
           "sourcePosition": 3
         },
         {
           "id": "04",
+          "recordId": "05-04-1",
+          "duplicateIndex": 1,
           "raw": {
-            "titulo": "IPASGO",
-            "convenio": "",
+            "titulo": "PRONTUÁRIOS",
+            "convenio": "IPASGO",
             "nome": "",
             "data": "02/2025",
             "parte": "1 e 2"
           },
+          "rawText": "PRONTUÁRIOS\nCONVÊNIO:\nIPASGO\nDATA 02/2025\nPARTE: 1 e 2",
           "sourcePage": 5,
           "sourcePosition": 4
         },
         {
           "id": "05",
+          "recordId": "05-05-1",
+          "duplicateIndex": 1,
           "raw": {
-            "titulo": "IPASGO",
-            "convenio": "",
+            "titulo": "PRONTUÁRIOS",
+            "convenio": "IPASGO",
             "nome": "",
             "data": "08/2025",
             "parte": "1, 2 e 3"
           },
+          "rawText": "PRONTUÁRIOS\nCONVÊNIO:\nIPASGO\nDATA 08/2025\nPARTE: 1, 2 e 3",
           "sourcePage": 5,
           "sourcePosition": 5
         },
         {
           "id": "06",
+          "recordId": "05-06-1",
+          "duplicateIndex": 1,
           "raw": {
-            "titulo": "IPASGO",
-            "convenio": "",
+            "titulo": "PRONTUÁRIOS",
+            "convenio": "IPASGO",
             "nome": "",
             "data": "07/2025",
             "parte": "01 até 03"
           },
+          "rawText": "PRONTUÁRIOS\nCONVÊNIO:\nIPASGO\nDATA 07/2025\nPARTE: 01 até 03",
           "sourcePage": 5,
           "sourcePosition": 6
         },
         {
           "id": "07",
+          "recordId": "05-07-1",
+          "duplicateIndex": 1,
           "raw": {
-            "titulo": "IPASGO",
-            "convenio": "",
+            "titulo": "PRONTUÁRIOS",
+            "convenio": "IPASGO",
             "nome": "",
             "data": "06/2025",
             "parte": "1, 2, 3 e 4"
           },
+          "rawText": "PRONTUÁRIOS\nCONVÊNIO:\nIPASGO\nDATA 06/2025\nPARTE: 1, 2, 3 e 4",
           "sourcePage": 5,
           "sourcePosition": 7
         },
         {
           "id": "08",
+          "recordId": "05-08-1",
+          "duplicateIndex": 1,
           "raw": {
-            "titulo": "IPASGO",
-            "convenio": "",
+            "titulo": "PRONTUÁRIOS",
+            "convenio": "IPASGO",
             "nome": "",
             "data": "05/2025",
             "parte": "1, 2, 3"
           },
+          "rawText": "PRONTUÁRIOS\nCONVÊNIO:\nIPASGO\nDATA 05/2025\nPARTE: 1, 2, 3",
           "sourcePage": 5,
           "sourcePosition": 8
         },
         {
           "id": "09",
+          "recordId": "05-09-1",
+          "duplicateIndex": 1,
           "raw": {
-            "titulo": "IPASGO",
-            "convenio": "",
+            "titulo": "PRONTUÁRIOS",
+            "convenio": "IPASGO",
             "nome": "",
             "data": "10/2025",
             "parte": "2 e 3"
           },
+          "rawText": "PRONTUÁRIOS\nCONVÊNIO:\nIPASGO\nDATA 10/2025\nPARTE: 2 e 3",
           "sourcePage": 5,
           "sourcePosition": 9
         },
         {
           "id": "10",
+          "recordId": "05-10-1",
+          "duplicateIndex": 1,
           "raw": {
-            "titulo": "IPASGO",
-            "convenio": "",
+            "titulo": "PRONTUÁRIOS",
+            "convenio": "IPASGO",
             "nome": "",
             "data": "10/2025",
             "parte": "01"
           },
+          "rawText": "PRONTUÁRIOS\nCONVÊNIO:\nIPASGO\nDATA 10/2025\nPARTE: 01",
           "sourcePage": 5,
           "sourcePosition": 10
         },
         {
           "id": "11",
+          "recordId": "05-11-1",
+          "duplicateIndex": 1,
           "raw": {
-            "titulo": "IPASGO",
-            "convenio": "",
+            "titulo": "PRONTUÁRIOS",
+            "convenio": "IPASGO",
             "nome": "",
             "data": "09/2025",
             "parte": "03"
           },
+          "rawText": "PRONTUÁRIOS\nCONVÊNIO:\nIPASGO\nDATA 09/2025\nPARTE: 03",
           "sourcePage": 5,
           "sourcePosition": 11
         },
         {
           "id": "12",
+          "recordId": "05-12-1",
+          "duplicateIndex": 1,
           "raw": {
-            "titulo": "IPASGO",
-            "convenio": "",
+            "titulo": "PRONTUÁRIOS",
+            "convenio": "IPASGO",
             "nome": "",
             "data": "09/2025",
             "parte": "1, 2"
           },
+          "rawText": "PRONTUÁRIOS\nCONVÊNIO:\nIPASGO\nDATA 09/2025\nPARTE: 1, 2",
           "sourcePage": 5,
           "sourcePosition": 12
         },
         {
           "id": "13",
+          "recordId": "05-13-1",
+          "duplicateIndex": 1,
           "raw": {
-            "titulo": "",
-            "convenio": "",
-            "nome": "MAIS Saude",
-            "data": "/2025",
+            "titulo": "PRONTUÁRIOS",
+            "convenio": "MAIS Saude",
+            "nome": "",
+            "data": "X /2025",
             "parte": "4 e 05"
           },
+          "rawText": "PRONTUÁRIOS\nCONVÊNIO:\nMAIS Saude\nDATA X /2025\nPARTE: 4 e 05",
           "sourcePage": 5,
           "sourcePosition": 13
         },
         {
           "id": "14",
+          "recordId": "05-14-1",
+          "duplicateIndex": 1,
           "raw": {
-            "titulo": "IPASGO",
-            "convenio": "",
+            "titulo": "PRONTUÁRIOS",
+            "convenio": "IPASGO",
             "nome": "",
             "data": "12/2025",
             "parte": "03"
           },
+          "rawText": "PRONTUÁRIOS\nCONVÊNIO:\nIPASGO\nDATA 12/2025\nPARTE: 03",
           "sourcePage": 5,
           "sourcePosition": 14
         },
         {
           "id": "15",
+          "recordId": "05-15-1",
+          "duplicateIndex": 1,
           "raw": {
-            "titulo": "IPASGO",
-            "convenio": "",
+            "titulo": "PRONTUÁRIOS",
+            "convenio": "IPASGO",
             "nome": "",
             "data": "12/2025",
             "parte": "1 e 2"
           },
+          "rawText": "PRONTUÁRIOS\nCONVÊNIO:\nIPASGO\nDATA 12/2025\nPARTE: 1 e 2",
           "sourcePage": 5,
           "sourcePosition": 15
         },
         {
           "id": "16",
+          "recordId": "05-16-1",
+          "duplicateIndex": 1,
           "raw": {
-            "titulo": "IPASGO",
-            "convenio": "",
+            "titulo": "PRONTUÁRIOS",
+            "convenio": "IPASGO",
             "nome": "",
             "data": "11/2025",
             "parte": "1, 2 e 3"
           },
+          "rawText": "PRONTUÁRIOS\nCONVÊNIO:\nIPASGO\nDATA 11/2025\nPARTE: 1, 2 e 3",
           "sourcePage": 5,
           "sourcePosition": 16
         }
@@ -944,217 +1188,271 @@
       "positions": [
         {
           "id": "01",
+          "recordId": "06-01-1",
+          "duplicateIndex": 1,
           "raw": {
-            "titulo": "IMAS",
-            "convenio": "",
+            "titulo": "PRONTUÁRIOS",
+            "convenio": "IMAS",
             "nome": "",
             "data": "11/2024",
             "parte": "05"
           },
+          "rawText": "PRONTUÁRIOS\nCONVÊNIO:\nIMAS\nDATA 11/2024\nPARTE: 05",
           "sourcePage": 6,
           "sourcePosition": 1
         },
         {
           "id": "02",
+          "recordId": "06-02-1",
+          "duplicateIndex": 1,
           "raw": {
-            "titulo": "IMAS",
-            "convenio": "",
+            "titulo": "PRONTUÁRIOS",
+            "convenio": "IMAS",
             "nome": "",
             "data": "11/2024",
             "parte": "3 e 4"
           },
+          "rawText": "PRONTUÁRIOS\nCONVÊNIO:\nIMAS\nDATA 11/2024\nPARTE: 3 e 4",
           "sourcePage": 6,
           "sourcePosition": 2
         },
         {
           "id": "03",
+          "recordId": "06-03-1",
+          "duplicateIndex": 1,
           "raw": {
-            "titulo": "IMAS",
-            "convenio": "",
+            "titulo": "PRONTUÁRIOS",
+            "convenio": "IMAS",
             "nome": "",
             "data": "11/2024",
             "parte": "1 e 2"
           },
+          "rawText": "PRONTUÁRIOS\nCONVÊNIO:\nIMAS\nDATA 11/2024\nPARTE: 1 e 2",
           "sourcePage": 6,
           "sourcePosition": 3
         },
         {
           "id": "04",
+          "recordId": "06-04-1",
+          "duplicateIndex": 1,
           "raw": {
-            "titulo": "IPASGO",
-            "convenio": "",
+            "titulo": "PRONTUÁRIOS",
+            "convenio": "IPASGO",
             "nome": "",
             "data": "01/2024",
             "parte": "A até L"
           },
+          "rawText": "PRONTUÁRIOS\nCONVÊNIO:\nIPASGO\nDATA 01/2024\nPARTE: A até L",
           "sourcePage": 6,
           "sourcePosition": 4
         },
         {
           "id": "05",
+          "recordId": "06-05-1",
+          "duplicateIndex": 1,
           "raw": {
-            "titulo": "IMAS",
-            "convenio": "",
+            "titulo": "PRONTUÁRIOS",
+            "convenio": "IMAS",
             "nome": "",
             "data": "12/2024",
             "parte": ""
           },
+          "rawText": "PRONTUÁRIOS\nCONVÊNIO:\nIMAS\nDATA 12/2024\nPARTE:",
           "sourcePage": 6,
           "sourcePosition": 5
         },
         {
           "id": "06",
+          "recordId": "06-06-1",
+          "duplicateIndex": 1,
           "raw": {
-            "titulo": "IMAS",
-            "convenio": "",
+            "titulo": "PRONTUÁRIOS",
+            "convenio": "IMAS",
             "nome": "",
             "data": "12/2024",
             "parte": ""
           },
+          "rawText": "PRONTUÁRIOS\nCONVÊNIO:\nIMAS\nDATA 12/2024\nPARTE:",
           "sourcePage": 6,
           "sourcePosition": 6
         },
         {
           "id": "07",
+          "recordId": "06-07-1",
+          "duplicateIndex": 1,
           "raw": {
-            "titulo": "IPASGO",
-            "convenio": "",
+            "titulo": "PRONTUÁRIOS",
+            "convenio": "IPASGO",
             "nome": "",
             "data": "03/2024",
             "parte": "01 e 02"
           },
+          "rawText": "PRONTUÁRIOS\nCONVÊNIO:\nIPASGO\nDATA 03/2024\nPARTE: 01 e 02",
           "sourcePage": 6,
           "sourcePosition": 7
         },
         {
           "id": "08",
+          "recordId": "06-08-1",
+          "duplicateIndex": 1,
           "raw": {
-            "titulo": "IPASGO",
-            "convenio": "",
+            "titulo": "PRONTUÁRIOS",
+            "convenio": "IPASGO",
             "nome": "",
             "data": "02/2024",
             "parte": ""
           },
+          "rawText": "PRONTUÁRIOS\nCONVÊNIO:\nIPASGO\nDATA 02/2024\nPARTE:",
           "sourcePage": 6,
           "sourcePosition": 8
         },
         {
           "id": "09",
+          "recordId": "06-09-1",
+          "duplicateIndex": 1,
           "raw": {
-            "titulo": "IPASGO",
-            "convenio": "",
+            "titulo": "PRONTUÁRIOS",
+            "convenio": "IPASGO",
             "nome": "",
             "data": "01/2024",
             "parte": "M até Z"
           },
+          "rawText": "PRONTUÁRIOS\nCONVÊNIO:\nIPASGO\nDATA 01/2024\nPARTE: M até Z",
           "sourcePage": 6,
           "sourcePosition": 9
         },
         {
           "id": "10",
+          "recordId": "06-10-1",
+          "duplicateIndex": 1,
           "raw": {
-            "titulo": "IPASGO",
-            "convenio": "",
+            "titulo": "PRONTUÁRIOS",
+            "convenio": "IPASGO",
             "nome": "",
             "data": "04/2024",
             "parte": ""
           },
+          "rawText": "PRONTUÁRIOS\nCONVÊNIO:\nIPASGO\nDATA 04/2024\nPARTE:",
           "sourcePage": 6,
           "sourcePosition": 10
         },
         {
           "id": "11",
+          "recordId": "06-11-1",
+          "duplicateIndex": 1,
           "raw": {
-            "titulo": "IPASGO",
-            "convenio": "",
+            "titulo": "PRONTUÁRIOS",
+            "convenio": "IPASGO",
             "nome": "",
             "data": "03/2024",
             "parte": ""
           },
+          "rawText": "PRONTUÁRIOS\nCONVÊNIO:\nIPASGO\nDATA 03/2024\nPARTE:",
           "sourcePage": 6,
           "sourcePosition": 11
         },
         {
           "id": "12",
+          "recordId": "06-12-1",
+          "duplicateIndex": 1,
           "raw": {
-            "titulo": "IPASGO",
-            "convenio": "",
+            "titulo": "PRONTUÁRIOS",
+            "convenio": "IPASGO",
             "nome": "",
             "data": "03/2024",
             "parte": ""
           },
+          "rawText": "PRONTUÁRIOS\nCONVÊNIO:\nIPASGO\nDATA 03/2024\nPARTE:",
           "sourcePage": 6,
           "sourcePosition": 12
         },
         {
           "id": "13",
+          "recordId": "06-13-1",
+          "duplicateIndex": 1,
           "raw": {
-            "titulo": "IPASGO",
-            "convenio": "",
+            "titulo": "PRONTUÁRIOS",
+            "convenio": "IPASGO",
             "nome": "",
             "data": "06/2024",
             "parte": ""
           },
+          "rawText": "PRONTUÁRIOS\nCONVÊNIO:\nIPASGO\nDATA 06/2024\nPARTE:",
           "sourcePage": 6,
           "sourcePosition": 13
         },
         {
           "id": "14",
+          "recordId": "06-14-1",
+          "duplicateIndex": 1,
           "raw": {
-            "titulo": "IPASGO",
-            "convenio": "",
+            "titulo": "PRONTUÁRIOS",
+            "convenio": "IPASGO",
             "nome": "",
             "data": "06/2024",
             "parte": ""
           },
+          "rawText": "PRONTUÁRIOS\nCONVÊNIO:\nIPASGO\nDATA 06/2024\nPARTE:",
           "sourcePage": 6,
           "sourcePosition": 14
         },
         {
           "id": "15",
+          "recordId": "06-15-1",
+          "duplicateIndex": 1,
           "raw": {
-            "titulo": "IPASGO",
-            "convenio": "",
+            "titulo": "PRONTUÁRIOS",
+            "convenio": "IPASGO",
             "nome": "",
-            "data": "/2024",
+            "data": "05 /2024",
             "parte": ""
           },
+          "rawText": "PRONTUÁRIOS\nCONVÊNIO:\nIPASGO\nDATA 05 /2024\nPARTE:",
           "sourcePage": 6,
           "sourcePosition": 15
         },
         {
           "id": "16",
+          "recordId": "06-16-1",
+          "duplicateIndex": 1,
           "raw": {
-            "titulo": "IPASGO",
-            "convenio": "",
+            "titulo": "PRONTUÁRIOS",
+            "convenio": "IPASGO",
             "nome": "",
             "data": "7/2024",
             "parte": "5"
           },
+          "rawText": "PRONTUÁRIOS\nCONVÊNIO:\nIPASGO\nDATA 7/2024\nPARTE: 5",
           "sourcePage": 6,
           "sourcePosition": 16
         },
         {
           "id": "17",
+          "recordId": "06-17-1",
+          "duplicateIndex": 1,
           "raw": {
-            "titulo": "IPASGO",
-            "convenio": "",
+            "titulo": "PRONTUÁRIOS",
+            "convenio": "IPASGO",
             "nome": "",
             "data": "7/2024",
             "parte": "2, 3 e 4"
           },
+          "rawText": "PRONTUÁRIOS\nCONVÊNIO:\nIPASGO\nDATA 7/2024\nPARTE: 2, 3 e 4",
           "sourcePage": 6,
           "sourcePosition": 17
         },
         {
           "id": "18",
+          "recordId": "06-18-1",
+          "duplicateIndex": 1,
           "raw": {
-            "titulo": "IPASGO",
-            "convenio": "",
+            "titulo": "PRONTUÁRIOS",
+            "convenio": "IPASGO",
             "nome": "",
             "data": "07/2024",
             "parte": "1"
           },
+          "rawText": "PRONTUÁRIOS\nCONVÊNIO:\nIPASGO\nDATA 07/2024\nPARTE: 1",
           "sourcePage": 6,
           "sourcePosition": 18
         }
@@ -1165,217 +1463,271 @@
       "positions": [
         {
           "id": "01",
+          "recordId": "07-01-1",
+          "duplicateIndex": 1,
           "raw": {
-            "titulo": "IPASGO",
-            "convenio": "",
+            "titulo": "PRONTUÁRIOS",
+            "convenio": "IPASGO",
             "nome": "",
             "data": "08/2024",
             "parte": ""
           },
+          "rawText": "PRONTUÁRIOS\nCONVÊNIO:\nIPASGO\nDATA 08/2024\nPARTE:",
           "sourcePage": 7,
           "sourcePosition": 1
         },
         {
           "id": "02",
+          "recordId": "07-02-1",
+          "duplicateIndex": 1,
           "raw": {
-            "titulo": "IPASGO",
-            "convenio": "",
+            "titulo": "PRONTUÁRIOS",
+            "convenio": "IPASGO",
             "nome": "",
             "data": "08/2024",
             "parte": ""
           },
+          "rawText": "PRONTUÁRIOS\nCONVÊNIO:\nIPASGO\nDATA 08/2024\nPARTE:",
           "sourcePage": 7,
           "sourcePosition": 2
         },
         {
           "id": "03",
+          "recordId": "07-03-1",
+          "duplicateIndex": 1,
           "raw": {
-            "titulo": "IPASGO",
-            "convenio": "",
+            "titulo": "PRONTUÁRIOS",
+            "convenio": "IPASGO",
             "nome": "",
             "data": "09/2024",
             "parte": "Parte 1, 2 e 3"
           },
+          "rawText": "PRONTUÁRIOS\nCONVÊNIO:\nIPASGO\nDATA 09/2024\nPARTE: Parte 1, 2 e 3",
           "sourcePage": 7,
           "sourcePosition": 3
         },
         {
           "id": "04",
+          "recordId": "07-04-1",
+          "duplicateIndex": 1,
           "raw": {
-            "titulo": "IPASGO",
-            "convenio": "",
+            "titulo": "PRONTUÁRIOS",
+            "convenio": "IPASGO",
             "nome": "",
             "data": "09/2024",
             "parte": "Parte 4, 5 e 6"
           },
+          "rawText": "PRONTUÁRIOS\nCONVÊNIO:\nIPASGO\nDATA 09/2024\nPARTE: Parte 4, 5 e 6",
           "sourcePage": 7,
           "sourcePosition": 4
         },
         {
           "id": "05",
+          "recordId": "07-05-1",
+          "duplicateIndex": 1,
           "raw": {
-            "titulo": "IPASGO",
-            "convenio": "",
+            "titulo": "PRONTUÁRIOS",
+            "convenio": "IPASGO",
             "nome": "",
             "data": "10/2024",
             "parte": "Parte 4 e 5"
           },
+          "rawText": "PRONTUÁRIOS\nCONVÊNIO:\nIPASGO\nDATA 10/2024\nPARTE: Parte 4 e 5",
           "sourcePage": 7,
           "sourcePosition": 5
         },
         {
           "id": "06",
+          "recordId": "07-06-1",
+          "duplicateIndex": 1,
           "raw": {
-            "titulo": "IPASGO",
-            "convenio": "",
+            "titulo": "PRONTUÁRIOS",
+            "convenio": "IPASGO",
             "nome": "",
             "data": "11/2024",
             "parte": ""
           },
+          "rawText": "PRONTUÁRIOS\nCONVÊNIO:\nIPASGO\nDATA 11/2024\nPARTE:",
           "sourcePage": 7,
           "sourcePosition": 6
         },
         {
           "id": "07",
+          "recordId": "07-07-1",
+          "duplicateIndex": 1,
           "raw": {
-            "titulo": "IPASGO",
-            "convenio": "",
+            "titulo": "PRONTUÁRIOS",
+            "convenio": "IPASGO",
             "nome": "",
             "data": "11/2024",
             "parte": ""
           },
+          "rawText": "PRONTUÁRIOS\nCONVÊNIO:\nIPASGO\nDATA 11/2024\nPARTE:",
           "sourcePage": 7,
           "sourcePosition": 7
         },
         {
           "id": "08",
+          "recordId": "07-08-1",
+          "duplicateIndex": 1,
           "raw": {
-            "titulo": "IPASGO",
-            "convenio": "",
+            "titulo": "PRONTUÁRIOS",
+            "convenio": "IPASGO",
             "nome": "",
             "data": "11/2024",
             "parte": ""
           },
+          "rawText": "PRONTUÁRIOS\nCONVÊNIO:\nIPASGO\nDATA 11/2024\nPARTE:",
           "sourcePage": 7,
           "sourcePosition": 8
         },
         {
           "id": "09",
+          "recordId": "07-09-1",
+          "duplicateIndex": 1,
           "raw": {
-            "titulo": "IPASGO",
-            "convenio": "",
+            "titulo": "PRONTUÁRIOS",
+            "convenio": "IPASGO",
             "nome": "",
             "data": "12/2024",
             "parte": ""
           },
+          "rawText": "PRONTUÁRIOS\nCONVÊNIO:\nIPASGO\nDATA 12/2024\nPARTE:",
           "sourcePage": 7,
           "sourcePosition": 9
         },
         {
           "id": "10",
+          "recordId": "07-10-1",
+          "duplicateIndex": 1,
           "raw": {
-            "titulo": "IPASGO",
-            "convenio": "",
+            "titulo": "PRONTUÁRIOS",
+            "convenio": "IPASGO",
             "nome": "",
             "data": "12/2024",
             "parte": ""
           },
+          "rawText": "PRONTUÁRIOS\nCONVÊNIO:\nIPASGO\nDATA 12/2024\nPARTE:",
           "sourcePage": 7,
           "sourcePosition": 10
         },
         {
           "id": "11",
+          "recordId": "07-11-1",
+          "duplicateIndex": 1,
           "raw": {
-            "titulo": "IPASGO",
-            "convenio": "",
+            "titulo": "PRONTUÁRIOS",
+            "convenio": "IPASGO",
             "nome": "",
             "data": "12/2024",
             "parte": ""
           },
+          "rawText": "PRONTUÁRIOS\nCONVÊNIO:\nIPASGO\nDATA 12/2024\nPARTE:",
           "sourcePage": 7,
           "sourcePosition": 11
         },
         {
           "id": "12",
+          "recordId": "07-12-1",
+          "duplicateIndex": 1,
           "raw": {
-            "titulo": "",
-            "convenio": "",
-            "nome": "Unimed",
+            "titulo": "PRONTUÁRIOS",
+            "convenio": "Unimed",
+            "nome": "",
             "data": "07/2024 A 02/2024",
             "parte": ""
           },
+          "rawText": "PRONTUÁRIOS\nCONVÊNIO:\nUnimed\nDATA 07/2024 A 02/2024\nPARTE:",
           "sourcePage": 7,
           "sourcePosition": 12
         },
         {
           "id": "13",
+          "recordId": "07-13-1",
+          "duplicateIndex": 1,
           "raw": {
-            "titulo": "",
-            "convenio": "",
-            "nome": "Unimed",
+            "titulo": "PRONTUÁRIOS",
+            "convenio": "Unimed",
+            "nome": "",
             "data": "03/2024 até 04/24",
             "parte": ""
           },
+          "rawText": "PRONTUÁRIOS\nCONVÊNIO:\nUnimed\nDATA 03/2024 até 04/24\nPARTE:",
           "sourcePage": 7,
           "sourcePosition": 13
         },
         {
           "id": "14",
+          "recordId": "07-14-1",
+          "duplicateIndex": 1,
           "raw": {
-            "titulo": "",
-            "convenio": "",
-            "nome": "Unimed",
+            "titulo": "PRONTUÁRIOS",
+            "convenio": "Unimed",
+            "nome": "",
             "data": "05/24",
             "parte": ""
           },
+          "rawText": "PRONTUÁRIOS\nCONVÊNIO:\nUnimed\nDATA 05/24\nPARTE:",
           "sourcePage": 7,
           "sourcePosition": 14
         },
         {
           "id": "15",
+          "recordId": "07-15-1",
+          "duplicateIndex": 1,
           "raw": {
-            "titulo": "",
-            "convenio": "",
-            "nome": "Unimed",
+            "titulo": "PRONTUÁRIOS",
+            "convenio": "Unimed",
+            "nome": "",
             "data": "07/2024",
             "parte": ""
           },
+          "rawText": "PRONTUÁRIOS\nCONVÊNIO:\nUnimed\nDATA 07/2024\nPARTE:",
           "sourcePage": 7,
           "sourcePosition": 15
         },
         {
           "id": "16",
+          "recordId": "07-16-1",
+          "duplicateIndex": 1,
           "raw": {
-            "titulo": "",
-            "convenio": "",
-            "nome": "Unimed",
+            "titulo": "PRONTUÁRIOS",
+            "convenio": "Unimed",
+            "nome": "",
             "data": "09/24 até 12/24",
             "parte": ""
           },
+          "rawText": "PRONTUÁRIOS\nCONVÊNIO:\nUnimed\nDATA 09/24 até 12/24\nPARTE:",
           "sourcePage": 7,
           "sourcePosition": 16
         },
         {
           "id": "17",
+          "recordId": "07-17-1",
+          "duplicateIndex": 1,
           "raw": {
-            "titulo": "",
-            "convenio": "",
-            "nome": "Mais Saude",
-            "data": "06 a 11/24",
+            "titulo": "PRONTUÁRIOS",
+            "convenio": "Mais Saude",
+            "nome": "",
+            "data": "06 a 11/2024",
             "parte": ""
           },
+          "rawText": "PRONTUÁRIOS\nCONVÊNIO:\nMais Saude\nDATA 06 a 11/2024\nPARTE:",
           "sourcePage": 7,
           "sourcePosition": 17
         },
         {
           "id": "18",
+          "recordId": "07-18-1",
+          "duplicateIndex": 1,
           "raw": {
-            "titulo": "",
-            "convenio": "",
-            "nome": "Mais Saude",
-            "data": "10/24 03/24",
+            "titulo": "PRONTUÁRIOS",
+            "convenio": "Mais Saude",
+            "nome": "",
+            "data": "10/2024 03/2024",
             "parte": ""
           },
+          "rawText": "PRONTUÁRIOS\nCONVÊNIO:\nMais Saude\nDATA 10/2024 03/2024\nPARTE:",
           "sourcePage": 7,
           "sourcePosition": 18
         }
@@ -1386,217 +1738,271 @@
       "positions": [
         {
           "id": "01",
+          "recordId": "08-01-1",
+          "duplicateIndex": 1,
           "raw": {
-            "titulo": "Devolução Antigo",
-            "convenio": "IPASGO e IMAS",
-            "nome": "Recurso glosa",
+            "titulo": "PRONTUÁRIOS",
+            "convenio": "Devolução Antigas Recurso Glosa Ipasgo e Imas",
+            "nome": "",
             "data": "2022",
             "parte": ""
           },
+          "rawText": "PRONTUÁRIOS\nCONVÊNIO:\nDevolução Antigas\nRecurso Glosa Ipasgo\ne Imas\nDATA 2022\nPARTE:",
           "sourcePage": 8,
           "sourcePosition": 1
         },
         {
           "id": "02",
+          "recordId": "08-02-1",
+          "duplicateIndex": 1,
           "raw": {
-            "titulo": "Faturamento",
+            "titulo": "PRONTUÁRIOS",
             "convenio": "",
-            "nome": "Convênios",
-            "data": "07/2022 a 11/2023",
+            "nome": "",
+            "data": "07/2022 a 11/2022",
             "parte": ""
           },
+          "rawText": "PRONTUÁRIOS\nCONVÊNIO:\nDATA 07/2022 a 11/2022\nPARTE:",
           "sourcePage": 8,
           "sourcePosition": 2
         },
         {
           "id": "03",
+          "recordId": "08-03-1",
+          "duplicateIndex": 1,
           "raw": {
-            "titulo": "Guias",
+            "titulo": "Guias Faturadas",
             "convenio": "",
-            "nome": "Faturadas",
+            "nome": "",
             "data": "01/22 a 06/2022",
             "parte": ""
           },
+          "rawText": "Guias\nFaturadas\nDATA 01/22 a 06/2022\nPARTE:",
           "sourcePage": 8,
           "sourcePosition": 3
         },
         {
           "id": "04",
+          "recordId": "08-04-1",
+          "duplicateIndex": 1,
           "raw": {
             "titulo": "Prescrições",
             "convenio": "",
             "nome": "",
-            "data": "Novbro 2022; Dezembro 2022; Janeiro 2023",
+            "data": "Novembro 2022; Dezembro 2022; Janeiro 2023",
             "parte": ""
           },
+          "rawText": "Prescrições\nDATA : Novembro 2022; Dezembro 2022; Janeiro 2023\nPARTE:",
           "sourcePage": 8,
           "sourcePosition": 4
         },
         {
           "id": "05",
+          "recordId": "08-05-1",
+          "duplicateIndex": 1,
           "raw": {
-            "titulo": "Protocolos",
+            "titulo": "Prescrições",
             "convenio": "",
-            "nome": "Prescrições",
+            "nome": "",
             "data": "2022/2023/2024",
             "parte": ""
           },
+          "rawText": "Prescrições\nDATA 2022/2023/2024\nPARTE:",
           "sourcePage": 8,
           "sourcePosition": 5
         },
         {
           "id": "06",
+          "recordId": "08-06-1",
+          "duplicateIndex": 1,
           "raw": {
-            "titulo": "Convênios",
+            "titulo": "PRONTUÁRIOS",
             "convenio": "",
             "nome": "",
             "data": "2022",
             "parte": ""
           },
+          "rawText": "PRONTUÁRIOS\nCONVÊNIO:\nDATA 2022\nPARTE:",
           "sourcePage": 8,
           "sourcePosition": 6
         },
         {
           "id": "07",
+          "recordId": "08-07-1",
+          "duplicateIndex": 1,
           "raw": {
-            "titulo": "IMAS",
-            "convenio": "",
+            "titulo": "PRONTUÁRIOS",
+            "convenio": "IMAS",
             "nome": "",
-            "data": "08 a 09 2021",
+            "data": "08 a 09 de 2021",
             "parte": ""
           },
+          "rawText": "PRONTUÁRIOS\nCONVÊNIO:\nIMAS\nDATA 08 a 09 de 2021\nPARTE:",
           "sourcePage": 8,
           "sourcePosition": 7
         },
         {
           "id": "08",
+          "recordId": "08-08-1",
+          "duplicateIndex": 1,
           "raw": {
-            "titulo": "IMAS",
-            "convenio": "",
+            "titulo": "PRONTUÁRIOS",
+            "convenio": "IMAS",
             "nome": "",
             "data": "06/2021 E 07/2021",
             "parte": ""
           },
+          "rawText": "PRONTUÁRIOS\nCONVÊNIO:\nIMAS\nDATA 06/2021 E 07/2021\nPARTE:",
           "sourcePage": 8,
           "sourcePosition": 8
         },
         {
           "id": "09",
+          "recordId": "08-09-1",
+          "duplicateIndex": 1,
           "raw": {
-            "titulo": "IMAS",
-            "convenio": "",
+            "titulo": "PRONTUÁRIOS",
+            "convenio": "IMAS",
             "nome": "",
-            "data": "01/21 a 05/21",
+            "data": "01/2021 a 05/2021",
             "parte": ""
           },
+          "rawText": "PRONTUÁRIOS\nCONVÊNIO:\nIMAS\nDATA 01/2021 a 05/2021\nPARTE:",
           "sourcePage": 8,
           "sourcePosition": 9
         },
         {
           "id": "10",
+          "recordId": "08-10-1",
+          "duplicateIndex": 1,
           "raw": {
-            "titulo": "IPASGO",
-            "convenio": "",
+            "titulo": "PRONTUÁRIOS",
+            "convenio": "IPASGO",
             "nome": "",
             "data": "08/2021",
             "parte": ""
           },
+          "rawText": "PRONTUÁRIOS\nCONVÊNIO:\nIPASGO\nDATA 08/2021\nPARTE:",
           "sourcePage": 8,
           "sourcePosition": 10
         },
         {
           "id": "11",
+          "recordId": "08-11-1",
+          "duplicateIndex": 1,
           "raw": {
-            "titulo": "IPASGO",
-            "convenio": "",
+            "titulo": "PRONTUÁRIOS",
+            "convenio": "IPASGO",
             "nome": "",
             "data": "05 a 07/2021",
             "parte": ""
           },
+          "rawText": "PRONTUÁRIOS\nCONVÊNIO:\nIPASGO\nDATA 05 a 07/2021\nPARTE:",
           "sourcePage": 8,
           "sourcePosition": 11
         },
         {
           "id": "12",
+          "recordId": "08-12-1",
+          "duplicateIndex": 1,
           "raw": {
-            "titulo": "IPASGO",
-            "convenio": "",
+            "titulo": "PRONTUÁRIOS",
+            "convenio": "IPASGO",
             "nome": "",
             "data": "01/2021 a 04/2021",
             "parte": ""
           },
+          "rawText": "PRONTUÁRIOS\nCONVÊNIO:\nIPASGO\nDATA 01/2021 a 04/2021\nPARTE:",
           "sourcePage": 8,
           "sourcePosition": 12
         },
         {
           "id": "13",
+          "recordId": "08-13-1",
+          "duplicateIndex": 1,
           "raw": {
-            "titulo": "IPASGO",
-            "convenio": "",
+            "titulo": "PRONTUÁRIOS",
+            "convenio": "IPASGO",
             "nome": "",
             "data": "11/2021",
             "parte": ""
           },
+          "rawText": "PRONTUÁRIOS\nCONVÊNIO:\nIPASGO\nDATA 11/2021\nPARTE:",
           "sourcePage": 8,
           "sourcePosition": 13
         },
         {
           "id": "14",
+          "recordId": "08-14-1",
+          "duplicateIndex": 1,
           "raw": {
-            "titulo": "IPASGO",
-            "convenio": "",
+            "titulo": "PRONTUÁRIOS",
+            "convenio": "IPASGO",
             "nome": "",
             "data": "10/2021",
             "parte": ""
           },
+          "rawText": "PRONTUÁRIOS\nCONVÊNIO:\nIPASGO\nDATA 10/2021\nPARTE:",
           "sourcePage": 8,
           "sourcePosition": 14
         },
         {
           "id": "15",
+          "recordId": "08-15-1",
+          "duplicateIndex": 1,
           "raw": {
-            "titulo": "IPASGO",
-            "convenio": "",
+            "titulo": "PRONTUÁRIOS",
+            "convenio": "IPASGO",
             "nome": "",
             "data": "09/2021",
             "parte": ""
           },
+          "rawText": "PRONTUÁRIOS\nCONVÊNIO:\nIPASGO\nDATA 09/2021\nPARTE:",
           "sourcePage": 8,
           "sourcePosition": 15
         },
         {
           "id": "16",
+          "recordId": "08-16-1",
+          "duplicateIndex": 1,
           "raw": {
-            "titulo": "Unimed",
-            "convenio": "",
+            "titulo": "PRONTUÁRIOS",
+            "convenio": "Unimed",
             "nome": "",
             "data": "09/2021 a 12/2021",
             "parte": ""
           },
+          "rawText": "PRONTUÁRIOS\nCONVÊNIO:\nUnimed\nDATA 09/2021 a 12/2021\nPARTE:",
           "sourcePage": 8,
           "sourcePosition": 16
         },
         {
           "id": "17",
+          "recordId": "08-17-1",
+          "duplicateIndex": 1,
           "raw": {
-            "titulo": "Unimed",
-            "convenio": "",
+            "titulo": "PRONTUÁRIOS",
+            "convenio": "Unimed",
             "nome": "",
             "data": "01/2021 a 08/2021",
             "parte": ""
           },
+          "rawText": "PRONTUÁRIOS\nCONVÊNIO:\nUnimed\nDATA 01/2021 a 08/2021\nPARTE:",
           "sourcePage": 8,
           "sourcePosition": 17
         },
         {
           "id": "18",
+          "recordId": "08-18-1",
+          "duplicateIndex": 1,
           "raw": {
-            "titulo": "IPASGO",
-            "convenio": "",
+            "titulo": "PRONTUÁRIOS",
+            "convenio": "IPASGO",
             "nome": "",
             "data": "12/2021",
             "parte": ""
           },
+          "rawText": "PRONTUÁRIOS\nCONVÊNIO:\nIPASGO\nDATA 12/2021\nPARTE:",
           "sourcePage": 8,
           "sourcePosition": 18
         }
@@ -1607,217 +2013,271 @@
       "positions": [
         {
           "id": "01",
+          "recordId": "09-01-1",
+          "duplicateIndex": 1,
           "raw": {
-            "titulo": "IPASGO",
-            "convenio": "",
+            "titulo": "PRONTUÁRIOS",
+            "convenio": "IPASGO",
             "nome": "",
             "data": "04/2022",
             "parte": ""
           },
+          "rawText": "PRONTUÁRIOS\nCONVÊNIO:\nIPASGO\nDATA 04/2022\nPARTE:",
           "sourcePage": 9,
           "sourcePosition": 1
         },
         {
           "id": "02",
+          "recordId": "09-02-1",
+          "duplicateIndex": 1,
           "raw": {
-            "titulo": "IPASGO",
-            "convenio": "",
+            "titulo": "PRONTUÁRIOS",
+            "convenio": "IPASGO",
             "nome": "",
             "data": "04/2022",
             "parte": ""
           },
+          "rawText": "PRONTUÁRIOS\nCONVÊNIO:\nIPASGO\nDATA 04/2022\nPARTE:",
           "sourcePage": 9,
           "sourcePosition": 2
         },
         {
           "id": "03",
+          "recordId": "09-03-1",
+          "duplicateIndex": 1,
           "raw": {
-            "titulo": "IPASGO",
-            "convenio": "",
+            "titulo": "PRONTUÁRIOS",
+            "convenio": "IPASGO",
             "nome": "",
             "data": "03/2022",
             "parte": ""
           },
+          "rawText": "PRONTUÁRIOS\nCONVÊNIO:\nIPASGO\nDATA 03/2022\nPARTE:",
           "sourcePage": 9,
           "sourcePosition": 3
         },
         {
           "id": "04",
+          "recordId": "09-04-1",
+          "duplicateIndex": 1,
           "raw": {
-            "titulo": "IPASGO",
-            "convenio": "",
+            "titulo": "PRONTUÁRIOS",
+            "convenio": "IPASGO",
             "nome": "",
             "data": "06/2022",
             "parte": ""
           },
+          "rawText": "PRONTUÁRIOS\nCONVÊNIO:\nIPASGO\nDATA 06/2022\nPARTE:",
           "sourcePage": 9,
           "sourcePosition": 4
         },
         {
           "id": "05",
+          "recordId": "09-05-1",
+          "duplicateIndex": 1,
           "raw": {
-            "titulo": "IPASGO",
-            "convenio": "",
+            "titulo": "PRONTUÁRIOS",
+            "convenio": "IPASGO",
             "nome": "",
             "data": "05/2022",
             "parte": ""
           },
+          "rawText": "PRONTUÁRIOS\nCONVÊNIO:\nIPASGO\nDATA 05/2022\nPARTE:",
           "sourcePage": 9,
           "sourcePosition": 5
         },
         {
           "id": "06",
+          "recordId": "09-06-1",
+          "duplicateIndex": 1,
           "raw": {
-            "titulo": "IPASGO",
-            "convenio": "",
+            "titulo": "PRONTUÁRIOS",
+            "convenio": "IPASGO",
             "nome": "",
             "data": "05/2022",
             "parte": ""
           },
+          "rawText": "PRONTUÁRIOS\nCONVÊNIO:\nIPASGO\nDATA 05/2022\nPARTE:",
           "sourcePage": 9,
           "sourcePosition": 6
         },
         {
           "id": "07",
+          "recordId": "09-07-1",
+          "duplicateIndex": 1,
           "raw": {
-            "titulo": "IPASGO",
-            "convenio": "",
+            "titulo": "PRONTUÁRIOS",
+            "convenio": "IPASGO",
             "nome": "",
             "data": "08/2022",
             "parte": ""
           },
+          "rawText": "PRONTUÁRIOS\nCONVÊNIO:\nIPASGO\nDATA 08/2022\nPARTE:",
           "sourcePage": 9,
           "sourcePosition": 7
         },
         {
           "id": "08",
+          "recordId": "09-08-1",
+          "duplicateIndex": 1,
           "raw": {
-            "titulo": "IPASGO",
-            "convenio": "",
+            "titulo": "PRONTUÁRIOS",
+            "convenio": "IPASGO",
             "nome": "",
             "data": "07/2022",
             "parte": ""
           },
+          "rawText": "PRONTUÁRIOS\nCONVÊNIO:\nIPASGO\nDATA 07/2022\nPARTE:",
           "sourcePage": 9,
           "sourcePosition": 8
         },
         {
           "id": "09",
+          "recordId": "09-09-1",
+          "duplicateIndex": 1,
           "raw": {
-            "titulo": "IPASGO",
-            "convenio": "",
+            "titulo": "PRONTUÁRIOS",
+            "convenio": "IPASGO",
             "nome": "",
             "data": "07/2022",
             "parte": ""
           },
+          "rawText": "PRONTUÁRIOS\nCONVÊNIO:\nIPASGO\nDATA 07/2022\nPARTE:",
           "sourcePage": 9,
           "sourcePosition": 9
         },
         {
           "id": "10",
+          "recordId": "09-10-1",
+          "duplicateIndex": 1,
           "raw": {
-            "titulo": "IPASGO",
-            "convenio": "",
+            "titulo": "PRONTUÁRIOS",
+            "convenio": "IPASGO",
             "nome": "",
             "data": "10/2022",
             "parte": ""
           },
+          "rawText": "PRONTUÁRIOS\nCONVÊNIO:\nIPASGO\nDATA 10/2022\nPARTE:",
           "sourcePage": 9,
           "sourcePosition": 10
         },
         {
           "id": "11",
+          "recordId": "09-11-1",
+          "duplicateIndex": 1,
           "raw": {
-            "titulo": "IPASGO",
-            "convenio": "",
+            "titulo": "PRONTUÁRIOS",
+            "convenio": "IPASGO",
             "nome": "",
             "data": "09/2022",
             "parte": ""
           },
+          "rawText": "PRONTUÁRIOS\nCONVÊNIO:\nIPASGO\nDATA 09/2022\nPARTE:",
           "sourcePage": 9,
           "sourcePosition": 11
         },
         {
           "id": "12",
+          "recordId": "09-12-1",
+          "duplicateIndex": 1,
           "raw": {
-            "titulo": "IPASGO",
-            "convenio": "",
+            "titulo": "PRONTUÁRIOS",
+            "convenio": "IPASGO",
             "nome": "",
             "data": "08/2022",
             "parte": ""
           },
+          "rawText": "PRONTUÁRIOS\nCONVÊNIO:\nIPASGO\nDATA 08/2022\nPARTE:",
           "sourcePage": 9,
           "sourcePosition": 12
         },
         {
           "id": "13",
+          "recordId": "09-13-1",
+          "duplicateIndex": 1,
           "raw": {
-            "titulo": "UNIMED",
-            "convenio": "",
+            "titulo": "PRONTUÁRIOS",
+            "convenio": "UNIMED",
             "nome": "",
             "data": "2022",
             "parte": ""
           },
+          "rawText": "PRONTUÁRIOS\nCONVÊNIO:\nUNIMED\nDATA 2022\nPARTE:",
           "sourcePage": 9,
           "sourcePosition": 13
         },
         {
           "id": "14",
+          "recordId": "09-14-1",
+          "duplicateIndex": 1,
           "raw": {
-            "titulo": "IPASGO",
-            "convenio": "",
+            "titulo": "PRONTUÁRIOS",
+            "convenio": "IPASGO",
             "nome": "",
             "data": "12/2022",
             "parte": ""
           },
+          "rawText": "PRONTUÁRIOS\nCONVÊNIO:\nIPASGO\nDATA 12/2022\nPARTE:",
           "sourcePage": 9,
           "sourcePosition": 14
         },
         {
           "id": "15",
+          "recordId": "09-15-1",
+          "duplicateIndex": 1,
           "raw": {
-            "titulo": "IPASGO",
-            "convenio": "",
+            "titulo": "PRONTUÁRIOS",
+            "convenio": "IPASGO",
             "nome": "",
             "data": "11/2022",
             "parte": ""
           },
+          "rawText": "PRONTUÁRIOS\nCONVÊNIO:\nIPASGO\nDATA 11/2022\nPARTE:",
           "sourcePage": 9,
           "sourcePosition": 15
         },
         {
           "id": "16",
+          "recordId": "09-16-1",
+          "duplicateIndex": 1,
           "raw": {
-            "titulo": "UNIMED",
-            "convenio": "",
+            "titulo": "PRONTUÁRIOS",
+            "convenio": "UNIMED",
             "nome": "",
             "data": "10/2022",
-            "parte": "a"
+            "parte": ""
           },
+          "rawText": "PRONTUÁRIOS\nCONVÊNIO:\nUNIMED\nDATA 10/2022\nPARTE:",
           "sourcePage": 9,
           "sourcePosition": 16
         },
         {
           "id": "17",
+          "recordId": "09-17-1",
+          "duplicateIndex": 1,
           "raw": {
-            "titulo": "UNIMED",
-            "convenio": "",
+            "titulo": "PRONTUÁRIOS",
+            "convenio": "UNIMED",
             "nome": "",
             "data": "07/2022 a 09/2022",
             "parte": ""
           },
+          "rawText": "PRONTUÁRIOS\nCONVÊNIO:\nUNIMED\nDATA 07/2022 a 09/2022\nPARTE:",
           "sourcePage": 9,
           "sourcePosition": 17
         },
         {
           "id": "18",
+          "recordId": "09-18-1",
+          "duplicateIndex": 1,
           "raw": {
-            "titulo": "UNIMED",
-            "convenio": "",
+            "titulo": "PRONTUÁRIOS",
+            "convenio": "UNIMED",
             "nome": "",
             "data": "01/2022 a 03/2022",
-            "parte": "PAG9"
+            "parte": ""
           },
+          "rawText": "PRONTUÁRIOS\nCONVÊNIO:\nUNIMED\nDATA 01/2022 a 03/2022\nPARTE:",
           "sourcePage": 9,
           "sourcePosition": 18
         }
@@ -1828,217 +2288,271 @@
       "positions": [
         {
           "id": "01",
+          "recordId": "10-01-1",
+          "duplicateIndex": 1,
           "raw": {
-            "titulo": "",
+            "titulo": "PRONTUÁRIOS",
             "convenio": "Unimed",
             "nome": "",
             "data": "02/2023 a 03/2023",
             "parte": ""
           },
+          "rawText": "PRONTUÁRIOS\nCONVÊNIO:\nUnimed\nDATA 02/2023 a 03/2023\nPARTE:",
           "sourcePage": 10,
           "sourcePosition": 1
         },
         {
           "id": "02",
+          "recordId": "10-02-1",
+          "duplicateIndex": 1,
           "raw": {
-            "titulo": "",
+            "titulo": "PRONTUÁRIOS",
             "convenio": "Particulares",
             "nome": "",
             "data": "02/2023 até 12/2023",
             "parte": ""
           },
+          "rawText": "PRONTUÁRIOS\nCONVÊNIO:\nParticulares\nDATA 02/2023 até 12/2023\nPARTE:",
           "sourcePage": 10,
           "sourcePosition": 2
         },
         {
           "id": "03",
+          "recordId": "10-03-1",
+          "duplicateIndex": 1,
           "raw": {
-            "titulo": "",
-            "convenio": "Particulares",
-            "nome": "Escaneados",
+            "titulo": "PRONTUÁRIOS",
+            "convenio": "Escaneados",
+            "nome": "",
             "data": "02/2022 a 02/2023",
             "parte": ""
           },
+          "rawText": "PRONTUÁRIOS\nCONVÊNIO:\nEscaneados\nDATA 02/2022 a 02/2023\nPARTE:",
           "sourcePage": 10,
           "sourcePosition": 3
         },
         {
           "id": "04",
+          "recordId": "10-04-1",
+          "duplicateIndex": 1,
           "raw": {
-            "titulo": "",
+            "titulo": "PRONTUÁRIOS",
             "convenio": "UNIMED",
             "nome": "",
             "data": "08/2023 a 09/2023",
             "parte": ""
           },
+          "rawText": "PRONTUÁRIOS\nCONVÊNIO:\nUNIMED\nDATA 08/2023 a 09/2023\nPARTE:",
           "sourcePage": 10,
           "sourcePosition": 4
         },
         {
           "id": "05",
+          "recordId": "10-05-1",
+          "duplicateIndex": 1,
           "raw": {
-            "titulo": "",
+            "titulo": "PRONTUÁRIOS",
             "convenio": "UNIMED",
             "nome": "",
             "data": "06/2023 a 07/2023",
             "parte": ""
           },
+          "rawText": "PRONTUÁRIOS\nCONVÊNIO:\nUNIMED\nDATA 06/2023 a 07/2023\nPARTE:",
           "sourcePage": 10,
           "sourcePosition": 5
         },
         {
           "id": "06",
+          "recordId": "10-06-1",
+          "duplicateIndex": 1,
           "raw": {
-            "titulo": "",
+            "titulo": "PRONTUÁRIOS",
             "convenio": "UNIMED",
             "nome": "",
             "data": "04/2023 a 05/2023",
             "parte": ""
           },
+          "rawText": "PRONTUÁRIOS\nCONVÊNIO:\nUNIMED\nDATA 04/2023 a 05/2023\nPARTE:",
           "sourcePage": 10,
           "sourcePosition": 6
         },
         {
           "id": "07",
+          "recordId": "10-07-1",
+          "duplicateIndex": 1,
           "raw": {
-            "titulo": "",
+            "titulo": "PRONTUÁRIOS",
             "convenio": "UNIMED",
             "nome": "",
-            "data": "12/2022 01/2023",
+            "data": "12/2022 a 01/2023",
             "parte": ""
           },
+          "rawText": "PRONTUÁRIOS\nCONVÊNIO:\nUNIMED\nDATA 12/2022 a 01/2023\nPARTE:",
           "sourcePage": 10,
           "sourcePosition": 7
         },
         {
           "id": "08",
+          "recordId": "10-08-1",
+          "duplicateIndex": 1,
           "raw": {
-            "titulo": "",
+            "titulo": "PRONTUÁRIOS",
             "convenio": "UNIMED",
             "nome": "",
             "data": "12/2023",
             "parte": ""
           },
+          "rawText": "PRONTUÁRIOS\nCONVÊNIO:\nUNIMED\nDATA 12/2023\nPARTE:",
           "sourcePage": 10,
           "sourcePosition": 8
         },
         {
           "id": "09",
+          "recordId": "10-09-1",
+          "duplicateIndex": 1,
           "raw": {
-            "titulo": "",
+            "titulo": "PRONTUÁRIOS",
             "convenio": "UNIMED",
             "nome": "",
             "data": "10/2023 a 11/2023",
             "parte": ""
           },
+          "rawText": "PRONTUÁRIOS\nCONVÊNIO:\nUNIMED\nDATA 10/2023 a 11/2023\nPARTE:",
           "sourcePage": 10,
           "sourcePosition": 9
         },
         {
           "id": "10",
+          "recordId": "10-10-1",
+          "duplicateIndex": 1,
           "raw": {
-            "titulo": "IMAS",
-            "convenio": "",
+            "titulo": "PRONTUÁRIOS",
+            "convenio": "IMAS",
             "nome": "",
             "data": "12/2021 e 01/2022",
             "parte": ""
           },
+          "rawText": "PRONTUÁRIOS\nCONVÊNIO:\nIMAS\nDATA 12/2021 e 01/2022\nPARTE:",
           "sourcePage": 10,
           "sourcePosition": 10
         },
         {
           "id": "11",
+          "recordId": "10-11-1",
+          "duplicateIndex": 1,
           "raw": {
-            "titulo": "IMAS",
-            "convenio": "",
+            "titulo": "PRONTUÁRIOS",
+            "convenio": "IMAS",
             "nome": "",
             "data": "02/2022 a 03/2022",
             "parte": ""
           },
+          "rawText": "PRONTUÁRIOS\nCONVÊNIO:\nIMAS\nDATA 02/2022 a 03/2022\nPARTE:",
           "sourcePage": 10,
           "sourcePosition": 11
         },
         {
           "id": "12",
+          "recordId": "10-12-1",
+          "duplicateIndex": 1,
           "raw": {
-            "titulo": "IMAS",
-            "convenio": "",
+            "titulo": "PRONTUÁRIOS",
+            "convenio": "IMAS",
             "nome": "",
             "data": "04/2022 a 05/2022",
             "parte": ""
           },
+          "rawText": "PRONTUÁRIOS\nCONVÊNIO:\nIMAS\nDATA 04/2022 a 05/2022\nPARTE:",
           "sourcePage": 10,
           "sourcePosition": 12
         },
         {
           "id": "13",
+          "recordId": "10-13-1",
+          "duplicateIndex": 1,
           "raw": {
-            "titulo": "IMAS",
-            "convenio": "",
+            "titulo": "PRONTUÁRIOS",
+            "convenio": "IMAS",
             "nome": "",
             "data": "08/2022 a 09/2022",
             "parte": ""
           },
+          "rawText": "PRONTUÁRIOS\nCONVÊNIO:\nIMAS\nDATA 08/2022 a 09/2022\nPARTE:",
           "sourcePage": 10,
           "sourcePosition": 13
         },
         {
           "id": "14",
+          "recordId": "10-14-1",
+          "duplicateIndex": 1,
           "raw": {
-            "titulo": "IMAS",
-            "convenio": "",
+            "titulo": "PRONTUÁRIOS",
+            "convenio": "IMAS",
             "nome": "",
             "data": "10/2022 a 11/2022",
             "parte": ""
           },
+          "rawText": "PRONTUÁRIOS\nCONVÊNIO:\nIMAS\nDATA 10/2022 a 11/2022\nPARTE:",
           "sourcePage": 10,
           "sourcePosition": 14
         },
         {
           "id": "15",
+          "recordId": "10-15-1",
+          "duplicateIndex": 1,
           "raw": {
-            "titulo": "IPASGO",
-            "convenio": "",
+            "titulo": "PRONTUÁRIOS",
+            "convenio": "IPASGO",
             "nome": "",
             "data": "01/2022",
             "parte": ""
           },
+          "rawText": "PRONTUÁRIOS\nCONVÊNIO:\nIPASGO\nDATA 01/2022\nPARTE:",
           "sourcePage": 10,
           "sourcePosition": 15
         },
         {
           "id": "16",
+          "recordId": "10-16-1",
+          "duplicateIndex": 1,
           "raw": {
-            "titulo": "IPASGO",
-            "convenio": "",
+            "titulo": "PRONTUÁRIOS",
+            "convenio": "IPASGO",
             "nome": "",
             "data": "01/2022",
             "parte": ""
           },
+          "rawText": "PRONTUÁRIOS\nCONVÊNIO:\nIPASGO\nDATA 01/2022\nPARTE:",
           "sourcePage": 10,
           "sourcePosition": 16
         },
         {
           "id": "17",
+          "recordId": "10-17-1",
+          "duplicateIndex": 1,
           "raw": {
-            "titulo": "IPASGO",
-            "convenio": "",
+            "titulo": "PRONTUÁRIOS",
+            "convenio": "IPASGO",
             "nome": "",
             "data": "02/2022",
             "parte": ""
           },
+          "rawText": "PRONTUÁRIOS\nCONVÊNIO:\nIPASGO\nDATA 02/2022\nPARTE:",
           "sourcePage": 10,
           "sourcePosition": 17
         },
         {
           "id": "18",
+          "recordId": "10-18-1",
+          "duplicateIndex": 1,
           "raw": {
-            "titulo": "IPASGO",
-            "convenio": "",
+            "titulo": "PRONTUÁRIOS",
+            "convenio": "IPASGO",
             "nome": "",
-            "data": "02/22",
-            "parte": "PAG 10"
+            "data": "02/2022",
+            "parte": ""
           },
+          "rawText": "PRONTUÁRIOS\nCONVÊNIO:\nIPASGO\nDATA 02/2022\nPARTE:",
           "sourcePage": 10,
           "sourcePosition": 18
         }
@@ -2049,217 +2563,271 @@
       "positions": [
         {
           "id": "01",
+          "recordId": "11-01-1",
+          "duplicateIndex": 1,
           "raw": {
-            "titulo": "IPASGO",
-            "convenio": "",
+            "titulo": "PRONTUÁRIOS",
+            "convenio": "IPASGO",
             "nome": "",
             "data": "06/2023",
             "parte": ""
           },
+          "rawText": "PRONTUÁRIOS\nCONVÊNIO:\nIPASGO\nDATA 06/2023\nPARTE:",
           "sourcePage": 11,
           "sourcePosition": 1
         },
         {
           "id": "02",
+          "recordId": "11-02-1",
+          "duplicateIndex": 1,
           "raw": {
-            "titulo": "IPASGO",
-            "convenio": "",
+            "titulo": "PRONTUÁRIOS",
+            "convenio": "IPASGO",
             "nome": "",
             "data": "05/2023",
             "parte": ""
           },
+          "rawText": "PRONTUÁRIOS\nCONVÊNIO:\nIPASGO\nDATA 05/2023\nPARTE:",
           "sourcePage": 11,
           "sourcePosition": 2
         },
         {
           "id": "03",
+          "recordId": "11-03-1",
+          "duplicateIndex": 1,
           "raw": {
-            "titulo": "IPASGO",
-            "convenio": "",
+            "titulo": "PRONTUÁRIOS",
+            "convenio": "IPASGO",
             "nome": "",
             "data": "04/2023",
             "parte": ""
           },
+          "rawText": "PRONTUÁRIOS\nCONVÊNIO:\nIPASGO\nDATA 04/2023\nPARTE:",
           "sourcePage": 11,
           "sourcePosition": 3
         },
         {
           "id": "04",
+          "recordId": "11-04-1",
+          "duplicateIndex": 1,
           "raw": {
-            "titulo": "IPASGO",
-            "convenio": "",
+            "titulo": "PRONTUÁRIOS",
+            "convenio": "IPASGO",
             "nome": "",
             "data": "08/2023",
             "parte": ""
           },
+          "rawText": "PRONTUÁRIOS\nCONVÊNIO:\nIPASGO\nDATA 08/2023\nPARTE:",
           "sourcePage": 11,
           "sourcePosition": 4
         },
         {
           "id": "05",
+          "recordId": "11-05-1",
+          "duplicateIndex": 1,
           "raw": {
-            "titulo": "IPASGO",
-            "convenio": "",
+            "titulo": "PRONTUÁRIOS",
+            "convenio": "IPASGO",
             "nome": "",
             "data": "07/2023",
             "parte": "PARTE 2"
           },
+          "rawText": "PRONTUÁRIOS\nCONVÊNIO:\nIPASGO\nDATA 07/2023\nPARTE: PARTE 2",
           "sourcePage": 11,
           "sourcePosition": 5
         },
         {
           "id": "06",
+          "recordId": "11-06-1",
+          "duplicateIndex": 1,
           "raw": {
-            "titulo": "IPASGO",
-            "convenio": "",
+            "titulo": "PRONTUÁRIOS",
+            "convenio": "IPASGO",
             "nome": "",
             "data": "07/2023",
             "parte": "Parte 01"
           },
+          "rawText": "PRONTUÁRIOS\nCONVÊNIO:\nIPASGO\nDATA 07/2023\nPARTE: Parte 01",
           "sourcePage": 11,
           "sourcePosition": 6
         },
         {
           "id": "07",
+          "recordId": "11-07-1",
+          "duplicateIndex": 1,
           "raw": {
-            "titulo": "IPASGO",
-            "convenio": "",
+            "titulo": "PRONTUÁRIOS",
+            "convenio": "IPASGO",
             "nome": "",
             "data": "09/2023",
             "parte": "Parte 02"
           },
+          "rawText": "PRONTUÁRIOS\nCONVÊNIO:\nIPASGO\nDATA 09/2023\nPARTE: Parte 02",
           "sourcePage": 11,
           "sourcePosition": 7
         },
         {
           "id": "08",
+          "recordId": "11-08-1",
+          "duplicateIndex": 1,
           "raw": {
-            "titulo": "IPASGO",
-            "convenio": "",
+            "titulo": "PRONTUÁRIOS",
+            "convenio": "IPASGO",
             "nome": "",
             "data": "09/2023",
             "parte": "Parte 01"
           },
+          "rawText": "PRONTUÁRIOS\nCONVÊNIO:\nIPASGO\nDATA 09/2023\nPARTE: Parte 01",
           "sourcePage": 11,
           "sourcePosition": 8
         },
         {
           "id": "09",
+          "recordId": "11-09-1",
+          "duplicateIndex": 1,
           "raw": {
-            "titulo": "IPASGO",
-            "convenio": "",
+            "titulo": "PRONTUÁRIOS",
+            "convenio": "IPASGO",
             "nome": "",
             "data": "08/2023",
             "parte": "M até Z"
           },
+          "rawText": "PRONTUÁRIOS\nCONVÊNIO:\nIPASGO\nDATA 08/2023\nPARTE: M até Z",
           "sourcePage": 11,
           "sourcePosition": 9
         },
         {
           "id": "10",
+          "recordId": "11-10-1",
+          "duplicateIndex": 1,
           "raw": {
-            "titulo": "IPASGO",
-            "convenio": "",
+            "titulo": "PRONTUÁRIOS",
+            "convenio": "IPASGO",
             "nome": "",
             "data": "11/2023",
             "parte": ""
           },
+          "rawText": "PRONTUÁRIOS\nCONVÊNIO:\nIPASGO\nDATA 11/2023\nPARTE:",
           "sourcePage": 11,
           "sourcePosition": 10
         },
         {
           "id": "11",
+          "recordId": "11-11-1",
+          "duplicateIndex": 1,
           "raw": {
-            "titulo": "IPASGO",
-            "convenio": "",
+            "titulo": "PRONTUÁRIOS",
+            "convenio": "IPASGO",
             "nome": "",
-            "data": "10/23",
+            "data": "10/2023",
             "parte": ""
           },
+          "rawText": "PRONTUÁRIOS\nCONVÊNIO:\nIPASGO\nDATA 10/2023\nPARTE:",
           "sourcePage": 11,
           "sourcePosition": 11
         },
         {
           "id": "12",
+          "recordId": "11-12-1",
+          "duplicateIndex": 1,
           "raw": {
-            "titulo": "IPASGO",
-            "convenio": "",
+            "titulo": "PRONTUÁRIOS",
+            "convenio": "IPASGO",
             "nome": "",
             "data": "10/2023",
             "parte": ""
           },
+          "rawText": "PRONTUÁRIOS\nCONVÊNIO:\nIPASGO\nDATA 10/2023\nPARTE:",
           "sourcePage": 11,
           "sourcePosition": 12
         },
         {
           "id": "13",
+          "recordId": "11-13-1",
+          "duplicateIndex": 1,
           "raw": {
-            "titulo": "IPASGO",
-            "convenio": "",
+            "titulo": "PRONTUÁRIOS",
+            "convenio": "IPASGO",
             "nome": "",
             "data": "12/2023",
             "parte": "M até Z"
           },
+          "rawText": "PRONTUÁRIOS\nCONVÊNIO:\nIPASGO\nDATA 12/2023\nPARTE: M até Z",
           "sourcePage": 11,
           "sourcePosition": 13
         },
         {
           "id": "14",
+          "recordId": "11-14-1",
+          "duplicateIndex": 1,
           "raw": {
-            "titulo": "IPASGO",
-            "convenio": "",
+            "titulo": "PRONTUÁRIOS",
+            "convenio": "IPASGO",
             "nome": "",
             "data": "12/2023",
             "parte": "A até G"
           },
+          "rawText": "PRONTUÁRIOS\nCONVÊNIO:\nIPASGO\nDATA 12/2023\nPARTE: A até G",
           "sourcePage": 11,
           "sourcePosition": 14
         },
         {
           "id": "15",
+          "recordId": "11-15-1",
+          "duplicateIndex": 1,
           "raw": {
-            "titulo": "IPASGO",
-            "convenio": "",
+            "titulo": "PRONTUÁRIOS",
+            "convenio": "IPASGO",
             "nome": "",
             "data": "11/2023",
             "parte": ""
           },
+          "rawText": "PRONTUÁRIOS\nCONVÊNIO:\nIPASGO\nDATA 11/2023\nPARTE:",
           "sourcePage": 11,
           "sourcePosition": 15
         },
         {
           "id": "16",
+          "recordId": "11-16-1",
+          "duplicateIndex": 1,
           "raw": {
-            "titulo": "",
-            "convenio": "Convenios",
-            "nome": "Diversos",
+            "titulo": "PRONTUÁRIOS",
+            "convenio": "Diversos",
+            "nome": "",
             "data": "08/2023 a 10/2023",
             "parte": ""
           },
+          "rawText": "PRONTUÁRIOS\nCONVÊNIO:\nDiversos\nDATA 08/2023 a 10/2023\nPARTE:",
           "sourcePage": 11,
           "sourcePosition": 16
         },
         {
           "id": "17",
+          "recordId": "11-17-1",
+          "duplicateIndex": 1,
           "raw": {
-            "titulo": "",
+            "titulo": "PRONTUÁRIOS",
             "convenio": "Convenio",
             "nome": "",
             "data": "12/2022",
-            "parte": "PAG 11"
+            "parte": ""
           },
+          "rawText": "PRONTUÁRIOS\nCONVÊNIO:\nConvenio\nDATA 12/2022\nPARTE:",
           "sourcePage": 11,
           "sourcePosition": 17
         },
         {
           "id": "18",
+          "recordId": "11-18-1",
+          "duplicateIndex": 1,
           "raw": {
-            "titulo": "",
-            "convenio": "Convenio",
-            "nome": "Faturados",
+            "titulo": "PRONTUÁRIOS",
+            "convenio": "Faturados",
+            "nome": "",
             "data": "05/2023 a 06/2023",
             "parte": ""
           },
+          "rawText": "PRONTUÁRIOS\nCONVÊNIO:\nFaturados\nDATA 05/2023 a 06/2023\nPARTE:",
           "sourcePage": 11,
           "sourcePosition": 18
         }
@@ -2270,229 +2838,271 @@
       "positions": [
         {
           "id": "01",
+          "recordId": "12-01-1",
+          "duplicateIndex": 1,
           "raw": {
-            "titulo": "",
-            "convenio": "Convenios",
-            "nome": "Diversos",
+            "titulo": "PRONTUÁRIOS",
+            "convenio": "Diversos",
+            "nome": "",
             "data": "05/2024",
             "parte": "até X"
           },
+          "rawText": "PRONTUÁRIOS\nCONVÊNIO:\nDiversos\nDATA 05/2024\nPARTE: até X",
           "sourcePage": 12,
           "sourcePosition": 1
         },
         {
           "id": "02",
+          "recordId": "12-02-1",
+          "duplicateIndex": 1,
           "raw": {
-            "titulo": "",
-            "convenio": "Convenios",
-            "nome": "Diversos",
+            "titulo": "PRONTUÁRIOS",
+            "convenio": "Diversos",
+            "nome": "",
             "data": "04/2024",
             "parte": "até X"
           },
+          "rawText": "PRONTUÁRIOS\nCONVÊNIO:\nDiversos\nDATA 04/2024\nPARTE: até X",
           "sourcePage": 12,
           "sourcePosition": 2
         },
         {
           "id": "03",
+          "recordId": "12-03-1",
+          "duplicateIndex": 1,
           "raw": {
-            "titulo": "",
-            "convenio": "Convenios",
-            "nome": "Diversos",
+            "titulo": "PRONTUÁRIOS",
+            "convenio": "Diversos",
+            "nome": "",
             "data": "02/2024",
             "parte": "até X"
           },
+          "rawText": "PRONTUÁRIOS\nCONVÊNIO:\nDiversos\nDATA 02/2024\nPARTE: até X",
           "sourcePage": 12,
           "sourcePosition": 3
         },
         {
           "id": "04",
+          "recordId": "12-04-1",
+          "duplicateIndex": 1,
           "raw": {
-            "titulo": "",
+            "titulo": "PRONTUÁRIOS",
             "convenio": "Particular",
             "nome": "",
             "data": "2024",
             "parte": ""
           },
+          "rawText": "PRONTUÁRIOS\nCONVÊNIO:\nParticular\nDATA 2024\nPARTE:",
           "sourcePage": 12,
           "sourcePosition": 4
         },
         {
           "id": "05",
+          "recordId": "12-05-1",
+          "duplicateIndex": 1,
           "raw": {
-            "titulo": "",
-            "convenio": "Convenios",
-            "nome": "Diversos",
+            "titulo": "PRONTUÁRIOS",
+            "convenio": "Diversos",
+            "nome": "",
             "data": "11/2023 a 01/2024",
             "parte": ""
           },
+          "rawText": "PRONTUÁRIOS\nCONVÊNIO:\nDiversos\nDATA 11/2023 a 01/2024\nPARTE:",
           "sourcePage": 12,
           "sourcePosition": 5
         },
         {
           "id": "06",
+          "recordId": "12-06-1",
+          "duplicateIndex": 1,
           "raw": {
-            "titulo": "",
-            "convenio": "Convenios",
-            "nome": "Diversos",
+            "titulo": "PRONTUÁRIOS",
+            "convenio": "Diversos Geap 06 a 10 de 2024 Vivacom 09 a 11 de 2024 Fundação Itaú 10 de 2024 Mais Saude 5 a 9 de 2024 Caesan 09 de 2024 Fusex 08 a 11 de 2024 Iamesc 08 a 10 de 2024",
+            "nome": "",
             "data": "",
-            "parte": "Geap [ILEGÍVEL]"
+            "parte": ""
           },
+          "rawText": "PRONTUÁRIOS\nCONVÊNIO:\nDiversos\nGeap 06 a 10 de 2024\nVivacom 09 a 11 de 2024\nFundação Itaú 10 de 2024\nMais Saude 5 a 9 de 2024\nCaesan 09 de 2024\nFusex 08 a 11 de 2024\nIamesc 08 a 10 de 2024",
           "sourcePage": 12,
           "sourcePosition": 6
         },
         {
-          "id": "07",
-          "raw": {
-            "titulo": "",
-            "convenio": "",
-            "nome": "",
-            "data": "",
-            "parte": "Tira Foto"
-          },
-          "sourcePage": 12,
-          "sourcePosition": 7
-        },
-        {
           "id": "08",
+          "recordId": "12-08-1",
+          "duplicateIndex": 1,
           "raw": {
-            "titulo": "IMAS",
-            "convenio": "",
+            "titulo": "PRONTUÁRIOS",
+            "convenio": "IMAS",
             "nome": "",
             "data": "02/2023 a 03/2023",
             "parte": ""
           },
+          "rawText": "PRONTUÁRIOS\nCONVÊNIO:\nIMAS\nDATA 02/2023 a 03/2023\nPARTE:",
           "sourcePage": 12,
           "sourcePosition": 8
         },
         {
           "id": "09",
+          "recordId": "12-09-1",
+          "duplicateIndex": 1,
           "raw": {
-            "titulo": "IMAS",
-            "convenio": "",
+            "titulo": "PRONTUÁRIOS",
+            "convenio": "IMAS",
             "nome": "",
             "data": "12/2022 e 01/2023",
             "parte": ""
           },
+          "rawText": "PRONTUÁRIOS\nCONVÊNIO:\nIMAS\nDATA 12/2022 e 01/2023\nPARTE:",
           "sourcePage": 12,
           "sourcePosition": 9
         },
         {
           "id": "10",
+          "recordId": "12-10-1",
+          "duplicateIndex": 1,
           "raw": {
-            "titulo": "",
+            "titulo": "PRONTUÁRIOS",
             "convenio": "Particular",
             "nome": "",
             "data": "2024",
             "parte": ""
           },
+          "rawText": "PRONTUÁRIOS\nCONVÊNIO:\nParticular\nDATA 2024\nPARTE:",
           "sourcePage": 12,
           "sourcePosition": 10
         },
         {
           "id": "11",
+          "recordId": "12-11-1",
+          "duplicateIndex": 1,
           "raw": {
-            "titulo": "IMAS",
-            "convenio": "",
+            "titulo": "PRONTUÁRIOS",
+            "convenio": "IMAS",
             "nome": "",
             "data": "08/2023",
             "parte": ""
           },
+          "rawText": "PRONTUÁRIOS\nCONVÊNIO:\nIMAS\nDATA 08/2023\nPARTE:",
           "sourcePage": 12,
           "sourcePosition": 11
         },
         {
           "id": "12",
+          "recordId": "12-12-1",
+          "duplicateIndex": 1,
           "raw": {
-            "titulo": "IMAS",
-            "convenio": "",
+            "titulo": "PRONTUÁRIOS",
+            "convenio": "IMAS",
             "nome": "",
             "data": "06/2023 e 07/2023",
             "parte": ""
           },
+          "rawText": "PRONTUÁRIOS\nCONVÊNIO:\nIMAS\nDATA 06/2023 e 07/2023\nPARTE:",
           "sourcePage": 12,
           "sourcePosition": 12
         },
         {
           "id": "13",
+          "recordId": "12-13-1",
+          "duplicateIndex": 1,
           "raw": {
-            "titulo": "IMAS",
-            "convenio": "",
+            "titulo": "PRONTUÁRIOS",
+            "convenio": "IMAS",
             "nome": "",
             "data": "04/2023 e 05/2023",
             "parte": ""
           },
+          "rawText": "PRONTUÁRIOS\nCONVÊNIO:\nIMAS\nDATA 04/2023 e 05/2023\nPARTE:",
           "sourcePage": 12,
           "sourcePosition": 13
         },
         {
           "id": "14",
+          "recordId": "12-14-1",
+          "duplicateIndex": 1,
           "raw": {
-            "titulo": "IMAS",
-            "convenio": "",
+            "titulo": "PRONTUÁRIOS",
+            "convenio": "IMAS",
             "nome": "",
             "data": "12/2023",
             "parte": ""
           },
+          "rawText": "PRONTUÁRIOS\nCONVÊNIO:\nIMAS\nDATA 12/2023\nPARTE:",
           "sourcePage": 12,
           "sourcePosition": 14
         },
         {
           "id": "15",
+          "recordId": "12-15-1",
+          "duplicateIndex": 1,
           "raw": {
-            "titulo": "IMAS",
-            "convenio": "",
+            "titulo": "PRONTUÁRIOS",
+            "convenio": "IMAS",
             "nome": "",
             "data": "11/2023",
             "parte": ""
           },
+          "rawText": "PRONTUÁRIOS\nCONVÊNIO:\nIMAS\nDATA 11/2023\nPARTE:",
           "sourcePage": 12,
           "sourcePosition": 15
         },
         {
           "id": "16",
+          "recordId": "12-16-1",
+          "duplicateIndex": 1,
           "raw": {
-            "titulo": "IMAS",
-            "convenio": "",
+            "titulo": "PRONTUÁRIOS",
+            "convenio": "IMAS",
             "nome": "",
             "data": "09/2023",
             "parte": ""
           },
+          "rawText": "PRONTUÁRIOS\nCONVÊNIO:\nIMAS\nDATA 09/2023\nPARTE:",
           "sourcePage": 12,
           "sourcePosition": 16
         },
         {
           "id": "17",
+          "recordId": "12-17-1",
+          "duplicateIndex": 1,
           "raw": {
-            "titulo": "IPASGO",
-            "convenio": "",
+            "titulo": "PRONTUÁRIOS",
+            "convenio": "IPASGO",
             "nome": "",
-            "data": "03/23",
+            "data": "03/2023",
             "parte": ""
           },
+          "rawText": "PRONTUÁRIOS\nCONVÊNIO:\nIPASGO\nDATA 03/2023\nPARTE:",
           "sourcePage": 12,
           "sourcePosition": 17
         },
         {
           "id": "18",
+          "recordId": "12-18-1",
+          "duplicateIndex": 1,
           "raw": {
-            "titulo": "IPASGO",
-            "convenio": "",
+            "titulo": "PRONTUÁRIOS",
+            "convenio": "IPASGO",
             "nome": "",
             "data": "02/2023",
             "parte": ""
           },
+          "rawText": "PRONTUÁRIOS\nCONVÊNIO:\nIPASGO\nDATA 02/2023\nPARTE:",
           "sourcePage": 12,
           "sourcePosition": 18
         },
         {
           "id": "19",
+          "recordId": "12-19-1",
+          "duplicateIndex": 1,
           "raw": {
-            "titulo": "IPASGO",
-            "convenio": "",
+            "titulo": "PRONTUÁRIOS",
+            "convenio": "IPASGO",
             "nome": "",
             "data": "01/2023",
             "parte": ""
           },
+          "rawText": "PRONTUÁRIOS\nCONVÊNIO:\nIPASGO\nDATA 01/2023\nPARTE:",
           "sourcePage": 12,
           "sourcePosition": 19
         }
@@ -2503,6 +3113,8 @@
       "positions": [
         {
           "id": "01",
+          "recordId": "13-01-1",
+          "duplicateIndex": 1,
           "raw": {
             "titulo": "Prescrições",
             "convenio": "",
@@ -2510,11 +3122,14 @@
             "data": "02/2021",
             "parte": ""
           },
+          "rawText": "Prescrições\nDATA 02/2021\nPARTE:",
           "sourcePage": 13,
           "sourcePosition": 1
         },
         {
           "id": "02",
+          "recordId": "13-02-1",
+          "duplicateIndex": 1,
           "raw": {
             "titulo": "Prescrições",
             "convenio": "",
@@ -2522,11 +3137,14 @@
             "data": "01/2021",
             "parte": ""
           },
+          "rawText": "Prescrições\nDATA 01/2021\nPARTE:",
           "sourcePage": 13,
           "sourcePosition": 2
         },
         {
           "id": "03",
+          "recordId": "13-03-1",
+          "duplicateIndex": 1,
           "raw": {
             "titulo": "Guias Faturadas",
             "convenio": "",
@@ -2534,11 +3152,14 @@
             "data": "01/2021 a 12/2021",
             "parte": ""
           },
+          "rawText": "Guias\nFaturadas\nDATA 01/2021 a 12/2021\nPARTE:",
           "sourcePage": 13,
           "sourcePosition": 3
         },
         {
           "id": "04",
+          "recordId": "13-04-1",
+          "duplicateIndex": 1,
           "raw": {
             "titulo": "Prescrições",
             "convenio": "",
@@ -2546,35 +3167,44 @@
             "data": "05/2021",
             "parte": ""
           },
+          "rawText": "Prescrições\nDATA 05/2021\nPARTE:",
           "sourcePage": 13,
           "sourcePosition": 4
         },
         {
           "id": "05",
+          "recordId": "13-05-1",
+          "duplicateIndex": 1,
           "raw": {
-            "titulo": "Prescrição",
+            "titulo": "Prescrições",
             "convenio": "",
             "nome": "",
             "data": "04/2021",
             "parte": ""
           },
+          "rawText": "Prescrições\nDATA 04/2021\nPARTE:",
           "sourcePage": 13,
           "sourcePosition": 5
         },
         {
           "id": "06",
+          "recordId": "13-06-1",
+          "duplicateIndex": 1,
           "raw": {
-            "titulo": "Prescrição",
+            "titulo": "Prescrições",
             "convenio": "",
             "nome": "",
             "data": "03/2021",
             "parte": ""
           },
+          "rawText": "Prescrições\nDATA 03/2021\nPARTE:",
           "sourcePage": 13,
           "sourcePosition": 6
         },
         {
           "id": "07",
+          "recordId": "13-07-1",
+          "duplicateIndex": 1,
           "raw": {
             "titulo": "Prescrições",
             "convenio": "",
@@ -2582,138 +3212,172 @@
             "data": "01/2020",
             "parte": ""
           },
+          "rawText": "Prescrições\nDATA 01/2020\nPARTE:",
           "sourcePage": 13,
           "sourcePosition": 7
         },
         {
           "id": "08",
+          "recordId": "13-08-1",
+          "duplicateIndex": 1,
           "raw": {
-            "titulo": "Prescrição",
+            "titulo": "Prescrições",
             "convenio": "",
             "nome": "",
             "data": "07/2021",
             "parte": ""
           },
+          "rawText": "Prescrições\nDATA 07/2021\nPARTE:",
           "sourcePage": 13,
           "sourcePosition": 8
         },
         {
           "id": "09",
+          "recordId": "13-09-1",
+          "duplicateIndex": 1,
           "raw": {
-            "titulo": "Prescrição",
+            "titulo": "Prescrições",
             "convenio": "",
             "nome": "",
             "data": "06/2021",
             "parte": ""
           },
+          "rawText": "Prescrições\nDATA 06/2021\nPARTE:",
           "sourcePage": 13,
           "sourcePosition": 9
         },
         {
           "id": "10",
+          "recordId": "13-10-1",
+          "duplicateIndex": 1,
           "raw": {
-            "titulo": "Prescrição",
+            "titulo": "Prescrições",
             "convenio": "",
             "nome": "",
             "data": "04/2020",
             "parte": ""
           },
+          "rawText": "Prescrições\nDATA 04/2020\nPARTE:",
           "sourcePage": 13,
           "sourcePosition": 10
         },
         {
           "id": "11",
+          "recordId": "13-11-1",
+          "duplicateIndex": 1,
           "raw": {
-            "titulo": "Prescrição",
+            "titulo": "Prescrições",
             "convenio": "",
             "nome": "",
             "data": "03/2020",
             "parte": ""
           },
+          "rawText": "Prescrições\nDATA 03/2020\nPARTE:",
           "sourcePage": 13,
           "sourcePosition": 11
         },
         {
           "id": "12",
+          "recordId": "13-12-1",
+          "duplicateIndex": 1,
           "raw": {
-            "titulo": "Prescrição",
+            "titulo": "Prescrições",
             "convenio": "",
             "nome": "",
             "data": "02/2020",
             "parte": ""
           },
+          "rawText": "Prescrições\nDATA 02/2020\nPARTE:",
           "sourcePage": 13,
           "sourcePosition": 12
         },
         {
           "id": "13",
+          "recordId": "13-13-1",
+          "duplicateIndex": 1,
           "raw": {
-            "titulo": "Prescrição",
+            "titulo": "Prescrições",
             "convenio": "",
             "nome": "",
             "data": "07/2020",
             "parte": ""
           },
+          "rawText": "Prescrições\nDATA 07/2020\nPARTE:",
           "sourcePage": 13,
           "sourcePosition": 13
         },
         {
           "id": "14",
+          "recordId": "13-14-1",
+          "duplicateIndex": 1,
           "raw": {
-            "titulo": "Prescrição",
+            "titulo": "Prescrições",
             "convenio": "",
             "nome": "",
             "data": "06/2020",
             "parte": ""
           },
+          "rawText": "Prescrições\nDATA 06/2020\nPARTE:",
           "sourcePage": 13,
           "sourcePosition": 14
         },
         {
           "id": "15",
+          "recordId": "13-15-1",
+          "duplicateIndex": 1,
           "raw": {
-            "titulo": "Prescrição",
+            "titulo": "Prescrições",
             "convenio": "",
             "nome": "",
             "data": "05/2020",
             "parte": ""
           },
+          "rawText": "Prescrições\nDATA 05/2020\nPARTE:",
           "sourcePage": 13,
           "sourcePosition": 15
         },
         {
           "id": "16",
+          "recordId": "13-16-1",
+          "duplicateIndex": 1,
           "raw": {
-            "titulo": "Prescrição",
+            "titulo": "Prescrições",
             "convenio": "",
             "nome": "",
             "data": "10/2020",
             "parte": ""
           },
+          "rawText": "Prescrições\nDATA 10/2020\nPARTE:",
           "sourcePage": 13,
           "sourcePosition": 16
         },
         {
           "id": "17",
+          "recordId": "13-17-1",
+          "duplicateIndex": 1,
           "raw": {
-            "titulo": "Prescrição",
+            "titulo": "Prescrições",
             "convenio": "",
             "nome": "",
             "data": "09/2020",
-            "parte": "PAG 13"
+            "parte": ""
           },
+          "rawText": "Prescrições\nDATA 09/2020\nPARTE:",
           "sourcePage": 13,
           "sourcePosition": 17
         },
         {
           "id": "18",
+          "recordId": "13-18-1",
+          "duplicateIndex": 1,
           "raw": {
-            "titulo": "Prescrição",
+            "titulo": "Prescrições",
             "convenio": "",
             "nome": "",
             "data": "08/2020",
             "parte": ""
           },
+          "rawText": "Prescrições\nDATA 08/2020\nPARTE:",
           "sourcePage": 13,
           "sourcePosition": 18
         }
@@ -2724,18 +3388,23 @@
       "positions": [
         {
           "id": "01",
+          "recordId": "14-01-1",
+          "duplicateIndex": 1,
           "raw": {
-            "titulo": "IMAS",
-            "convenio": "",
+            "titulo": "PRONTUÁRIOS",
+            "convenio": "IMAS",
             "nome": "",
             "data": "02/2020 a 07/2020",
             "parte": ""
           },
+          "rawText": "PRONTUÁRIOS\nCONVÊNIO:\nIMAS\nDATA 02/2020 a 07/2020\nPARTE:",
           "sourcePage": 14,
           "sourcePosition": 1
         },
         {
           "id": "02",
+          "recordId": "14-02-1",
+          "duplicateIndex": 1,
           "raw": {
             "titulo": "Prescrições",
             "convenio": "",
@@ -2743,11 +3412,14 @@
             "data": "12/2020",
             "parte": ""
           },
+          "rawText": "Prescrições\nDATA 12/2020\nPARTE:",
           "sourcePage": 14,
           "sourcePosition": 2
         },
         {
           "id": "03",
+          "recordId": "14-03-1",
+          "duplicateIndex": 1,
           "raw": {
             "titulo": "Prescrições",
             "convenio": "",
@@ -2755,47 +3427,59 @@
             "data": "11/2020",
             "parte": ""
           },
+          "rawText": "Prescrições\nDATA 11/2020\nPARTE:",
           "sourcePage": 14,
           "sourcePosition": 3
         },
         {
           "id": "04",
+          "recordId": "14-04-1",
+          "duplicateIndex": 1,
           "raw": {
-            "titulo": "IPASGO",
-            "convenio": "",
+            "titulo": "PRONTUÁRIOS",
+            "convenio": "IPASGO",
             "nome": "",
             "data": "09/2020 a 12/2020",
             "parte": ""
           },
+          "rawText": "PRONTUÁRIOS\nCONVÊNIO:\nIPASGO\nDATA 09/2020 a 12/2020\nPARTE:",
           "sourcePage": 14,
           "sourcePosition": 4
         },
         {
           "id": "05",
+          "recordId": "14-05-1",
+          "duplicateIndex": 1,
           "raw": {
-            "titulo": "IPASGO",
-            "convenio": "",
+            "titulo": "PRONTUÁRIOS",
+            "convenio": "IPASGO",
             "nome": "",
             "data": "05/2020 a 08/2020",
             "parte": ""
           },
+          "rawText": "PRONTUÁRIOS\nCONVÊNIO:\nIPASGO\nDATA 05/2020 a 08/2020\nPARTE:",
           "sourcePage": 14,
           "sourcePosition": 5
         },
         {
           "id": "06",
+          "recordId": "14-06-1",
+          "duplicateIndex": 1,
           "raw": {
-            "titulo": "IMAS",
-            "convenio": "",
+            "titulo": "PRONTUÁRIOS",
+            "convenio": "IMAS",
             "nome": "",
             "data": "08/2020 a 12/2020",
             "parte": ""
           },
+          "rawText": "PRONTUÁRIOS\nCONVÊNIO:\nIMAS\nDATA 08/2020 a 12/2020\nPARTE:",
           "sourcePage": 14,
           "sourcePosition": 6
         },
         {
           "id": "07",
+          "recordId": "14-07-1",
+          "duplicateIndex": 1,
           "raw": {
             "titulo": "Guias Faturadas",
             "convenio": "",
@@ -2803,11 +3487,14 @@
             "data": "08/2020 a 12/2020",
             "parte": ""
           },
+          "rawText": "Guias\nFaturadas\nDATA 08/2020 a 12/2020\nPARTE:",
           "sourcePage": 14,
           "sourcePosition": 7
         },
         {
           "id": "08",
+          "recordId": "14-08-1",
+          "duplicateIndex": 1,
           "raw": {
             "titulo": "Guias Faturadas",
             "convenio": "",
@@ -2815,126 +3502,157 @@
             "data": "01/2020 a 07/2020",
             "parte": ""
           },
+          "rawText": "Guias\nFaturadas\nDATA 01/2020 a 07/2020\nPARTE:",
           "sourcePage": 14,
           "sourcePosition": 8
         },
         {
           "id": "09",
+          "recordId": "14-09-1",
+          "duplicateIndex": 1,
           "raw": {
-            "titulo": "IPASGO",
-            "convenio": "",
+            "titulo": "PRONTUÁRIOS",
+            "convenio": "IPASGO",
             "nome": "",
             "data": "12/2019 a 04/2020",
             "parte": ""
           },
+          "rawText": "PRONTUÁRIOS\nCONVÊNIO:\nIPASGO\nDATA 12/2019 a 04/2020\nPARTE:",
           "sourcePage": 14,
           "sourcePosition": 9
         },
         {
           "id": "10",
+          "recordId": "14-10-1",
+          "duplicateIndex": 1,
           "raw": {
-            "titulo": "Demonstrativo de Pagamento",
-            "convenio": "convenio",
+            "titulo": "Demostrativo De Pagamento Convênios",
+            "convenio": "",
             "nome": "",
-            "data": "",
+            "data": "2020",
             "parte": ""
           },
+          "rawText": "Demostrativo\nDe Pagamento\nConvênios\nDATA 2020\nPARTE:",
           "sourcePage": 14,
           "sourcePosition": 10
         },
         {
           "id": "11",
+          "recordId": "14-11-1",
+          "duplicateIndex": 1,
           "raw": {
-            "titulo": "Devolução Prontuario",
-            "convenio": "",
-            "nome": "multi Saude",
+            "titulo": "PRONTUÁRIOS",
+            "convenio": "multi Saude",
+            "nome": "",
             "data": "09/2020",
             "parte": ""
           },
+          "rawText": "PRONTUÁRIOS\nCONVÊNIO:\nmulti Saude\nDATA 09/2020\nPARTE:",
           "sourcePage": 14,
           "sourcePosition": 11
         },
         {
           "id": "12",
+          "recordId": "14-12-1",
+          "duplicateIndex": 1,
           "raw": {
-            "titulo": "Prescrições",
-            "convenio": "",
-            "nome": "Particular",
+            "titulo": "PRONTUÁRIOS",
+            "convenio": "Particular",
+            "nome": "",
             "data": "2019 a 2021",
             "parte": ""
           },
+          "rawText": "PRONTUÁRIOS\nCONVÊNIO:\nParticular\nDATA 2019 a 2021\nPARTE:",
           "sourcePage": 14,
           "sourcePosition": 12
         },
         {
           "id": "13",
+          "recordId": "14-13-1",
+          "duplicateIndex": 1,
           "raw": {
-            "titulo": "IMAS",
-            "convenio": "",
+            "titulo": "PRONTUÁRIOS",
+            "convenio": "IMAS",
             "nome": "",
-            "data": "06/2019 01/2020",
+            "data": "06/2019 a 01/2020",
             "parte": ""
           },
+          "rawText": "PRONTUÁRIOS\nCONVÊNIO:\nIMAS\nDATA 06/2019 a 01/2020\nPARTE:",
           "sourcePage": 14,
           "sourcePosition": 13
         },
         {
           "id": "14",
+          "recordId": "14-14-1",
+          "duplicateIndex": 1,
           "raw": {
-            "titulo": "IPASGO",
-            "convenio": "",
+            "titulo": "PRONTUÁRIOS",
+            "convenio": "IPASGO",
             "nome": "",
             "data": "05/2019 a 08/2019",
             "parte": ""
           },
+          "rawText": "PRONTUÁRIOS\nCONVÊNIO:\nIPASGO\nDATA 05/2019 a 08/2019\nPARTE:",
           "sourcePage": 14,
           "sourcePosition": 14
         },
         {
           "id": "15",
+          "recordId": "14-15-1",
+          "duplicateIndex": 1,
           "raw": {
-            "titulo": "IPASGO",
-            "convenio": "",
+            "titulo": "PRONTUÁRIOS",
+            "convenio": "IPASGO",
             "nome": "",
             "data": "01/2019 a 04/2019",
             "parte": ""
           },
+          "rawText": "PRONTUÁRIOS\nCONVÊNIO:\nIPASGO\nDATA 01/2019 a 04/2019\nPARTE:",
           "sourcePage": 14,
           "sourcePosition": 15
         },
         {
           "id": "16",
+          "recordId": "14-16-1",
+          "duplicateIndex": 1,
           "raw": {
-            "titulo": "Faturamento",
+            "titulo": "Faturamento Convênios",
             "convenio": "",
-            "nome": "competencia",
+            "nome": "",
             "data": "01/2019 - 02/2019",
             "parte": ""
           },
+          "rawText": "Faturamento\nConvênios\nDATA 01/2019 - 02/2019\nPARTE:",
           "sourcePage": 14,
           "sourcePosition": 16
         },
         {
           "id": "17",
+          "recordId": "14-17-1",
+          "duplicateIndex": 1,
           "raw": {
-            "titulo": "IPASGO",
-            "convenio": "",
+            "titulo": "PRONTUÁRIOS",
+            "convenio": "IPASGO",
             "nome": "",
             "data": "09/2019 - 10/2019 a 11/2019",
             "parte": ""
           },
+          "rawText": "PRONTUÁRIOS\nCONVÊNIO:\nIPASGO\nDATA 09/2019 - 10/2019 a 11/2019\nPARTE:",
           "sourcePage": 14,
           "sourcePosition": 17
         },
         {
           "id": "18",
+          "recordId": "14-18-1",
+          "duplicateIndex": 1,
           "raw": {
-            "titulo": "Unimed",
-            "convenio": "",
+            "titulo": "PRONTUÁRIOS",
+            "convenio": "Unimed",
             "nome": "",
             "data": "07/2019 a 04/2020",
-            "parte": "PAR14"
+            "parte": ""
           },
+          "rawText": "PRONTUÁRIOS\nCONVÊNIO:\nUnimed\nDATA 07/2019 a 04/2020\nPARTE:",
           "sourcePage": 14,
           "sourcePosition": 18
         }
@@ -2945,78 +3663,98 @@
       "positions": [
         {
           "id": "01",
+          "recordId": "15-01-1",
+          "duplicateIndex": 1,
           "raw": {
-            "titulo": "Faturamento",
+            "titulo": "Faturamento Convênios",
             "convenio": "",
             "nome": "",
             "data": "08/2019 a 10/2019",
             "parte": ""
           },
+          "rawText": "Faturamento\nConvênios\nDATA 08/2019 a 10/2019\nPARTE:",
           "sourcePage": 15,
           "sourcePosition": 1
         },
         {
           "id": "02",
+          "recordId": "15-02-1",
+          "duplicateIndex": 1,
           "raw": {
-            "titulo": "Faturamento",
+            "titulo": "Faturamento Convênios",
             "convenio": "",
             "nome": "",
             "data": "05/2019 a 07/2019",
             "parte": ""
           },
+          "rawText": "Faturamento\nConvênios\nDATA 05/2019 a 07/2019\nPARTE:",
           "sourcePage": 15,
           "sourcePosition": 2
         },
         {
           "id": "03",
+          "recordId": "15-03-1",
+          "duplicateIndex": 1,
           "raw": {
-            "titulo": "Faturamento",
+            "titulo": "Faturamento Convênios",
             "convenio": "",
             "nome": "",
             "data": "03/2019 a 04/2019",
             "parte": ""
           },
+          "rawText": "Faturamento\nConvênios\nDATA 03/2019 a 04/2019\nPARTE:",
           "sourcePage": 15,
           "sourcePosition": 3
         },
         {
           "id": "04",
+          "recordId": "15-04-1",
+          "duplicateIndex": 1,
           "raw": {
-            "titulo": "Prescrição",
+            "titulo": "PRONTUÁRIOS",
             "convenio": "",
             "nome": "",
             "data": "02/2019 e 03/2019",
             "parte": ""
           },
+          "rawText": "PRONTUÁRIOS\nCONVÊNIO:\nDATA 02/2019 e 03/2019\nPARTE:",
           "sourcePage": 15,
           "sourcePosition": 4
         },
         {
           "id": "05",
+          "recordId": "15-05-1",
+          "duplicateIndex": 1,
           "raw": {
-            "titulo": "Prescrições",
+            "titulo": "Faturamento Convênios",
             "convenio": "",
             "nome": "",
             "data": "12/2018 e 01/2019",
             "parte": ""
           },
+          "rawText": "Faturamento\nConvênios\nDATA 12/2018 e 01/2019\nPARTE:",
           "sourcePage": 15,
           "sourcePosition": 5
         },
         {
           "id": "06",
+          "recordId": "15-06-1",
+          "duplicateIndex": 1,
           "raw": {
-            "titulo": "Faturamento",
+            "titulo": "Faturamento Convênios",
             "convenio": "",
             "nome": "",
             "data": "11/2018 12/2018",
             "parte": ""
           },
+          "rawText": "Faturamento\nConvênios\nDATA 11/2018 12/2018\nPARTE:",
           "sourcePage": 15,
           "sourcePosition": 6
         },
         {
           "id": "07",
+          "recordId": "15-07-1",
+          "duplicateIndex": 1,
           "raw": {
             "titulo": "Prescrições",
             "convenio": "",
@@ -3024,11 +3762,14 @@
             "data": "12/2019",
             "parte": ""
           },
+          "rawText": "Prescrições\nDATA 12/2019\nPARTE:",
           "sourcePage": 15,
           "sourcePosition": 7
         },
         {
           "id": "08",
+          "recordId": "15-08-1",
+          "duplicateIndex": 1,
           "raw": {
             "titulo": "Prescrições",
             "convenio": "",
@@ -3036,11 +3777,14 @@
             "data": "06/2019 e 07/2019",
             "parte": ""
           },
+          "rawText": "Prescrições\nDATA 06/2019 e 07/2019\nPARTE:",
           "sourcePage": 15,
           "sourcePosition": 8
         },
         {
           "id": "09",
+          "recordId": "15-09-1",
+          "duplicateIndex": 1,
           "raw": {
             "titulo": "Prescrições",
             "convenio": "",
@@ -3048,59 +3792,74 @@
             "data": "04/2019 e 05/2019",
             "parte": ""
           },
+          "rawText": "Prescrições\nDATA 04/2019 e 05/2019\nPARTE:",
           "sourcePage": 15,
           "sourcePosition": 9
         },
         {
           "id": "10",
+          "recordId": "15-10-1",
+          "duplicateIndex": 1,
           "raw": {
-            "titulo": "Convênio",
+            "titulo": "",
             "convenio": "",
             "nome": "",
             "data": "02/2018",
             "parte": ""
           },
+          "rawText": "CONVÊNIO:\nDATA 02/2018\nPARTE:",
           "sourcePage": 15,
           "sourcePosition": 10
         },
         {
           "id": "11",
+          "recordId": "15-11-1",
+          "duplicateIndex": 1,
           "raw": {
-            "titulo": "Convênio",
+            "titulo": "",
             "convenio": "",
             "nome": "",
             "data": "01/2018",
             "parte": ""
           },
+          "rawText": "CONVÊNIO:\nDATA 01/2018\nPARTE:",
           "sourcePage": 15,
           "sourcePosition": 11
         },
         {
           "id": "12",
+          "recordId": "15-12-1",
+          "duplicateIndex": 1,
           "raw": {
-            "titulo": "Devolução",
+            "titulo": "PRONTUÁRIOS",
             "convenio": "Unimed",
             "nome": "",
             "data": "01/2018 a 06/2018",
             "parte": ""
           },
+          "rawText": "PRONTUÁRIOS\nCONVÊNIO:\nUnimed\nDATA 01/2018 a 06/2018\nPARTE:",
           "sourcePage": 15,
           "sourcePosition": 12
         },
         {
           "id": "13",
+          "recordId": "15-13-1",
+          "duplicateIndex": 1,
           "raw": {
-            "titulo": "Convênio",
+            "titulo": "",
             "convenio": "",
             "nome": "",
             "data": "05/18",
             "parte": ""
           },
+          "rawText": "CONVÊNIO:\nDATA 05/18\nPARTE:",
           "sourcePage": 15,
           "sourcePosition": 13
         },
         {
           "id": "14",
+          "recordId": "15-14-1",
+          "duplicateIndex": 1,
           "raw": {
             "titulo": "Convênio",
             "convenio": "",
@@ -3108,54 +3867,67 @@
             "data": "04/2018",
             "parte": ""
           },
+          "rawText": "Convênio\nDATA 04/2018\nPARTE:",
           "sourcePage": 15,
           "sourcePosition": 14
         },
         {
           "id": "15",
+          "recordId": "15-15-1",
+          "duplicateIndex": 1,
           "raw": {
-            "titulo": "Convênio",
+            "titulo": "",
             "convenio": "",
             "nome": "",
             "data": "03/2018",
             "parte": ""
           },
+          "rawText": "CONVÊNIO:\nDATA 03/2018\nPARTE:",
           "sourcePage": 15,
           "sourcePosition": 15
         },
         {
           "id": "16",
+          "recordId": "15-16-1",
+          "duplicateIndex": 1,
           "raw": {
             "titulo": "Convênio",
             "convenio": "",
             "nome": "",
-            "data": "08/18",
+            "data": "08/2018",
             "parte": ""
           },
+          "rawText": "Convênio\nDATA 08/2018\nPARTE:",
           "sourcePage": 15,
           "sourcePosition": 16
         },
         {
           "id": "17",
+          "recordId": "15-17-1",
+          "duplicateIndex": 1,
           "raw": {
-            "titulo": "Convênio",
+            "titulo": "",
             "convenio": "",
             "nome": "",
             "data": "07/18",
             "parte": ""
           },
+          "rawText": "CONVÊNIO:\nDATA 07/18\nPARTE:",
           "sourcePage": 15,
           "sourcePosition": 17
         },
         {
           "id": "18",
+          "recordId": "15-18-1",
+          "duplicateIndex": 1,
           "raw": {
-            "titulo": "Convênio",
+            "titulo": "",
             "convenio": "",
             "nome": "",
             "data": "06/18",
-            "parte": "PAG 15"
+            "parte": ""
           },
+          "rawText": "CONVÊNIO:\nDATA 06/18\nPARTE:",
           "sourcePage": 15,
           "sourcePosition": 18
         }
@@ -3166,217 +3938,271 @@
       "positions": [
         {
           "id": "01",
+          "recordId": "16-01-1",
+          "duplicateIndex": 1,
           "raw": {
             "titulo": "",
-            "convenio": "Convenio",
+            "convenio": "",
             "nome": "",
             "data": "12/2017",
             "parte": ""
           },
+          "rawText": "CONVÊNIO:\nDATA 12/2017\nPARTE:",
           "sourcePage": 16,
           "sourcePosition": 1
         },
         {
           "id": "02",
+          "recordId": "16-02-1",
+          "duplicateIndex": 1,
           "raw": {
             "titulo": "",
-            "convenio": "Convenio",
+            "convenio": "",
             "nome": "",
             "data": "2018",
             "parte": ""
           },
+          "rawText": "CONVÊNIO:\nDATA 2018\nPARTE:",
           "sourcePage": 16,
           "sourcePosition": 2
         },
         {
           "id": "03",
+          "recordId": "16-03-1",
+          "duplicateIndex": 1,
           "raw": {
             "titulo": "",
-            "convenio": "Convenio",
+            "convenio": "",
             "nome": "",
-            "data": "09 e 10 2018",
+            "data": "09 a 10 de 2018",
             "parte": ""
           },
+          "rawText": "CONVÊNIO:\nDATA 09 a 10 de 2018\nPARTE:",
           "sourcePage": 16,
           "sourcePosition": 3
         },
         {
           "id": "04",
+          "recordId": "16-04-1",
+          "duplicateIndex": 1,
           "raw": {
-            "titulo": "IPASGO",
-            "convenio": "",
+            "titulo": "PRONTUÁRIOS",
+            "convenio": "IPASGO",
             "nome": "",
-            "data": "07/28",
+            "data": "07/2018",
             "parte": ""
           },
+          "rawText": "PRONTUÁRIOS\nCONVÊNIO:\nIPASGO\nDATA 07/2018\nPARTE:",
           "sourcePage": 16,
           "sourcePosition": 4
         },
         {
           "id": "05",
+          "recordId": "16-05-1",
+          "duplicateIndex": 1,
           "raw": {
-            "titulo": "IPASGO",
-            "convenio": "",
+            "titulo": "PRONTUÁRIOS",
+            "convenio": "IPASGO",
             "nome": "",
             "data": "03/2018 a 05/2018",
             "parte": ""
           },
+          "rawText": "PRONTUÁRIOS\nCONVÊNIO:\nIPASGO\nDATA 03/2018 a 05/2018\nPARTE:",
           "sourcePage": 16,
           "sourcePosition": 5
         },
         {
           "id": "06",
+          "recordId": "16-06-1",
+          "duplicateIndex": 1,
           "raw": {
-            "titulo": "Protocolo",
+            "titulo": "PRONTUÁRIOS",
             "convenio": "IPASGO",
             "nome": "",
             "data": "2018",
             "parte": ""
           },
+          "rawText": "PRONTUÁRIOS\nCONVÊNIO:\nIPASGO\nDATA 2018\nPARTE:",
           "sourcePage": 16,
           "sourcePosition": 6
         },
         {
           "id": "07",
+          "recordId": "16-07-1",
+          "duplicateIndex": 1,
           "raw": {
-            "titulo": "IPASGO",
-            "convenio": "",
+            "titulo": "PRONTUÁRIOS",
+            "convenio": "IPASGO",
             "nome": "",
             "data": "11/2017",
             "parte": ""
           },
+          "rawText": "PRONTUÁRIOS\nCONVÊNIO:\nIPASGO\nDATA 11/2017\nPARTE:",
           "sourcePage": 16,
           "sourcePosition": 7
         },
         {
           "id": "08",
+          "recordId": "16-08-1",
+          "duplicateIndex": 1,
           "raw": {
-            "titulo": "Faturas",
+            "titulo": "Faturamento Convênios",
             "convenio": "",
             "nome": "",
             "data": "05/2018",
             "parte": ""
           },
+          "rawText": "Faturamento\nConvênios\nDATA 05/2018\nPARTE:",
           "sourcePage": 16,
           "sourcePosition": 8
         },
         {
           "id": "09",
+          "recordId": "16-09-1",
+          "duplicateIndex": 1,
           "raw": {
-            "titulo": "IPASGO",
-            "convenio": "",
+            "titulo": "PRONTUÁRIOS",
+            "convenio": "IPASGO",
             "nome": "",
-            "data": "11/2018 12/2018",
+            "data": "11/2018 a 12/2018",
             "parte": ""
           },
+          "rawText": "PRONTUÁRIOS\nCONVÊNIO:\nIPASGO\nDATA 11/2018 a 12/2018\nPARTE:",
           "sourcePage": 16,
           "sourcePosition": 9
         },
         {
           "id": "10",
+          "recordId": "16-10-1",
+          "duplicateIndex": 1,
           "raw": {
-            "titulo": "IPASGO",
-            "convenio": "",
+            "titulo": "PRONTUÁRIOS",
+            "convenio": "IPASGO",
             "nome": "",
-            "data": "07 a 10 2017",
+            "data": "07 a 10 de 2017",
             "parte": ""
           },
+          "rawText": "PRONTUÁRIOS\nCONVÊNIO:\nIPASGO\nDATA 07 a 10 de 2017\nPARTE:",
           "sourcePage": 16,
           "sourcePosition": 10
         },
         {
           "id": "11",
+          "recordId": "16-11-1",
+          "duplicateIndex": 1,
           "raw": {
-            "titulo": "IPAGO",
-            "convenio": "",
+            "titulo": "PRONTUÁRIOS",
+            "convenio": "IPAGO",
             "nome": "",
             "data": "06/2017",
             "parte": ""
           },
+          "rawText": "PRONTUÁRIOS\nCONVÊNIO:\nIPAGO\nDATA 06/2017\nPARTE:",
           "sourcePage": 16,
           "sourcePosition": 11
         },
         {
           "id": "12",
+          "recordId": "16-12-1",
+          "duplicateIndex": 1,
           "raw": {
-            "titulo": "IPASGO",
-            "convenio": "",
+            "titulo": "PRONTUÁRIOS",
+            "convenio": "IPASGO",
             "nome": "",
             "data": "05/2017",
             "parte": ""
           },
+          "rawText": "PRONTUÁRIOS\nCONVÊNIO:\nIPASGO\nDATA 05/2017\nPARTE:",
           "sourcePage": 16,
           "sourcePosition": 12
         },
         {
           "id": "13",
+          "recordId": "16-13-1",
+          "duplicateIndex": 1,
           "raw": {
-            "titulo": "[ILEGÍVEL]",
-            "convenio": "Convenio",
+            "titulo": "PRONTUÁRIOS",
+            "convenio": "IPASGO / UNIMED DE 03/2027 UNIMED DE 01/2017 CONVENIOS DE 03/2017",
             "nome": "",
-            "data": "2017",
-            "parte": "Tira Foto"
+            "data": "",
+            "parte": ""
           },
+          "rawText": "PRONTUÁRIOS\nCONVÊNIO:\nIPASGO / UNIMED DE 03/2027\nUNIMED DE 01/2017\nCONVENIOS DE 03/2017",
           "sourcePage": 16,
           "sourcePosition": 13
         },
         {
           "id": "14",
+          "recordId": "16-14-1",
+          "duplicateIndex": 1,
           "raw": {
             "titulo": "",
             "convenio": "",
             "nome": "",
             "data": "2017",
-            "parte": "?"
+            "parte": ""
           },
+          "rawText": "CONVÊNIO:\nDATA 2017\nPARTE:",
           "sourcePage": 16,
           "sourcePosition": 14
         },
         {
           "id": "15",
+          "recordId": "16-15-1",
+          "duplicateIndex": 1,
           "raw": {
-            "titulo": "Exames",
+            "titulo": "PRONTUÁRIOS",
             "convenio": "IPASGO",
             "nome": "",
             "data": "2017",
             "parte": ""
           },
+          "rawText": "PRONTUÁRIOS\nCONVÊNIO:\nIPASGO\nDATA 2017\nPARTE:",
           "sourcePage": 16,
           "sourcePosition": 15
         },
         {
           "id": "16",
+          "recordId": "16-16-1",
+          "duplicateIndex": 1,
           "raw": {
             "titulo": "",
-            "convenio": "Convenio",
+            "convenio": "",
             "nome": "",
-            "data": "[ILEGÍVEL]/2017",
+            "data": "09/2017",
             "parte": ""
           },
+          "rawText": "CONVÊNIO:\nDATA 09/2017\nPARTE:",
           "sourcePage": 16,
           "sourcePosition": 16
         },
         {
           "id": "17",
+          "recordId": "16-17-1",
+          "duplicateIndex": 1,
           "raw": {
             "titulo": "",
-            "convenio": "Convenio",
+            "convenio": "",
             "nome": "",
             "data": "06/2017",
             "parte": ""
           },
+          "rawText": "CONVÊNIO:\nDATA 06/2017\nPARTE:",
           "sourcePage": 16,
           "sourcePosition": 17
         },
         {
           "id": "18",
+          "recordId": "16-18-1",
+          "duplicateIndex": 1,
           "raw": {
             "titulo": "",
-            "convenio": "Convenio",
+            "convenio": "",
             "nome": "",
             "data": "05/2017",
             "parte": "PAG 16"
           },
+          "rawText": "CONVÊNIO:\nDATA 05/2017\nPARTE: PAG 16",
           "sourcePage": 16,
           "sourcePosition": 18
         }
@@ -3387,241 +4213,286 @@
       "positions": [
         {
           "id": "01",
+          "recordId": "17-01-1",
+          "duplicateIndex": 1,
           "raw": {
-            "titulo": "IPASGO",
-            "convenio": "",
+            "titulo": "PRONTUÁRIOS",
+            "convenio": "IPASGO",
             "nome": "",
             "data": "2017",
             "parte": ""
           },
+          "rawText": "PRONTUÁRIOS\nCONVÊNIO:\nIPASGO\nDATA 2017\nPARTE:",
           "sourcePage": 17,
           "sourcePosition": 1
         },
         {
           "id": "02",
+          "recordId": "17-02-1",
+          "duplicateIndex": 1,
           "raw": {
-            "titulo": "Faturamento",
-            "convenio": "Convênio",
+            "titulo": "Faturamento Convênios",
+            "convenio": "",
             "nome": "",
             "data": "10/2017",
             "parte": ""
           },
+          "rawText": "Faturamento\nConvênios\nDATA 10/2017\nPARTE:",
           "sourcePage": 17,
           "sourcePosition": 2
         },
         {
           "id": "03",
+          "recordId": "17-03-1",
+          "duplicateIndex": 1,
           "raw": {
-            "titulo": "Faturamento",
+            "titulo": "PRONTUÁRIOS",
             "convenio": "",
             "nome": "",
             "data": "08/2017",
             "parte": ""
           },
+          "rawText": "PRONTUÁRIOS\nCONVÊNIO:\nDATA 08/2017\nPARTE:",
           "sourcePage": 17,
           "sourcePosition": 3
         },
         {
           "id": "04",
+          "recordId": "17-04-1",
+          "duplicateIndex": 1,
           "raw": {
             "titulo": "",
-            "convenio": "Convênio",
+            "convenio": "",
             "nome": "",
             "data": "12/2017",
             "parte": ""
           },
+          "rawText": "CONVÊNIO:\nDATA 12/2017\nPARTE:",
           "sourcePage": 17,
           "sourcePosition": 4
         },
         {
           "id": "05",
+          "recordId": "17-05-1",
+          "duplicateIndex": 1,
           "raw": {
-            "titulo": "IPASGO",
-            "convenio": "",
+            "titulo": "PRONTUÁRIOS",
+            "convenio": "IPASGO",
             "nome": "",
             "data": "03/2016 a 06/2016",
             "parte": ""
           },
+          "rawText": "PRONTUÁRIOS\nCONVÊNIO:\nIPASGO\nDATA 03/2016 a 06/2016\nPARTE:",
           "sourcePage": 17,
           "sourcePosition": 5
         },
         {
           "id": "06",
+          "recordId": "17-06-1",
+          "duplicateIndex": 1,
           "raw": {
-            "titulo": "IPASGO",
-            "convenio": "",
+            "titulo": "PRONTUÁRIOS",
+            "convenio": "IPASGO",
             "nome": "",
             "data": "01/2016; 02/2016",
             "parte": ""
           },
+          "rawText": "PRONTUÁRIOS\nCONVÊNIO:\nIPASGO\nDATA 01/2016; 02/2016\nPARTE:",
           "sourcePage": 17,
           "sourcePosition": 6
         },
         {
           "id": "07",
+          "recordId": "17-07-1",
+          "duplicateIndex": 1,
           "raw": {
-            "titulo": "",
+            "titulo": "PRONTUÁRIOS",
             "convenio": "Unimed",
             "nome": "",
-            "data": "07/2017; 05/2017",
+            "data": "05/2017; 07/2017",
             "parte": ""
           },
+          "rawText": "PRONTUÁRIOS\nCONVÊNIO:\nUnimed\nDATA 05/2017; 07/2017\nPARTE:",
           "sourcePage": 17,
           "sourcePosition": 7
         },
         {
           "id": "08",
+          "recordId": "17-08-1",
+          "duplicateIndex": 1,
           "raw": {
-            "titulo": "IMAS",
-            "convenio": "",
+            "titulo": "PRONTUÁRIOS",
+            "convenio": "IMAS",
             "nome": "",
             "data": "11/2017; 12/2017; 01/2018; 03/2018",
             "parte": ""
           },
+          "rawText": "PRONTUÁRIOS\nCONVÊNIO:\nIMAS\nDATA 11/2017; 12/2017; 01/2018; 03/2018\nPARTE:",
           "sourcePage": 17,
           "sourcePosition": 8
         },
         {
           "id": "09",
+          "recordId": "17-09-1",
+          "duplicateIndex": 1,
           "raw": {
-            "titulo": "IMAS",
-            "convenio": "",
+            "titulo": "PRONTUÁRIOS",
+            "convenio": "IMAS",
             "nome": "",
             "data": "07 a 09 de 2016; 03 a 08 de 2017",
             "parte": ""
           },
+          "rawText": "PRONTUÁRIOS\nCONVÊNIO:\nIMAS\nDATA 07 a 09 de 2016; 03 a 08 de 2017\nPARTE:",
           "sourcePage": 17,
           "sourcePosition": 9
         },
         {
           "id": "10",
+          "recordId": "17-10-1",
+          "duplicateIndex": 1,
           "raw": {
-            "titulo": "",
-            "convenio": "Unimed",
-            "nome": "Celson",
+            "titulo": "PRONTUÁRIOS",
+            "convenio": "UNIMED 03 A 12 DE 2016 01 A 12 DE 2017 CAESAN 11 A 12 DE 2015 02 A 12 DE 2016 02 A 08 DE 2017",
+            "nome": "",
             "data": "",
             "parte": ""
           },
+          "rawText": "PRONTUÁRIOS\nCONVÊNIO:\nUNIMED\n03 A 12 DE 2016\n01 A 12 DE 2017\nCAESAN\n11 A 12 DE 2015\n02 A 12 DE 2016\n02 A 08 DE 2017\nPARTE:",
           "sourcePage": 17,
           "sourcePosition": 10
         },
         {
-          "id": "11",
-          "raw": {
-            "titulo": "Tiro Foto",
-            "convenio": "",
-            "nome": "",
-            "data": "",
-            "parte": ""
-          },
-          "sourcePage": 17,
-          "sourcePosition": 11
-        },
-        {
           "id": "12",
+          "recordId": "17-12-1",
+          "duplicateIndex": 1,
           "raw": {
-            "titulo": "IPASGO",
-            "convenio": "",
+            "titulo": "PRONTUÁRIOS",
+            "convenio": "IPASGO",
             "nome": "",
             "data": "2016",
             "parte": "Parte 3"
           },
+          "rawText": "PRONTUÁRIOS\nCONVÊNIO:\nIPASGO\nDATA 2016\nPARTE: Parte 3",
           "sourcePage": 17,
           "sourcePosition": 12
         },
         {
           "id": "13",
+          "recordId": "17-13-1",
+          "duplicateIndex": 1,
           "raw": {
             "titulo": "",
-            "convenio": "Convênio",
+            "convenio": "",
             "nome": "",
             "data": "03/2016",
             "parte": ""
           },
+          "rawText": "CONVÊNIO:\nDATA 03/2016\nPARTE:",
           "sourcePage": 17,
           "sourcePosition": 13
         },
         {
           "id": "14",
+          "recordId": "17-14-1",
+          "duplicateIndex": 1,
           "raw": {
-            "titulo": "",
+            "titulo": "PRONTUÁRIOS",
             "convenio": "Particular",
             "nome": "",
             "data": "2013/2014; 2017/2018; 2019",
             "parte": ""
           },
+          "rawText": "PRONTUÁRIOS\nCONVÊNIO:\nParticular\nDATA 2013/2014; 2017/2018; 2019\nPARTE:",
           "sourcePage": 17,
           "sourcePosition": 14
         },
         {
           "id": "15",
+          "recordId": "17-15-1",
+          "duplicateIndex": 1,
           "raw": {
-            "titulo": "IPASGO",
-            "convenio": "",
+            "titulo": "PRONTUÁRIOS",
+            "convenio": "IPASGO",
             "nome": "",
             "data": "06/2015 a 07/2015",
             "parte": ""
           },
+          "rawText": "PRONTUÁRIOS\nCONVÊNIO:\nIPASGO\nDATA 06/2015 a 07/2015\nPARTE:",
           "sourcePage": 17,
           "sourcePosition": 15
         },
         {
           "id": "16",
+          "recordId": "17-16-1",
+          "duplicateIndex": 1,
           "raw": {
-            "titulo": "IPASGO",
-            "convenio": "",
+            "titulo": "PRONTUÁRIOS",
+            "convenio": "IPASGO",
             "nome": "",
             "data": "07/2016 a 11/2016",
             "parte": ""
           },
+          "rawText": "PRONTUÁRIOS\nCONVÊNIO:\nIPASGO\nDATA 07/2016 a 11/2016\nPARTE:",
           "sourcePage": 17,
           "sourcePosition": 16
         },
         {
           "id": "17",
+          "recordId": "17-17-1",
+          "duplicateIndex": 1,
           "raw": {
-            "titulo": "IPASGO",
-            "convenio": "",
+            "titulo": "PRONTUÁRIOS",
+            "convenio": "IPASGO",
             "nome": "",
             "data": "2016",
             "parte": "Parte 3"
           },
+          "rawText": "PRONTUÁRIOS\nCONVÊNIO:\nIPASGO\nDATA 2016\nPARTE: Parte 3",
           "sourcePage": 17,
           "sourcePosition": 17
         },
         {
           "id": "18",
+          "recordId": "17-18-1",
+          "duplicateIndex": 1,
           "raw": {
-            "titulo": "",
+            "titulo": "PRONTUÁRIOS",
             "convenio": "Convênio",
             "nome": "",
             "data": "01/2015 a 08/2015",
             "parte": ""
           },
+          "rawText": "PRONTUÁRIOS\nCONVÊNIO:\nConvênio\nDATA 01/2015 a 08/2015\nPARTE:",
           "sourcePage": 17,
           "sourcePosition": 18
         },
         {
           "id": "19",
+          "recordId": "17-19-1",
+          "duplicateIndex": 1,
           "raw": {
-            "titulo": "IPASGO",
-            "convenio": "",
+            "titulo": "PRONTUÁRIOS",
+            "convenio": "IPASGO",
             "nome": "",
-            "data": "10/2015 a 1/2015",
+            "data": "10/2015 a 01/2015",
             "parte": ""
           },
+          "rawText": "PRONTUÁRIOS\nCONVÊNIO:\nIPASGO\nDATA 10/2015 a 01/2015\nPARTE:",
           "sourcePage": 17,
           "sourcePosition": 19
         },
         {
           "id": "20",
+          "recordId": "17-20-1",
+          "duplicateIndex": 1,
           "raw": {
-            "titulo": "IPASGO",
-            "convenio": "",
+            "titulo": "PRONTUÁRIOS",
+            "convenio": "IPASGO",
             "nome": "",
             "data": "08/2015 a 09/2015",
-            "parte": "PAG 17"
+            "parte": ""
           },
+          "rawText": "PRONTUÁRIOS\nCONVÊNIO:\nIPASGO\nDATA 08/2015 a 09/2015\nPARTE:",
           "sourcePage": 17,
           "sourcePosition": 20
         }
@@ -3632,217 +4503,271 @@
       "positions": [
         {
           "id": "01",
+          "recordId": "18-01-1",
+          "duplicateIndex": 1,
           "raw": {
-            "titulo": "IMG",
-            "convenio": "",
+            "titulo": "PRONTUÁRIOS",
+            "convenio": "IHG",
             "nome": "",
             "data": "05/2016 a 08/2016",
             "parte": ""
           },
+          "rawText": "PRONTUÁRIOS\nCONVÊNIO:\nIHG\nDATA 05/2016 a 08/2016\nPARTE:",
           "sourcePage": 18,
           "sourcePosition": 1
         },
         {
           "id": "02",
+          "recordId": "18-02-1",
+          "duplicateIndex": 1,
           "raw": {
-            "titulo": "Prescrições",
-            "convenio": "",
-            "nome": "CGO",
+            "titulo": "PRONTUÁRIOS",
+            "convenio": "CGO",
+            "nome": "",
             "data": "01/2017 a 07/2017",
             "parte": ""
           },
+          "rawText": "PRONTUÁRIOS\nCONVÊNIO:\nCGO\nDATA 01/2017 a 07/2017\nPARTE:",
           "sourcePage": 18,
           "sourcePosition": 2
         },
         {
           "id": "03",
+          "recordId": "18-03-1",
+          "duplicateIndex": 1,
           "raw": {
-            "titulo": "",
+            "titulo": "PRONTUÁRIOS",
             "convenio": "Unimed",
             "nome": "",
             "data": "JAN - 2015 / FEV - 2016",
             "parte": ""
           },
+          "rawText": "PRONTUÁRIOS\nCONVÊNIO:\nUnimed\nDATA JAN - 2015 / FEV - 2016\nPARTE:",
           "sourcePage": 18,
           "sourcePosition": 3
         },
         {
           "id": "04",
+          "recordId": "18-04-1",
+          "duplicateIndex": 1,
           "raw": {
-            "titulo": "TIRA FOTO",
-            "convenio": "",
+            "titulo": "PRONTUÁRIOS",
+            "convenio": "Particula",
             "nome": "",
-            "data": "",
+            "data": "2015 a 2017",
             "parte": ""
           },
+          "rawText": "PRONTUÁRIOS\nCONVÊNIO:\nParticula\nDATA 2015 a 2017\nPARTE:",
           "sourcePage": 18,
           "sourcePosition": 4
         },
         {
           "id": "05",
+          "recordId": "18-05-1",
+          "duplicateIndex": 1,
           "raw": {
-            "titulo": "TIRA FOTO",
+            "titulo": "PRONTUÁRIOS Saúde Santa Genoveva 10 de 2005 ate X Faturamento 2015 2016 2017",
             "convenio": "",
             "nome": "",
             "data": "",
             "parte": ""
           },
+          "rawText": "PRONTUÁRIOS\nSaúde Santa\nGenoveva\n10 de 2005 ate X\nFaturamento\n2015\n2016\n2017\nPARTE:",
           "sourcePage": 18,
           "sourcePosition": 5
         },
         {
           "id": "06",
+          "recordId": "18-06-1",
+          "duplicateIndex": 1,
           "raw": {
-            "titulo": "Prontuário",
-            "convenio": "",
-            "nome": "QT [ILEGÍVEL]",
+            "titulo": "PRONTUÁRIOS",
+            "convenio": "QTC",
+            "nome": "",
             "data": "2016",
             "parte": ""
           },
+          "rawText": "PRONTUÁRIOS\nCONVÊNIO:\nQTC\nDATA 2016\nPARTE:",
           "sourcePage": 18,
           "sourcePosition": 6
         },
         {
           "id": "07",
+          "recordId": "18-07-1",
+          "duplicateIndex": 1,
           "raw": {
-            "titulo": "",
-            "convenio": "",
-            "nome": "CGO",
+            "titulo": "PRONTUÁRIOS",
+            "convenio": "CGO",
+            "nome": "",
             "data": "02/2015 a 04/2015",
             "parte": ""
           },
+          "rawText": "PRONTUÁRIOS\nCONVÊNIO:\nCGO\nDATA 02/2015 a 04/2015\nPARTE:",
           "sourcePage": 18,
           "sourcePosition": 7
         },
         {
           "id": "08",
+          "recordId": "18-08-1",
+          "duplicateIndex": 1,
           "raw": {
-            "titulo": "",
-            "convenio": "",
-            "nome": "CGO",
+            "titulo": "PRONTUÁRIOS",
+            "convenio": "CGO",
+            "nome": "",
             "data": "05/2015 a 09/2015",
             "parte": ""
           },
+          "rawText": "PRONTUÁRIOS\nCONVÊNIO:\nCGO\nDATA 05/2015 a 09/2015\nPARTE:",
           "sourcePage": 18,
           "sourcePosition": 8
         },
         {
           "id": "09",
+          "recordId": "18-09-1",
+          "duplicateIndex": 1,
           "raw": {
-            "titulo": "",
-            "convenio": "",
-            "nome": "CGO",
+            "titulo": "PRONTUÁRIOS",
+            "convenio": "CGO",
+            "nome": "",
             "data": "10/2015 a 12/2015",
             "parte": ""
           },
+          "rawText": "PRONTUÁRIOS\nCONVÊNIO:\nCGO\nDATA 10/2015 a 12/2015\nPARTE:",
           "sourcePage": 18,
           "sourcePosition": 9
         },
         {
           "id": "10",
+          "recordId": "18-10-1",
+          "duplicateIndex": 1,
           "raw": {
-            "titulo": "",
+            "titulo": "PRONTUÁRIOS",
             "convenio": "Particular",
             "nome": "",
-            "data": "01/2009 / 2010 / 2011 / 2012 e 2014",
+            "data": "01/2008 / 2010 / 2011 / 2012 e 2014",
             "parte": ""
           },
+          "rawText": "PRONTUÁRIOS\nCONVÊNIO:\nParticular\nDATA 01/2008 / 2010 / 2011 / 2012 e 2014\nPARTE:",
           "sourcePage": 18,
           "sourcePosition": 10
         },
         {
           "id": "11",
+          "recordId": "18-11-1",
+          "duplicateIndex": 1,
           "raw": {
-            "titulo": "",
-            "convenio": "",
-            "nome": "CGO",
+            "titulo": "PRONTUÁRIOS",
+            "convenio": "CGO",
+            "nome": "",
             "data": "06/2013 a 11/2014",
             "parte": ""
           },
+          "rawText": "PRONTUÁRIOS\nCONVÊNIO:\nCGO\nDATA 06/2013 a 11/2014\nPARTE:",
           "sourcePage": 18,
           "sourcePosition": 11
         },
         {
           "id": "12",
+          "recordId": "18-12-1",
+          "duplicateIndex": 1,
           "raw": {
-            "titulo": "",
-            "convenio": "",
-            "nome": "CGO",
+            "titulo": "PRONTUÁRIOS",
+            "convenio": "CGO",
+            "nome": "",
             "data": "12/2014 a 01/2014",
             "parte": ""
           },
+          "rawText": "PRONTUÁRIOS\nCONVÊNIO:\nCGO\nDATA 12/2014 a 01/2014\nPARTE:",
           "sourcePage": 18,
           "sourcePosition": 12
         },
         {
           "id": "13",
+          "recordId": "18-13-1",
+          "duplicateIndex": 1,
           "raw": {
-            "titulo": "Devolução Prontuário",
+            "titulo": "PRONTUÁRIOS",
             "convenio": "IPASGO",
             "nome": "",
             "data": "2013",
             "parte": ""
           },
+          "rawText": "PRONTUÁRIOS\nCONVÊNIO:\nIPASGO\nDATA 2013\nPARTE:",
           "sourcePage": 18,
           "sourcePosition": 13
         },
         {
           "id": "14",
+          "recordId": "18-14-1",
+          "duplicateIndex": 1,
           "raw": {
-            "titulo": "Devolução Prontuário",
+            "titulo": "PRONTUÁRIOS",
             "convenio": "Unimed",
             "nome": "",
             "data": "2014",
             "parte": ""
           },
+          "rawText": "PRONTUÁRIOS\nCONVÊNIO:\nUnimed\nDATA 2014\nPARTE:",
           "sourcePage": 18,
           "sourcePosition": 14
         },
         {
           "id": "15",
+          "recordId": "18-15-1",
+          "duplicateIndex": 1,
           "raw": {
-            "titulo": "Devolução Prontuário",
+            "titulo": "PRONTUÁRIOS",
             "convenio": "IPASGO",
             "nome": "",
             "data": "2014",
             "parte": ""
           },
+          "rawText": "PRONTUÁRIOS\nCONVÊNIO:\nIPASGO\nDATA 2014\nPARTE:",
           "sourcePage": 18,
           "sourcePosition": 15
         },
         {
           "id": "16",
+          "recordId": "18-16-1",
+          "duplicateIndex": 1,
           "raw": {
             "titulo": "",
-            "convenio": "Convênios",
+            "convenio": "",
             "nome": "",
             "data": "2010 a 2013",
             "parte": ""
           },
+          "rawText": "CONVÊNIO:\nDATA 2010 a 2013\nPARTE:",
           "sourcePage": 18,
           "sourcePosition": 16
         },
         {
           "id": "17",
+          "recordId": "18-17-1",
+          "duplicateIndex": 1,
           "raw": {
             "titulo": "",
-            "convenio": "Convênio",
+            "convenio": "",
             "nome": "",
             "data": "2013",
             "parte": ""
           },
+          "rawText": "CONVÊNIO:\nDATA 2013\nPARTE:",
           "sourcePage": 18,
           "sourcePosition": 17
         },
         {
           "id": "18",
+          "recordId": "18-18-1",
+          "duplicateIndex": 1,
           "raw": {
-            "titulo": "Devolução",
+            "titulo": "PRONTUÁRIOS",
             "convenio": "IPASGO",
             "nome": "",
             "data": "2013",
-            "parte": "pag 19"
+            "parte": ""
           },
+          "rawText": "PRONTUÁRIOS\nCONVÊNIO:\nIPASGO\nDATA 2013\nPARTE:",
           "sourcePage": 18,
           "sourcePosition": 18
         }
@@ -3853,183 +4778,183 @@
       "positions": [
         {
           "id": "01",
+          "recordId": "19-01-1",
+          "duplicateIndex": 1,
           "raw": {
-            "titulo": "IPASGO",
-            "convenio": "",
-            "nome": "Devolução",
+            "titulo": "PRONTUÁRIOS",
+            "convenio": "IPASGO",
+            "nome": "",
             "data": "2012",
             "parte": ""
           },
+          "rawText": "PRONTUÁRIOS\nCONVÊNIO:\nIPASGO\nDATA 2012\nPARTE:",
           "sourcePage": 19,
           "sourcePosition": 1
         },
         {
           "id": "02",
+          "recordId": "19-02-1",
+          "duplicateIndex": 1,
           "raw": {
-            "titulo": "UNIMED",
-            "convenio": "",
-            "nome": "Devolução",
+            "titulo": "PRONTUÁRIOS",
+            "convenio": "UNIMED",
+            "nome": "",
             "data": "2013",
             "parte": ""
           },
+          "rawText": "PRONTUÁRIOS\nCONVÊNIO:\nUNIMED\nDATA 2013\nPARTE:",
           "sourcePage": 19,
           "sourcePosition": 2
         },
         {
           "id": "03",
+          "recordId": "19-03-1",
+          "duplicateIndex": 1,
           "raw": {
-            "titulo": "Convenios",
+            "titulo": "",
             "convenio": "",
             "nome": "",
             "data": "2010 a 2013",
             "parte": ""
           },
+          "rawText": "CONVÊNIO:\nDATA 2010 a 2013\nPARTE:",
           "sourcePage": 19,
           "sourcePosition": 3
         },
         {
           "id": "04",
+          "recordId": "19-04-1",
+          "duplicateIndex": 1,
           "raw": {
-            "titulo": "IPASGO",
-            "convenio": "",
-            "nome": "Devolução",
+            "titulo": "PRONTUÁRIOS",
+            "convenio": "IPASGO",
+            "nome": "",
             "data": "2011",
             "parte": ""
           },
+          "rawText": "PRONTUÁRIOS\nCONVÊNIO:\nIPASGO\nDATA 2011\nPARTE:",
           "sourcePage": 19,
           "sourcePosition": 4
         },
         {
           "id": "05",
+          "recordId": "19-05-1",
+          "duplicateIndex": 1,
           "raw": {
-            "titulo": "IMAS",
-            "convenio": "",
-            "nome": "Devolução",
-            "data": "02,03,08,10,11/2011; 03/06/08,09,10/2012",
-            "parte": ""
+            "titulo": "PRONTUÁRIOS",
+            "convenio": "IMAS",
+            "nome": "",
+            "data": "2011 ATE 2012",
+            "parte": "02 , 03 , 08 , 10 , 11- 2011 03 , 06 , 08 , 09 , 10 - 2012"
           },
+          "rawText": "PRONTUÁRIOS\nCONVÊNIO:\nIMAS\nDATA 2011 ATE 2012\nPARTE:\n02 , 03 , 08 , 10 , 11- 2011\n03 , 06 , 08 , 09 , 10 - 2012",
           "sourcePage": 19,
           "sourcePosition": 5
         },
         {
           "id": "06",
+          "recordId": "19-06-1",
+          "duplicateIndex": 1,
           "raw": {
-            "titulo": "IPASGO",
-            "convenio": "",
+            "titulo": "PRONTUÁRIOS",
+            "convenio": "IPASGO",
             "nome": "",
             "data": "2012",
             "parte": ""
           },
+          "rawText": "PRONTUÁRIOS\nCONVÊNIO:\nIPASGO\nDATA 2012\nPARTE:",
           "sourcePage": 19,
           "sourcePosition": 6
         },
         {
-          "id": "07",
-          "raw": {
-            "titulo": "",
-            "convenio": "",
-            "nome": "",
-            "data": "",
-            "parte": "X"
-          },
-          "sourcePage": 19,
-          "sourcePosition": 7
-        },
-        {
           "id": "08",
+          "recordId": "19-08-1",
+          "duplicateIndex": 1,
           "raw": {
-            "titulo": "IPASGO",
-            "convenio": "",
-            "nome": "Devolução",
-            "data": "02,05,06,10,11,12-2009; 01,02,07 - 2010",
-            "parte": ""
+            "titulo": "PRONTUÁRIOS",
+            "convenio": "IPASGO",
+            "nome": "",
+            "data": "2009 a 2010",
+            "parte": "02 , 05 , 06 , 10 , 11 , 12 - 2009 01 , 02 , 07 - 2010"
           },
+          "rawText": "PRONTUÁRIOS\nCONVÊNIO:\nIPASGO\nDATA 2009 a 2010\nPARTE:\n02 , 05 , 06 , 10 , 11 , 12 - 2009\n01 , 02 , 07 - 2010",
           "sourcePage": 19,
           "sourcePosition": 8
         },
         {
           "id": "09",
+          "recordId": "19-09-1",
+          "duplicateIndex": 1,
           "raw": {
-            "titulo": "IPASGO",
-            "convenio": "",
-            "nome": "Devolução",
+            "titulo": "PRONTUÁRIOS",
+            "convenio": "IPASGO",
+            "nome": "",
             "data": "2011",
             "parte": ""
           },
+          "rawText": "PRONTUÁRIOS\nCONVÊNIO:\nIPASGO\nDATA 2011\nPARTE:",
           "sourcePage": 19,
           "sourcePosition": 9
         },
         {
           "id": "10",
+          "recordId": "19-10-1",
+          "duplicateIndex": 1,
           "raw": {
-            "titulo": "IPASGO",
-            "convenio": "",
+            "titulo": "PRONTUÁRIOS",
+            "convenio": "IPASGO",
             "nome": "",
             "data": "2005 a 2006",
             "parte": ""
           },
+          "rawText": "PRONTUÁRIOS\nCONVÊNIO:\nIPASGO\nDATA 2005 a 2006\nPARTE:",
           "sourcePage": 19,
           "sourcePosition": 10
         },
         {
           "id": "11",
+          "recordId": "19-11-1",
+          "duplicateIndex": 1,
           "raw": {
-            "titulo": "IPASGO",
-            "convenio": "",
+            "titulo": "PRONTUÁRIOS",
+            "convenio": "IPASGO",
             "nome": "",
             "data": "2005 a 2006",
             "parte": ""
           },
+          "rawText": "PRONTUÁRIOS\nCONVÊNIO:\nIPASGO\nDATA 2005 a 2006\nPARTE:",
           "sourcePage": 19,
           "sourcePosition": 11
         },
         {
           "id": "12",
+          "recordId": "19-12-1",
+          "duplicateIndex": 1,
           "raw": {
-            "titulo": "IPASGO",
-            "convenio": "",
-            "nome": "Devolução",
-            "data": "05,06,08,11,12-2018",
-            "parte": "[ILEGÍVEL]"
+            "titulo": "PRONTUÁRIOS",
+            "convenio": "IPASGO",
+            "nome": "",
+            "data": "2018 A 2019",
+            "parte": "05 , 06 , 08 , 11 ,12 - 2018 01 E 02 - 2019"
           },
+          "rawText": "PRONTUÁRIOS\nCONVÊNIO:\nIPASGO\nDATA 2018 A 2019\nPARTE:\n05 , 06 , 08 , 11 ,12 - 2018\n01 E 02 - 2019",
           "sourcePage": 19,
           "sourcePosition": 12
         },
         {
-          "id": "13",
-          "raw": {
-            "titulo": "",
-            "convenio": "",
-            "nome": "",
-            "data": "01 a 02 2019",
-            "parte": ""
-          },
-          "sourcePage": 19,
-          "sourcePosition": 13
-        },
-        {
           "id": "14",
+          "recordId": "19-14-1",
+          "duplicateIndex": 1,
           "raw": {
-            "titulo": "IPASGO",
-            "convenio": "",
-            "nome": "Devolução",
+            "titulo": "PRONTUÁRIOS",
+            "convenio": "IPASGO",
+            "nome": "",
             "data": "2007 a 2008",
             "parte": ""
           },
+          "rawText": "PRONTUÁRIOS\nCONVÊNIO:\nIPASGO\nDATA 2007 a 2008\nPARTE:",
           "sourcePage": 19,
           "sourcePosition": 14
-        },
-        {
-          "id": "15",
-          "raw": {
-            "titulo": "",
-            "convenio": "",
-            "nome": "",
-            "data": "",
-            "parte": "PAG-[ILEGÍVEL]"
-          },
-          "sourcePage": 19,
-          "sourcePosition": 15
         }
       ]
     }

@@ -6,6 +6,6 @@
 - [ ] Página individual de cada armário com grade responsiva das posições.
 - [ ] Página individual de cada caixa com transcrição, localização, período, parte e observações.
 - [ ] URLs estáveis para armários e caixas, prontas para QR Codes.
-- [ ] Dados iniciais com 19 armários e 328 posições transcritas.
-- [ ] Área de QR Codes para abrir diretamente armários e posições.
+- [ ] Dados iniciais extraídos do PDF caixa5anda-verificadas.pdf, usando página como armário e quadrado como posição.
+- [ ] Um único QR Code geral para abrir o site completo e pesquisar armários, posições e conteúdos.
 - [ ] Navegação responsiva e acessível com logotipo do Centro de Oncologia IHG.
