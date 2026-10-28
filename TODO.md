@@ -1,11 +1,15 @@
 # Entregas do site
 
-- [ ] Página inicial com busca textual sobre o conteúdo transcrito das caixas.
-- [ ] Filtros combináveis por armário, posição, convênio, categoria, período e parte.
-- [ ] Mapa visual dos 19 armários com posições numeradas e cores de identificação.
-- [ ] Página individual de cada armário com grade responsiva das posições.
-- [ ] Página individual de cada caixa com transcrição, localização, período, parte e observações.
-- [ ] URLs estáveis para armários e caixas, prontas para QR Codes.
-- [ ] Dados iniciais extraídos do PDF caixa5anda-verificadas.pdf, usando página como armário e quadrado como posição.
-- [ ] Um único QR Code geral para abrir o site completo e pesquisar armários, posições e conteúdos.
-- [ ] Navegação responsiva e acessível com logotipo do Centro de Oncologia IHG.
+- [x] Página inicial com busca textual sobre o conteúdo transcrito das caixas.
+- [x] Filtros combináveis por armário, posição, convênio, categoria, período e parte.
+- [x] Mapa visual dos 19 armários com posições numeradas e cores de identificação.
+- [x] Página individual de cada armário com grade responsiva das posições.
+- [x] Página individual de cada caixa com transcrição, localização, período, parte e observações.
+- [x] URLs estáveis para armários e caixas, prontas para QR Codes.
+- [x] Dados iniciais extraídos do PDF caixa5anda-verificadas.pdf, usando página como armário e quadrado como posição.
+- [x] Um único QR Code geral para abrir o site completo e pesquisar armários, posições e conteúdos.
+- [x] Navegação responsiva e acessível com logotipo do Centro de Oncologia IHG.
+- [x] Banco compartilhado e API para salvar alterações para todos os usuários do site.
+- [x] Formulário para editar título, convênio, nome, período, parte e texto completo do registro.
+- [x] Reposicionamento de uma caixa para outro armário e posição, preservando a localização atualizada.
+- [x] Exclusão de registro com confirmação e atualização do mapa após a operação.

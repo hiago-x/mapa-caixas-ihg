@@ -35,6 +35,13 @@ const armRoute = id => route(`/armario/${id}`)
 const boxRoute = (armId, recordId) => route(`/caixa/${recordId}`)
 const formatCount = value => new Intl.NumberFormat('pt-BR').format(value)
 
+async function api(path, options = {}) {
+  const response = await fetch(path, { headers: { 'Content-Type': 'application/json', ...(options.headers || {}) }, ...options })
+  const data = await response.json().catch(() => ({}))
+  if (!response.ok) throw new Error(data.error || 'Não foi possível concluir a operação.')
+  return data
+}
+
 function shell(content, active = 'inicio') {
   app.innerHTML = `
     <header class="topbar">
@@ -162,7 +169,48 @@ function boxPage(armId, recordId) {
   const box = getBox(armId, recordId)
   if (!armario || !box) return notFound()
   const rawLines = escapeHtml(box.rawText || '').replaceAll('\n', '<br/>')
-  shell(`<div class="breadcrumbs"><a href="#/">Visão geral</a><span>/</span><a href="${armRoute(armId)}">Armário ${armId}</a><span>/</span><span>Posição ${box.id}</span></div><section class="detail-header"><div><span class="section-kicker">LOCALIZAÇÃO DA CAIXA</span><h2>Armário ${armId} · Posição ${box.id}</h2><p>Esta é a ficha detalhada da posição selecionada.</p></div><div class="location-badge ${tone(box)}"><span>POSIÇÃO</span><strong>${box.id}</strong></div></section><div class="detail-layout"><article class="detail-card"><div class="detail-card-title"><span class="box-mark ${tone(box)}">${box.id}</span><div><span class="section-kicker">CONTEÚDO VERIFICADO</span><h3>${escapeHtml(shortLabel(box))}</h3></div></div><dl>${detailRow('Categoria / título', box.raw.titulo)}${detailRow('Convênio', box.raw.convenio)}${detailRow('Nome', box.raw.nome)}${detailRow('Período / data', box.raw.data)}${detailRow('Parte', box.raw.parte)}</dl><div class="raw-transcription"><span class="section-kicker">TEXTO DO PDF VERIFICADO</span><div>${rawLines || '<span>Sem texto identificado.</span>'}</div></div><div class="source-note">Localização no PDF: página ${box.sourcePage} = armário ${armId} · quadrado ${box.sourcePosition} = posição ${box.id}${box.duplicateIndex > 1 ? ` · registro ${box.duplicateIndex}` : ''}</div></article><aside class="detail-aside"><div class="aside-card"><span class="section-kicker">CAMINHO FÍSICO</span><strong>5º andar</strong><span>Armário ${armId}</span><span>Posição ${box.id}</span></div><div class="aside-card"><span class="section-kicker">QR CODE</span><strong>1 QR geral</strong><span>Use o QR Code geral para abrir o site e pesquisar esta posição.</span><a class="text-link" href="#/qrcodes">Abrir QR geral →</a></div></aside></div>`, 'mapa')
+  shell(`<div class="breadcrumbs"><a href="#/">Visão geral</a><span>/</span><a href="${armRoute(armId)}">Armário ${armId}</a><span>/</span><span>Posição ${box.id}</span></div><section class="detail-header"><div><span class="section-kicker">LOCALIZAÇÃO DA CAIXA</span><h2>Armário ${armId} · Posição ${box.id}</h2><p>Esta é a ficha detalhada da posição selecionada.</p></div><div class="location-badge ${tone(box)}"><span>POSIÇÃO</span><strong>${box.id}</strong></div></section><div class="detail-layout"><article class="detail-card"><div class="detail-card-title"><span class="box-mark ${tone(box)}">${box.id}</span><div><span class="section-kicker">CONTEÚDO VERIFICADO</span><h3>${escapeHtml(shortLabel(box))}</h3></div></div><dl>${detailRow('Categoria / título', box.raw.titulo)}${detailRow('Convênio', box.raw.convenio)}${detailRow('Nome', box.raw.nome)}${detailRow('Período / data', box.raw.data)}${detailRow('Parte', box.raw.parte)}</dl><div class="raw-transcription"><span class="section-kicker">TEXTO DO PDF VERIFICADO</span><div>${rawLines || '<span>Sem texto identificado.</span>'}</div></div><div class="source-note">Localização no PDF: página ${box.sourcePage} = armário ${armId} · quadrado ${box.sourcePosition} = posição ${box.id}${box.duplicateIndex > 1 ? ` · registro ${box.duplicateIndex}` : ''}</div></article><aside class="detail-aside"><div class="aside-card"><span class="section-kicker">CAMINHO FÍSICO</span><strong>5º andar</strong><span>Armário ${armId}</span><span>Posição ${box.id}</span></div><div class="aside-card"><span class="section-kicker">QR CODE</span><strong>1 QR geral</strong><span>Use o QR Code geral para abrir o site e pesquisar esta posição.</span><a class="text-link" href="#/qrcodes">Abrir QR geral →</a></div><div class="aside-card admin-card"><span class="section-kicker">GESTÃO DO INVENTÁRIO</span><button class="solid-button full-button" id="edit-box">Editar informações</button><button class="outline-button full-button danger-button" id="delete-box">Excluir este registro</button><span class="admin-hint">As alterações ficam salvas para todos no site.</span></div></aside></div>`, 'mapa')
+  document.querySelector('#edit-box')?.addEventListener('click', () => openEditDialog(armId, box))
+  document.querySelector('#delete-box')?.addEventListener('click', () => deleteBox(armId, box))
+}
+
+function openEditDialog(armId, box) {
+  const options = inventory.armarios.map(arm => `<option value="${arm.id}" ${arm.id === armId ? 'selected' : ''}>Armário ${arm.id}</option>`).join('')
+  const modal = document.createElement('div')
+  modal.className = 'modal-backdrop'
+  modal.innerHTML = `<form class="edit-modal" id="edit-form"><div class="modal-head"><div><span class="section-kicker">EDITAR REGISTRO</span><h3>Armário ${armId} · Posição ${box.id}</h3></div><button type="button" class="modal-close" id="close-modal">×</button></div><label>Categoria / título<input name="titulo" value="${escapeHtml(box.raw.titulo)}" /></label><label>Convênio<input name="convenio" value="${escapeHtml(box.raw.convenio)}" /></label><label>Nome<input name="nome" value="${escapeHtml(box.raw.nome)}" /></label><label>Período / data<input name="data" value="${escapeHtml(box.raw.data)}" /></label><label>Parte<input name="parte" value="${escapeHtml(box.raw.parte)}" /></label><label>Texto completo do PDF<textarea name="rawText" rows="4">${escapeHtml(box.rawText || '')}</textarea></label><div class="move-box"><span class="section-kicker">REPOSICIONAR CAIXA</span><div class="move-fields"><label>Armário<select name="moveArmario">${options}</select></label><label>Posição<input name="movePosicao" inputmode="numeric" maxlength="2" value="${box.id}" /></label></div></div><div class="modal-actions"><button type="button" class="outline-button" id="cancel-modal">Cancelar</button><button type="submit" class="solid-button">Salvar alterações</button></div><p class="modal-status" id="modal-status"></p></form>`
+  document.body.appendChild(modal)
+  const close = () => modal.remove()
+  modal.querySelector('#close-modal').addEventListener('click', close)
+  modal.querySelector('#cancel-modal').addEventListener('click', close)
+  modal.addEventListener('click', event => { if (event.target === modal) close() })
+  modal.querySelector('#edit-form').addEventListener('submit', async event => {
+    event.preventDefault()
+    const form = new FormData(event.target)
+    const status = modal.querySelector('#modal-status')
+    status.textContent = 'Salvando...'
+    try {
+      await api(`/api/boxes/${encodeURIComponent(box.recordId)}`, { method: 'PUT', body: JSON.stringify({ titulo: form.get('titulo'), convenio: form.get('convenio'), nome: form.get('nome'), data: form.get('data'), parte: form.get('parte'), rawText: form.get('rawText') }) })
+      const newArmario = form.get('moveArmario')
+      const newPosition = String(form.get('movePosicao')).padStart(2, '0')
+      if (newArmario !== armId || newPosition !== box.id) await api(`/api/boxes/${encodeURIComponent(box.recordId)}/move`, { method: 'POST', body: JSON.stringify({ armario: newArmario, posicao: newPosition }) })
+      await reloadInventory()
+      close()
+      const updated = getBox(newArmario, box.recordId)
+      location.hash = updated ? `/caixa/${box.recordId}` : `/armario/${newArmario}`
+    } catch (error) { status.textContent = error.message; status.className = 'modal-status error' }
+  })
+}
+
+async function deleteBox(armId, box) {
+  if (!window.confirm(`Excluir o registro da posição ${box.id} do armário ${armId}? Esta ação não pode ser desfeita.`)) return
+  try { await api(`/api/boxes/${encodeURIComponent(box.recordId)}`, { method: 'DELETE' }); await reloadInventory(); location.hash = armRoute(armId) } catch (error) { window.alert(error.message) }
+}
+
+async function reloadInventory() {
+  const response = await fetch('/api/inventory')
+  if (!response.ok) throw new Error('Não foi possível atualizar o inventário compartilhado.')
+  inventory = await response.json()
 }
 
 async function renderQrCodes() {
@@ -188,4 +236,4 @@ function render() {
 }
 
 window.addEventListener('hashchange', render)
-fetch('/inventory.json').then(response => response.json()).then(data => { inventory = data; render() }).catch(() => { app.innerHTML = '<div class="loading-error">Não foi possível carregar o inventário.</div>' })
+fetch('/api/inventory').then(response => { if (!response.ok) throw new Error('API indisponível'); return response.json() }).catch(() => fetch('/inventory.json').then(response => response.json())).then(data => { inventory = data; render() }).catch(() => { app.innerHTML = '<div class="loading-error">Não foi possível carregar o inventário.</div>' })
