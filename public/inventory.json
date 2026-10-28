@@ -1,0 +1,4037 @@
+{
+  "version": 1,
+  "source": "caixas-5andar.docx",
+  "armarios": [
+    {
+      "id": "01",
+      "positions": [
+        {
+          "id": "01",
+          "raw": {
+            "titulo": "Prontuario",
+            "convenio": "IMAS",
+            "nome": "",
+            "data": "01/2025",
+            "parte": "5 e 6"
+          },
+          "sourcePage": 1,
+          "sourcePosition": 1
+        },
+        {
+          "id": "02",
+          "raw": {
+            "titulo": "IMAS",
+            "convenio": "",
+            "nome": "",
+            "data": "01/2025",
+            "parte": "03 e 04"
+          },
+          "sourcePage": 1,
+          "sourcePosition": 2
+        },
+        {
+          "id": "03",
+          "raw": {
+            "titulo": "IMAS",
+            "convenio": "",
+            "nome": "",
+            "data": "01/2025",
+            "parte": "01 e 02"
+          },
+          "sourcePage": 1,
+          "sourcePosition": 3
+        },
+        {
+          "id": "04",
+          "raw": {
+            "titulo": "Repasses",
+            "convenio": "",
+            "nome": "Médicos",
+            "data": "2025",
+            "parte": ""
+          },
+          "sourcePage": 1,
+          "sourcePosition": 4
+        },
+        {
+          "id": "05",
+          "raw": {
+            "titulo": "IMAS",
+            "convenio": "",
+            "nome": "",
+            "data": "05/2025",
+            "parte": "01 e 02"
+          },
+          "sourcePage": 1,
+          "sourcePosition": 5
+        },
+        {
+          "id": "06",
+          "raw": {
+            "titulo": "IMAS",
+            "convenio": "",
+            "nome": "",
+            "data": "03/2025",
+            "parte": "05 e 06"
+          },
+          "sourcePage": 1,
+          "sourcePosition": 6
+        },
+        {
+          "id": "07",
+          "raw": {
+            "titulo": "IMAS",
+            "convenio": "",
+            "nome": "",
+            "data": "02/2025",
+            "parte": "03 e 04"
+          },
+          "sourcePage": 1,
+          "sourcePosition": 7
+        },
+        {
+          "id": "08",
+          "raw": {
+            "titulo": "IMAS",
+            "convenio": "",
+            "nome": "",
+            "data": "02/2025",
+            "parte": "01 e 02"
+          },
+          "sourcePage": 1,
+          "sourcePosition": 8
+        },
+        {
+          "id": "09",
+          "raw": {
+            "titulo": "IMAS",
+            "convenio": "",
+            "nome": "",
+            "data": "06/2025",
+            "parte": "02"
+          },
+          "sourcePage": 1,
+          "sourcePosition": 9
+        },
+        {
+          "id": "10",
+          "raw": {
+            "titulo": "IMAS",
+            "convenio": "",
+            "nome": "",
+            "data": "06/2025",
+            "parte": "01"
+          },
+          "sourcePage": 1,
+          "sourcePosition": 10
+        },
+        {
+          "id": "11",
+          "raw": {
+            "titulo": "IMAS",
+            "convenio": "",
+            "nome": "",
+            "data": "05/2025",
+            "parte": "05"
+          },
+          "sourcePage": 1,
+          "sourcePosition": 11
+        },
+        {
+          "id": "12",
+          "raw": {
+            "titulo": "IMAS",
+            "convenio": "",
+            "nome": "",
+            "data": "05/2025",
+            "parte": "03/04"
+          },
+          "sourcePage": 1,
+          "sourcePosition": 12
+        }
+      ]
+    },
+    {
+      "id": "02",
+      "positions": [
+        {
+          "id": "01",
+          "raw": {
+            "titulo": "IMAS",
+            "convenio": "",
+            "nome": "",
+            "data": "08/2025",
+            "parte": "01 e 02"
+          },
+          "sourcePage": 2,
+          "sourcePosition": 1
+        },
+        {
+          "id": "02",
+          "raw": {
+            "titulo": "IMAS",
+            "convenio": "",
+            "nome": "",
+            "data": "07/2025",
+            "parte": "3 até 4"
+          },
+          "sourcePage": 2,
+          "sourcePosition": 2
+        },
+        {
+          "id": "03",
+          "raw": {
+            "titulo": "IMAS",
+            "convenio": "",
+            "nome": "",
+            "data": "07/2025",
+            "parte": "01 até 02"
+          },
+          "sourcePage": 2,
+          "sourcePosition": 3
+        },
+        {
+          "id": "04",
+          "raw": {
+            "titulo": "IMAS",
+            "convenio": "",
+            "nome": "",
+            "data": "06/2025",
+            "parte": "03 e 04"
+          },
+          "sourcePage": 2,
+          "sourcePosition": 4
+        },
+        {
+          "id": "05",
+          "raw": {
+            "titulo": "IMAS",
+            "convenio": "",
+            "nome": "",
+            "data": "10/2028",
+            "parte": "1 e 2"
+          },
+          "sourcePage": 2,
+          "sourcePosition": 5
+        },
+        {
+          "id": "06",
+          "raw": {
+            "titulo": "IMAS",
+            "convenio": "",
+            "nome": "",
+            "data": "09/2025",
+            "parte": "03 e 04"
+          },
+          "sourcePage": 2,
+          "sourcePosition": 6
+        },
+        {
+          "id": "07",
+          "raw": {
+            "titulo": "IMAS",
+            "convenio": "",
+            "nome": "",
+            "data": "09/2025",
+            "parte": "01 e 02"
+          },
+          "sourcePage": 2,
+          "sourcePosition": 7
+        },
+        {
+          "id": "08",
+          "raw": {
+            "titulo": "IMAS",
+            "convenio": "",
+            "nome": "",
+            "data": "08/2025",
+            "parte": "03 e 04"
+          },
+          "sourcePage": 2,
+          "sourcePosition": 8
+        },
+        {
+          "id": "09",
+          "raw": {
+            "titulo": "IMAS",
+            "convenio": "",
+            "nome": "",
+            "data": "11/2025",
+            "parte": "03, 04 e 05"
+          },
+          "sourcePage": 2,
+          "sourcePosition": 9
+        },
+        {
+          "id": "10",
+          "raw": {
+            "titulo": "IMAS",
+            "convenio": "",
+            "nome": "",
+            "data": "11/2025",
+            "parte": "01 e 02"
+          },
+          "sourcePage": 2,
+          "sourcePosition": 10
+        },
+        {
+          "id": "11",
+          "raw": {
+            "titulo": "IMAS",
+            "convenio": "",
+            "nome": "",
+            "data": "10/2025",
+            "parte": "05"
+          },
+          "sourcePage": 2,
+          "sourcePosition": 11
+        },
+        {
+          "id": "12",
+          "raw": {
+            "titulo": "IMAS",
+            "convenio": "",
+            "nome": "",
+            "data": "10/2025",
+            "parte": "03 e 04"
+          },
+          "sourcePage": 2,
+          "sourcePosition": 12
+        },
+        {
+          "id": "13",
+          "raw": {
+            "titulo": "IPASGO",
+            "convenio": "",
+            "nome": "",
+            "data": "01/2025",
+            "parte": "03 e 04"
+          },
+          "sourcePage": 2,
+          "sourcePosition": 13
+        },
+        {
+          "id": "14",
+          "raw": {
+            "titulo": "IPASGO",
+            "convenio": "",
+            "nome": "",
+            "data": "01/2025",
+            "parte": "01 e 02"
+          },
+          "sourcePage": 2,
+          "sourcePosition": 14
+        },
+        {
+          "id": "15",
+          "raw": {
+            "titulo": "IMAS",
+            "convenio": "",
+            "nome": "",
+            "data": "12/2025",
+            "parte": "03, 04 e 05"
+          },
+          "sourcePage": 2,
+          "sourcePosition": 15
+        },
+        {
+          "id": "16",
+          "raw": {
+            "titulo": "IMAS",
+            "convenio": "",
+            "nome": "",
+            "data": "12/2025",
+            "parte": "01 e 02"
+          },
+          "sourcePage": 2,
+          "sourcePosition": 16
+        }
+      ]
+    },
+    {
+      "id": "03",
+      "positions": [
+        {
+          "id": "01",
+          "raw": {
+            "titulo": "",
+            "convenio": "",
+            "nome": "Mais Saude",
+            "data": "12/2025; 01/2026",
+            "parte": ""
+          },
+          "sourcePage": 3,
+          "sourcePosition": 1
+        },
+        {
+          "id": "02",
+          "raw": {
+            "titulo": "",
+            "convenio": "",
+            "nome": "Mais Saude",
+            "data": "10 e 11; 2025",
+            "parte": ""
+          },
+          "sourcePage": 3,
+          "sourcePosition": 2
+        },
+        {
+          "id": "03",
+          "raw": {
+            "titulo": "",
+            "convenio": "",
+            "nome": "Mais Saude",
+            "data": "06 e 07; 2025",
+            "parte": ""
+          },
+          "sourcePage": 3,
+          "sourcePosition": 3
+        },
+        {
+          "id": "04",
+          "raw": {
+            "titulo": "",
+            "convenio": "",
+            "nome": "Mais Saude",
+            "data": "08 e 09; 2025",
+            "parte": ""
+          },
+          "sourcePage": 3,
+          "sourcePosition": 4
+        },
+        {
+          "id": "05",
+          "raw": {
+            "titulo": "",
+            "convenio": "Convenios",
+            "nome": "",
+            "data": "2025",
+            "parte": "1 A 12"
+          },
+          "sourcePage": 3,
+          "sourcePosition": 5
+        },
+        {
+          "id": "06",
+          "raw": {
+            "titulo": "",
+            "convenio": "Convenios",
+            "nome": "",
+            "data": "2025",
+            "parte": "1 A 12"
+          },
+          "sourcePage": 3,
+          "sourcePosition": 6
+        },
+        {
+          "id": "07",
+          "raw": {
+            "titulo": "",
+            "convenio": "",
+            "nome": "Unimed",
+            "data": "4, 05, 06 e 07; 2025",
+            "parte": ""
+          },
+          "sourcePage": 3,
+          "sourcePosition": 7
+        },
+        {
+          "id": "08",
+          "raw": {
+            "titulo": "",
+            "convenio": "",
+            "nome": "Unimed",
+            "data": "01/2025 a 03/2025",
+            "parte": ""
+          },
+          "sourcePage": 3,
+          "sourcePosition": 8
+        },
+        {
+          "id": "09",
+          "raw": {
+            "titulo": "IMAS",
+            "convenio": "",
+            "nome": "",
+            "data": "03/24; 2024",
+            "parte": "Parte 03 e 04"
+          },
+          "sourcePage": 3,
+          "sourcePosition": 9
+        },
+        {
+          "id": "10",
+          "raw": {
+            "titulo": "IMAS",
+            "convenio": "",
+            "nome": "",
+            "data": "03/2024; 2024",
+            "parte": "Parte 1 e 2"
+          },
+          "sourcePage": 3,
+          "sourcePosition": 10
+        },
+        {
+          "id": "11",
+          "raw": {
+            "titulo": "IMAS",
+            "convenio": "",
+            "nome": "",
+            "data": "01 até 02; 2024",
+            "parte": ""
+          },
+          "sourcePage": 3,
+          "sourcePosition": 11
+        },
+        {
+          "id": "12",
+          "raw": {
+            "titulo": "",
+            "convenio": "",
+            "nome": "Particular",
+            "data": "01/2025 até 12/2025",
+            "parte": ""
+          },
+          "sourcePage": 3,
+          "sourcePosition": 12
+        },
+        {
+          "id": "13",
+          "raw": {
+            "titulo": "IMAS",
+            "convenio": "",
+            "nome": "",
+            "data": "04/2024; 2024",
+            "parte": "03, 04 e 05 partes"
+          },
+          "sourcePage": 3,
+          "sourcePosition": 13
+        },
+        {
+          "id": "14",
+          "raw": {
+            "titulo": "IMAS",
+            "convenio": "",
+            "nome": "",
+            "data": "04/2024",
+            "parte": ""
+          },
+          "sourcePage": 3,
+          "sourcePosition": 14
+        },
+        {
+          "id": "15",
+          "raw": {
+            "titulo": "IMAS",
+            "convenio": "",
+            "nome": "",
+            "data": "04/2024",
+            "parte": "Partes 1 e 2"
+          },
+          "sourcePage": 3,
+          "sourcePosition": 15
+        },
+        {
+          "id": "16",
+          "raw": {
+            "titulo": "IMAS",
+            "convenio": "",
+            "nome": "",
+            "data": "03/24; 2024",
+            "parte": ""
+          },
+          "sourcePage": 3,
+          "sourcePosition": 16
+        }
+      ]
+    },
+    {
+      "id": "04",
+      "positions": [
+        {
+          "id": "01",
+          "raw": {
+            "titulo": "IMAS",
+            "convenio": "",
+            "nome": "",
+            "data": "05/2024",
+            "parte": ""
+          },
+          "sourcePage": 4,
+          "sourcePosition": 1
+        },
+        {
+          "id": "02",
+          "raw": {
+            "titulo": "IMAS",
+            "convenio": "",
+            "nome": "",
+            "data": "05/24",
+            "parte": ""
+          },
+          "sourcePage": 4,
+          "sourcePosition": 2
+        },
+        {
+          "id": "03",
+          "raw": {
+            "titulo": "IMAS",
+            "convenio": "",
+            "nome": "",
+            "data": "06/24",
+            "parte": "A a i"
+          },
+          "sourcePage": 4,
+          "sourcePosition": 3
+        },
+        {
+          "id": "04",
+          "raw": {
+            "titulo": "IMAS",
+            "convenio": "",
+            "nome": "",
+            "data": "06/24",
+            "parte": "J a M"
+          },
+          "sourcePage": 4,
+          "sourcePosition": 4
+        },
+        {
+          "id": "05",
+          "raw": {
+            "titulo": "IMAS",
+            "convenio": "",
+            "nome": "",
+            "data": "06/24",
+            "parte": "N a Z"
+          },
+          "sourcePage": 4,
+          "sourcePosition": 5
+        },
+        {
+          "id": "06",
+          "raw": {
+            "titulo": "IMAS",
+            "convenio": "",
+            "nome": "",
+            "data": "07/24",
+            "parte": "Parte 1"
+          },
+          "sourcePage": 4,
+          "sourcePosition": 6
+        },
+        {
+          "id": "07",
+          "raw": {
+            "titulo": "IMAS",
+            "convenio": "",
+            "nome": "",
+            "data": "07/24",
+            "parte": "Parte 2"
+          },
+          "sourcePage": 4,
+          "sourcePosition": 7
+        },
+        {
+          "id": "08",
+          "raw": {
+            "titulo": "IMAS",
+            "convenio": "",
+            "nome": "",
+            "data": "07/24",
+            "parte": "Parte 3"
+          },
+          "sourcePage": 4,
+          "sourcePosition": 8
+        },
+        {
+          "id": "09",
+          "raw": {
+            "titulo": "IMAS",
+            "convenio": "",
+            "nome": "",
+            "data": "07/24",
+            "parte": "Parte 4 e 5"
+          },
+          "sourcePage": 4,
+          "sourcePosition": 9
+        },
+        {
+          "id": "10",
+          "raw": {
+            "titulo": "IMAS",
+            "convenio": "",
+            "nome": "",
+            "data": "08/24",
+            "parte": "Parte 1, 2 e 3"
+          },
+          "sourcePage": 4,
+          "sourcePosition": 10
+        },
+        {
+          "id": "11",
+          "raw": {
+            "titulo": "IMAS",
+            "convenio": "",
+            "nome": "",
+            "data": "08/24",
+            "parte": "Parte 04 e 05"
+          },
+          "sourcePage": 4,
+          "sourcePosition": 11
+        },
+        {
+          "id": "12",
+          "raw": {
+            "titulo": "IMAS",
+            "convenio": "",
+            "nome": "",
+            "data": "09/24",
+            "parte": "Parte 1 e 2"
+          },
+          "sourcePage": 4,
+          "sourcePosition": 12
+        },
+        {
+          "id": "13",
+          "raw": {
+            "titulo": "IMAS",
+            "convenio": "",
+            "nome": "",
+            "data": "10/24",
+            "parte": "Parte 04 e 05"
+          },
+          "sourcePage": 4,
+          "sourcePosition": 13
+        },
+        {
+          "id": "14",
+          "raw": {
+            "titulo": "IMAS",
+            "convenio": "",
+            "nome": "",
+            "data": "10/24",
+            "parte": "Parte 03"
+          },
+          "sourcePage": 4,
+          "sourcePosition": 14
+        },
+        {
+          "id": "15",
+          "raw": {
+            "titulo": "IMAS",
+            "convenio": "",
+            "nome": "",
+            "data": "10/24",
+            "parte": "Parte 01 e 02"
+          },
+          "sourcePage": 4,
+          "sourcePosition": 15
+        },
+        {
+          "id": "16",
+          "raw": {
+            "titulo": "IMAS",
+            "convenio": "",
+            "nome": "",
+            "data": "09/2024",
+            "parte": "Parte 03 e 04"
+          },
+          "sourcePage": 4,
+          "sourcePosition": 16
+        }
+      ]
+    },
+    {
+      "id": "05",
+      "positions": [
+        {
+          "id": "01",
+          "raw": {
+            "titulo": "IPASGO",
+            "convenio": "",
+            "nome": "",
+            "data": "04/2025",
+            "parte": "02 e 03"
+          },
+          "sourcePage": 5,
+          "sourcePosition": 1
+        },
+        {
+          "id": "02",
+          "raw": {
+            "titulo": "IPASGO",
+            "convenio": "",
+            "nome": "",
+            "data": "04/2025",
+            "parte": "01"
+          },
+          "sourcePage": 5,
+          "sourcePosition": 2
+        },
+        {
+          "id": "03",
+          "raw": {
+            "titulo": "IPASGO",
+            "convenio": "",
+            "nome": "",
+            "data": "02/2025",
+            "parte": "03"
+          },
+          "sourcePage": 5,
+          "sourcePosition": 3
+        },
+        {
+          "id": "04",
+          "raw": {
+            "titulo": "IPASGO",
+            "convenio": "",
+            "nome": "",
+            "data": "02/2025",
+            "parte": "1 e 2"
+          },
+          "sourcePage": 5,
+          "sourcePosition": 4
+        },
+        {
+          "id": "05",
+          "raw": {
+            "titulo": "IPASGO",
+            "convenio": "",
+            "nome": "",
+            "data": "08/2025",
+            "parte": "1, 2 e 3"
+          },
+          "sourcePage": 5,
+          "sourcePosition": 5
+        },
+        {
+          "id": "06",
+          "raw": {
+            "titulo": "IPASGO",
+            "convenio": "",
+            "nome": "",
+            "data": "07/2025",
+            "parte": "01 até 03"
+          },
+          "sourcePage": 5,
+          "sourcePosition": 6
+        },
+        {
+          "id": "07",
+          "raw": {
+            "titulo": "IPASGO",
+            "convenio": "",
+            "nome": "",
+            "data": "06/2025",
+            "parte": "1, 2, 3 e 4"
+          },
+          "sourcePage": 5,
+          "sourcePosition": 7
+        },
+        {
+          "id": "08",
+          "raw": {
+            "titulo": "IPASGO",
+            "convenio": "",
+            "nome": "",
+            "data": "05/2025",
+            "parte": "1, 2, 3"
+          },
+          "sourcePage": 5,
+          "sourcePosition": 8
+        },
+        {
+          "id": "09",
+          "raw": {
+            "titulo": "IPASGO",
+            "convenio": "",
+            "nome": "",
+            "data": "10/2025",
+            "parte": "2 e 3"
+          },
+          "sourcePage": 5,
+          "sourcePosition": 9
+        },
+        {
+          "id": "10",
+          "raw": {
+            "titulo": "IPASGO",
+            "convenio": "",
+            "nome": "",
+            "data": "10/2025",
+            "parte": "01"
+          },
+          "sourcePage": 5,
+          "sourcePosition": 10
+        },
+        {
+          "id": "11",
+          "raw": {
+            "titulo": "IPASGO",
+            "convenio": "",
+            "nome": "",
+            "data": "09/2025",
+            "parte": "03"
+          },
+          "sourcePage": 5,
+          "sourcePosition": 11
+        },
+        {
+          "id": "12",
+          "raw": {
+            "titulo": "IPASGO",
+            "convenio": "",
+            "nome": "",
+            "data": "09/2025",
+            "parte": "1, 2"
+          },
+          "sourcePage": 5,
+          "sourcePosition": 12
+        },
+        {
+          "id": "13",
+          "raw": {
+            "titulo": "",
+            "convenio": "",
+            "nome": "MAIS Saude",
+            "data": "/2025",
+            "parte": "4 e 05"
+          },
+          "sourcePage": 5,
+          "sourcePosition": 13
+        },
+        {
+          "id": "14",
+          "raw": {
+            "titulo": "IPASGO",
+            "convenio": "",
+            "nome": "",
+            "data": "12/2025",
+            "parte": "03"
+          },
+          "sourcePage": 5,
+          "sourcePosition": 14
+        },
+        {
+          "id": "15",
+          "raw": {
+            "titulo": "IPASGO",
+            "convenio": "",
+            "nome": "",
+            "data": "12/2025",
+            "parte": "1 e 2"
+          },
+          "sourcePage": 5,
+          "sourcePosition": 15
+        },
+        {
+          "id": "16",
+          "raw": {
+            "titulo": "IPASGO",
+            "convenio": "",
+            "nome": "",
+            "data": "11/2025",
+            "parte": "1, 2 e 3"
+          },
+          "sourcePage": 5,
+          "sourcePosition": 16
+        }
+      ]
+    },
+    {
+      "id": "06",
+      "positions": [
+        {
+          "id": "01",
+          "raw": {
+            "titulo": "IMAS",
+            "convenio": "",
+            "nome": "",
+            "data": "11/2024",
+            "parte": "05"
+          },
+          "sourcePage": 6,
+          "sourcePosition": 1
+        },
+        {
+          "id": "02",
+          "raw": {
+            "titulo": "IMAS",
+            "convenio": "",
+            "nome": "",
+            "data": "11/2024",
+            "parte": "3 e 4"
+          },
+          "sourcePage": 6,
+          "sourcePosition": 2
+        },
+        {
+          "id": "03",
+          "raw": {
+            "titulo": "IMAS",
+            "convenio": "",
+            "nome": "",
+            "data": "11/2024",
+            "parte": "1 e 2"
+          },
+          "sourcePage": 6,
+          "sourcePosition": 3
+        },
+        {
+          "id": "04",
+          "raw": {
+            "titulo": "IPASGO",
+            "convenio": "",
+            "nome": "",
+            "data": "01/2024",
+            "parte": "A até L"
+          },
+          "sourcePage": 6,
+          "sourcePosition": 4
+        },
+        {
+          "id": "05",
+          "raw": {
+            "titulo": "IMAS",
+            "convenio": "",
+            "nome": "",
+            "data": "12/2024",
+            "parte": ""
+          },
+          "sourcePage": 6,
+          "sourcePosition": 5
+        },
+        {
+          "id": "06",
+          "raw": {
+            "titulo": "IMAS",
+            "convenio": "",
+            "nome": "",
+            "data": "12/2024",
+            "parte": ""
+          },
+          "sourcePage": 6,
+          "sourcePosition": 6
+        },
+        {
+          "id": "07",
+          "raw": {
+            "titulo": "IPASGO",
+            "convenio": "",
+            "nome": "",
+            "data": "03/2024",
+            "parte": "01 e 02"
+          },
+          "sourcePage": 6,
+          "sourcePosition": 7
+        },
+        {
+          "id": "08",
+          "raw": {
+            "titulo": "IPASGO",
+            "convenio": "",
+            "nome": "",
+            "data": "02/2024",
+            "parte": ""
+          },
+          "sourcePage": 6,
+          "sourcePosition": 8
+        },
+        {
+          "id": "09",
+          "raw": {
+            "titulo": "IPASGO",
+            "convenio": "",
+            "nome": "",
+            "data": "01/2024",
+            "parte": "M até Z"
+          },
+          "sourcePage": 6,
+          "sourcePosition": 9
+        },
+        {
+          "id": "10",
+          "raw": {
+            "titulo": "IPASGO",
+            "convenio": "",
+            "nome": "",
+            "data": "04/2024",
+            "parte": ""
+          },
+          "sourcePage": 6,
+          "sourcePosition": 10
+        },
+        {
+          "id": "11",
+          "raw": {
+            "titulo": "IPASGO",
+            "convenio": "",
+            "nome": "",
+            "data": "03/2024",
+            "parte": ""
+          },
+          "sourcePage": 6,
+          "sourcePosition": 11
+        },
+        {
+          "id": "12",
+          "raw": {
+            "titulo": "IPASGO",
+            "convenio": "",
+            "nome": "",
+            "data": "03/2024",
+            "parte": ""
+          },
+          "sourcePage": 6,
+          "sourcePosition": 12
+        },
+        {
+          "id": "13",
+          "raw": {
+            "titulo": "IPASGO",
+            "convenio": "",
+            "nome": "",
+            "data": "06/2024",
+            "parte": ""
+          },
+          "sourcePage": 6,
+          "sourcePosition": 13
+        },
+        {
+          "id": "14",
+          "raw": {
+            "titulo": "IPASGO",
+            "convenio": "",
+            "nome": "",
+            "data": "06/2024",
+            "parte": ""
+          },
+          "sourcePage": 6,
+          "sourcePosition": 14
+        },
+        {
+          "id": "15",
+          "raw": {
+            "titulo": "IPASGO",
+            "convenio": "",
+            "nome": "",
+            "data": "/2024",
+            "parte": ""
+          },
+          "sourcePage": 6,
+          "sourcePosition": 15
+        },
+        {
+          "id": "16",
+          "raw": {
+            "titulo": "IPASGO",
+            "convenio": "",
+            "nome": "",
+            "data": "7/2024",
+            "parte": "5"
+          },
+          "sourcePage": 6,
+          "sourcePosition": 16
+        },
+        {
+          "id": "17",
+          "raw": {
+            "titulo": "IPASGO",
+            "convenio": "",
+            "nome": "",
+            "data": "7/2024",
+            "parte": "2, 3 e 4"
+          },
+          "sourcePage": 6,
+          "sourcePosition": 17
+        },
+        {
+          "id": "18",
+          "raw": {
+            "titulo": "IPASGO",
+            "convenio": "",
+            "nome": "",
+            "data": "07/2024",
+            "parte": "1"
+          },
+          "sourcePage": 6,
+          "sourcePosition": 18
+        }
+      ]
+    },
+    {
+      "id": "07",
+      "positions": [
+        {
+          "id": "01",
+          "raw": {
+            "titulo": "IPASGO",
+            "convenio": "",
+            "nome": "",
+            "data": "08/2024",
+            "parte": ""
+          },
+          "sourcePage": 7,
+          "sourcePosition": 1
+        },
+        {
+          "id": "02",
+          "raw": {
+            "titulo": "IPASGO",
+            "convenio": "",
+            "nome": "",
+            "data": "08/2024",
+            "parte": ""
+          },
+          "sourcePage": 7,
+          "sourcePosition": 2
+        },
+        {
+          "id": "03",
+          "raw": {
+            "titulo": "IPASGO",
+            "convenio": "",
+            "nome": "",
+            "data": "09/2024",
+            "parte": "Parte 1, 2 e 3"
+          },
+          "sourcePage": 7,
+          "sourcePosition": 3
+        },
+        {
+          "id": "04",
+          "raw": {
+            "titulo": "IPASGO",
+            "convenio": "",
+            "nome": "",
+            "data": "09/2024",
+            "parte": "Parte 4, 5 e 6"
+          },
+          "sourcePage": 7,
+          "sourcePosition": 4
+        },
+        {
+          "id": "05",
+          "raw": {
+            "titulo": "IPASGO",
+            "convenio": "",
+            "nome": "",
+            "data": "10/2024",
+            "parte": "Parte 4 e 5"
+          },
+          "sourcePage": 7,
+          "sourcePosition": 5
+        },
+        {
+          "id": "06",
+          "raw": {
+            "titulo": "IPASGO",
+            "convenio": "",
+            "nome": "",
+            "data": "11/2024",
+            "parte": ""
+          },
+          "sourcePage": 7,
+          "sourcePosition": 6
+        },
+        {
+          "id": "07",
+          "raw": {
+            "titulo": "IPASGO",
+            "convenio": "",
+            "nome": "",
+            "data": "11/2024",
+            "parte": ""
+          },
+          "sourcePage": 7,
+          "sourcePosition": 7
+        },
+        {
+          "id": "08",
+          "raw": {
+            "titulo": "IPASGO",
+            "convenio": "",
+            "nome": "",
+            "data": "11/2024",
+            "parte": ""
+          },
+          "sourcePage": 7,
+          "sourcePosition": 8
+        },
+        {
+          "id": "09",
+          "raw": {
+            "titulo": "IPASGO",
+            "convenio": "",
+            "nome": "",
+            "data": "12/2024",
+            "parte": ""
+          },
+          "sourcePage": 7,
+          "sourcePosition": 9
+        },
+        {
+          "id": "10",
+          "raw": {
+            "titulo": "IPASGO",
+            "convenio": "",
+            "nome": "",
+            "data": "12/2024",
+            "parte": ""
+          },
+          "sourcePage": 7,
+          "sourcePosition": 10
+        },
+        {
+          "id": "11",
+          "raw": {
+            "titulo": "IPASGO",
+            "convenio": "",
+            "nome": "",
+            "data": "12/2024",
+            "parte": ""
+          },
+          "sourcePage": 7,
+          "sourcePosition": 11
+        },
+        {
+          "id": "12",
+          "raw": {
+            "titulo": "",
+            "convenio": "",
+            "nome": "Unimed",
+            "data": "07/2024 A 02/2024",
+            "parte": ""
+          },
+          "sourcePage": 7,
+          "sourcePosition": 12
+        },
+        {
+          "id": "13",
+          "raw": {
+            "titulo": "",
+            "convenio": "",
+            "nome": "Unimed",
+            "data": "03/2024 até 04/24",
+            "parte": ""
+          },
+          "sourcePage": 7,
+          "sourcePosition": 13
+        },
+        {
+          "id": "14",
+          "raw": {
+            "titulo": "",
+            "convenio": "",
+            "nome": "Unimed",
+            "data": "05/24",
+            "parte": ""
+          },
+          "sourcePage": 7,
+          "sourcePosition": 14
+        },
+        {
+          "id": "15",
+          "raw": {
+            "titulo": "",
+            "convenio": "",
+            "nome": "Unimed",
+            "data": "07/2024",
+            "parte": ""
+          },
+          "sourcePage": 7,
+          "sourcePosition": 15
+        },
+        {
+          "id": "16",
+          "raw": {
+            "titulo": "",
+            "convenio": "",
+            "nome": "Unimed",
+            "data": "09/24 até 12/24",
+            "parte": ""
+          },
+          "sourcePage": 7,
+          "sourcePosition": 16
+        },
+        {
+          "id": "17",
+          "raw": {
+            "titulo": "",
+            "convenio": "",
+            "nome": "Mais Saude",
+            "data": "06 a 11/24",
+            "parte": ""
+          },
+          "sourcePage": 7,
+          "sourcePosition": 17
+        },
+        {
+          "id": "18",
+          "raw": {
+            "titulo": "",
+            "convenio": "",
+            "nome": "Mais Saude",
+            "data": "10/24 03/24",
+            "parte": ""
+          },
+          "sourcePage": 7,
+          "sourcePosition": 18
+        }
+      ]
+    },
+    {
+      "id": "08",
+      "positions": [
+        {
+          "id": "01",
+          "raw": {
+            "titulo": "Devolução Antigo",
+            "convenio": "IPASGO e IMAS",
+            "nome": "Recurso glosa",
+            "data": "2022",
+            "parte": ""
+          },
+          "sourcePage": 8,
+          "sourcePosition": 1
+        },
+        {
+          "id": "02",
+          "raw": {
+            "titulo": "Faturamento",
+            "convenio": "",
+            "nome": "Convênios",
+            "data": "07/2022 a 11/2023",
+            "parte": ""
+          },
+          "sourcePage": 8,
+          "sourcePosition": 2
+        },
+        {
+          "id": "03",
+          "raw": {
+            "titulo": "Guias",
+            "convenio": "",
+            "nome": "Faturadas",
+            "data": "01/22 a 06/2022",
+            "parte": ""
+          },
+          "sourcePage": 8,
+          "sourcePosition": 3
+        },
+        {
+          "id": "04",
+          "raw": {
+            "titulo": "Prescrições",
+            "convenio": "",
+            "nome": "",
+            "data": "Novbro 2022; Dezembro 2022; Janeiro 2023",
+            "parte": ""
+          },
+          "sourcePage": 8,
+          "sourcePosition": 4
+        },
+        {
+          "id": "05",
+          "raw": {
+            "titulo": "Protocolos",
+            "convenio": "",
+            "nome": "Prescrições",
+            "data": "2022/2023/2024",
+            "parte": ""
+          },
+          "sourcePage": 8,
+          "sourcePosition": 5
+        },
+        {
+          "id": "06",
+          "raw": {
+            "titulo": "Convênios",
+            "convenio": "",
+            "nome": "",
+            "data": "2022",
+            "parte": ""
+          },
+          "sourcePage": 8,
+          "sourcePosition": 6
+        },
+        {
+          "id": "07",
+          "raw": {
+            "titulo": "IMAS",
+            "convenio": "",
+            "nome": "",
+            "data": "08 a 09 2021",
+            "parte": ""
+          },
+          "sourcePage": 8,
+          "sourcePosition": 7
+        },
+        {
+          "id": "08",
+          "raw": {
+            "titulo": "IMAS",
+            "convenio": "",
+            "nome": "",
+            "data": "06/2021 E 07/2021",
+            "parte": ""
+          },
+          "sourcePage": 8,
+          "sourcePosition": 8
+        },
+        {
+          "id": "09",
+          "raw": {
+            "titulo": "IMAS",
+            "convenio": "",
+            "nome": "",
+            "data": "01/21 a 05/21",
+            "parte": ""
+          },
+          "sourcePage": 8,
+          "sourcePosition": 9
+        },
+        {
+          "id": "10",
+          "raw": {
+            "titulo": "IPASGO",
+            "convenio": "",
+            "nome": "",
+            "data": "08/2021",
+            "parte": ""
+          },
+          "sourcePage": 8,
+          "sourcePosition": 10
+        },
+        {
+          "id": "11",
+          "raw": {
+            "titulo": "IPASGO",
+            "convenio": "",
+            "nome": "",
+            "data": "05 a 07/2021",
+            "parte": ""
+          },
+          "sourcePage": 8,
+          "sourcePosition": 11
+        },
+        {
+          "id": "12",
+          "raw": {
+            "titulo": "IPASGO",
+            "convenio": "",
+            "nome": "",
+            "data": "01/2021 a 04/2021",
+            "parte": ""
+          },
+          "sourcePage": 8,
+          "sourcePosition": 12
+        },
+        {
+          "id": "13",
+          "raw": {
+            "titulo": "IPASGO",
+            "convenio": "",
+            "nome": "",
+            "data": "11/2021",
+            "parte": ""
+          },
+          "sourcePage": 8,
+          "sourcePosition": 13
+        },
+        {
+          "id": "14",
+          "raw": {
+            "titulo": "IPASGO",
+            "convenio": "",
+            "nome": "",
+            "data": "10/2021",
+            "parte": ""
+          },
+          "sourcePage": 8,
+          "sourcePosition": 14
+        },
+        {
+          "id": "15",
+          "raw": {
+            "titulo": "IPASGO",
+            "convenio": "",
+            "nome": "",
+            "data": "09/2021",
+            "parte": ""
+          },
+          "sourcePage": 8,
+          "sourcePosition": 15
+        },
+        {
+          "id": "16",
+          "raw": {
+            "titulo": "Unimed",
+            "convenio": "",
+            "nome": "",
+            "data": "09/2021 a 12/2021",
+            "parte": ""
+          },
+          "sourcePage": 8,
+          "sourcePosition": 16
+        },
+        {
+          "id": "17",
+          "raw": {
+            "titulo": "Unimed",
+            "convenio": "",
+            "nome": "",
+            "data": "01/2021 a 08/2021",
+            "parte": ""
+          },
+          "sourcePage": 8,
+          "sourcePosition": 17
+        },
+        {
+          "id": "18",
+          "raw": {
+            "titulo": "IPASGO",
+            "convenio": "",
+            "nome": "",
+            "data": "12/2021",
+            "parte": ""
+          },
+          "sourcePage": 8,
+          "sourcePosition": 18
+        }
+      ]
+    },
+    {
+      "id": "09",
+      "positions": [
+        {
+          "id": "01",
+          "raw": {
+            "titulo": "IPASGO",
+            "convenio": "",
+            "nome": "",
+            "data": "04/2022",
+            "parte": ""
+          },
+          "sourcePage": 9,
+          "sourcePosition": 1
+        },
+        {
+          "id": "02",
+          "raw": {
+            "titulo": "IPASGO",
+            "convenio": "",
+            "nome": "",
+            "data": "04/2022",
+            "parte": ""
+          },
+          "sourcePage": 9,
+          "sourcePosition": 2
+        },
+        {
+          "id": "03",
+          "raw": {
+            "titulo": "IPASGO",
+            "convenio": "",
+            "nome": "",
+            "data": "03/2022",
+            "parte": ""
+          },
+          "sourcePage": 9,
+          "sourcePosition": 3
+        },
+        {
+          "id": "04",
+          "raw": {
+            "titulo": "IPASGO",
+            "convenio": "",
+            "nome": "",
+            "data": "06/2022",
+            "parte": ""
+          },
+          "sourcePage": 9,
+          "sourcePosition": 4
+        },
+        {
+          "id": "05",
+          "raw": {
+            "titulo": "IPASGO",
+            "convenio": "",
+            "nome": "",
+            "data": "05/2022",
+            "parte": ""
+          },
+          "sourcePage": 9,
+          "sourcePosition": 5
+        },
+        {
+          "id": "06",
+          "raw": {
+            "titulo": "IPASGO",
+            "convenio": "",
+            "nome": "",
+            "data": "05/2022",
+            "parte": ""
+          },
+          "sourcePage": 9,
+          "sourcePosition": 6
+        },
+        {
+          "id": "07",
+          "raw": {
+            "titulo": "IPASGO",
+            "convenio": "",
+            "nome": "",
+            "data": "08/2022",
+            "parte": ""
+          },
+          "sourcePage": 9,
+          "sourcePosition": 7
+        },
+        {
+          "id": "08",
+          "raw": {
+            "titulo": "IPASGO",
+            "convenio": "",
+            "nome": "",
+            "data": "07/2022",
+            "parte": ""
+          },
+          "sourcePage": 9,
+          "sourcePosition": 8
+        },
+        {
+          "id": "09",
+          "raw": {
+            "titulo": "IPASGO",
+            "convenio": "",
+            "nome": "",
+            "data": "07/2022",
+            "parte": ""
+          },
+          "sourcePage": 9,
+          "sourcePosition": 9
+        },
+        {
+          "id": "10",
+          "raw": {
+            "titulo": "IPASGO",
+            "convenio": "",
+            "nome": "",
+            "data": "10/2022",
+            "parte": ""
+          },
+          "sourcePage": 9,
+          "sourcePosition": 10
+        },
+        {
+          "id": "11",
+          "raw": {
+            "titulo": "IPASGO",
+            "convenio": "",
+            "nome": "",
+            "data": "09/2022",
+            "parte": ""
+          },
+          "sourcePage": 9,
+          "sourcePosition": 11
+        },
+        {
+          "id": "12",
+          "raw": {
+            "titulo": "IPASGO",
+            "convenio": "",
+            "nome": "",
+            "data": "08/2022",
+            "parte": ""
+          },
+          "sourcePage": 9,
+          "sourcePosition": 12
+        },
+        {
+          "id": "13",
+          "raw": {
+            "titulo": "UNIMED",
+            "convenio": "",
+            "nome": "",
+            "data": "2022",
+            "parte": ""
+          },
+          "sourcePage": 9,
+          "sourcePosition": 13
+        },
+        {
+          "id": "14",
+          "raw": {
+            "titulo": "IPASGO",
+            "convenio": "",
+            "nome": "",
+            "data": "12/2022",
+            "parte": ""
+          },
+          "sourcePage": 9,
+          "sourcePosition": 14
+        },
+        {
+          "id": "15",
+          "raw": {
+            "titulo": "IPASGO",
+            "convenio": "",
+            "nome": "",
+            "data": "11/2022",
+            "parte": ""
+          },
+          "sourcePage": 9,
+          "sourcePosition": 15
+        },
+        {
+          "id": "16",
+          "raw": {
+            "titulo": "UNIMED",
+            "convenio": "",
+            "nome": "",
+            "data": "10/2022",
+            "parte": "a"
+          },
+          "sourcePage": 9,
+          "sourcePosition": 16
+        },
+        {
+          "id": "17",
+          "raw": {
+            "titulo": "UNIMED",
+            "convenio": "",
+            "nome": "",
+            "data": "07/2022 a 09/2022",
+            "parte": ""
+          },
+          "sourcePage": 9,
+          "sourcePosition": 17
+        },
+        {
+          "id": "18",
+          "raw": {
+            "titulo": "UNIMED",
+            "convenio": "",
+            "nome": "",
+            "data": "01/2022 a 03/2022",
+            "parte": "PAG9"
+          },
+          "sourcePage": 9,
+          "sourcePosition": 18
+        }
+      ]
+    },
+    {
+      "id": "10",
+      "positions": [
+        {
+          "id": "01",
+          "raw": {
+            "titulo": "",
+            "convenio": "Unimed",
+            "nome": "",
+            "data": "02/2023 a 03/2023",
+            "parte": ""
+          },
+          "sourcePage": 10,
+          "sourcePosition": 1
+        },
+        {
+          "id": "02",
+          "raw": {
+            "titulo": "",
+            "convenio": "Particulares",
+            "nome": "",
+            "data": "02/2023 até 12/2023",
+            "parte": ""
+          },
+          "sourcePage": 10,
+          "sourcePosition": 2
+        },
+        {
+          "id": "03",
+          "raw": {
+            "titulo": "",
+            "convenio": "Particulares",
+            "nome": "Escaneados",
+            "data": "02/2022 a 02/2023",
+            "parte": ""
+          },
+          "sourcePage": 10,
+          "sourcePosition": 3
+        },
+        {
+          "id": "04",
+          "raw": {
+            "titulo": "",
+            "convenio": "UNIMED",
+            "nome": "",
+            "data": "08/2023 a 09/2023",
+            "parte": ""
+          },
+          "sourcePage": 10,
+          "sourcePosition": 4
+        },
+        {
+          "id": "05",
+          "raw": {
+            "titulo": "",
+            "convenio": "UNIMED",
+            "nome": "",
+            "data": "06/2023 a 07/2023",
+            "parte": ""
+          },
+          "sourcePage": 10,
+          "sourcePosition": 5
+        },
+        {
+          "id": "06",
+          "raw": {
+            "titulo": "",
+            "convenio": "UNIMED",
+            "nome": "",
+            "data": "04/2023 a 05/2023",
+            "parte": ""
+          },
+          "sourcePage": 10,
+          "sourcePosition": 6
+        },
+        {
+          "id": "07",
+          "raw": {
+            "titulo": "",
+            "convenio": "UNIMED",
+            "nome": "",
+            "data": "12/2022 01/2023",
+            "parte": ""
+          },
+          "sourcePage": 10,
+          "sourcePosition": 7
+        },
+        {
+          "id": "08",
+          "raw": {
+            "titulo": "",
+            "convenio": "UNIMED",
+            "nome": "",
+            "data": "12/2023",
+            "parte": ""
+          },
+          "sourcePage": 10,
+          "sourcePosition": 8
+        },
+        {
+          "id": "09",
+          "raw": {
+            "titulo": "",
+            "convenio": "UNIMED",
+            "nome": "",
+            "data": "10/2023 a 11/2023",
+            "parte": ""
+          },
+          "sourcePage": 10,
+          "sourcePosition": 9
+        },
+        {
+          "id": "10",
+          "raw": {
+            "titulo": "IMAS",
+            "convenio": "",
+            "nome": "",
+            "data": "12/2021 e 01/2022",
+            "parte": ""
+          },
+          "sourcePage": 10,
+          "sourcePosition": 10
+        },
+        {
+          "id": "11",
+          "raw": {
+            "titulo": "IMAS",
+            "convenio": "",
+            "nome": "",
+            "data": "02/2022 a 03/2022",
+            "parte": ""
+          },
+          "sourcePage": 10,
+          "sourcePosition": 11
+        },
+        {
+          "id": "12",
+          "raw": {
+            "titulo": "IMAS",
+            "convenio": "",
+            "nome": "",
+            "data": "04/2022 a 05/2022",
+            "parte": ""
+          },
+          "sourcePage": 10,
+          "sourcePosition": 12
+        },
+        {
+          "id": "13",
+          "raw": {
+            "titulo": "IMAS",
+            "convenio": "",
+            "nome": "",
+            "data": "08/2022 a 09/2022",
+            "parte": ""
+          },
+          "sourcePage": 10,
+          "sourcePosition": 13
+        },
+        {
+          "id": "14",
+          "raw": {
+            "titulo": "IMAS",
+            "convenio": "",
+            "nome": "",
+            "data": "10/2022 a 11/2022",
+            "parte": ""
+          },
+          "sourcePage": 10,
+          "sourcePosition": 14
+        },
+        {
+          "id": "15",
+          "raw": {
+            "titulo": "IPASGO",
+            "convenio": "",
+            "nome": "",
+            "data": "01/2022",
+            "parte": ""
+          },
+          "sourcePage": 10,
+          "sourcePosition": 15
+        },
+        {
+          "id": "16",
+          "raw": {
+            "titulo": "IPASGO",
+            "convenio": "",
+            "nome": "",
+            "data": "01/2022",
+            "parte": ""
+          },
+          "sourcePage": 10,
+          "sourcePosition": 16
+        },
+        {
+          "id": "17",
+          "raw": {
+            "titulo": "IPASGO",
+            "convenio": "",
+            "nome": "",
+            "data": "02/2022",
+            "parte": ""
+          },
+          "sourcePage": 10,
+          "sourcePosition": 17
+        },
+        {
+          "id": "18",
+          "raw": {
+            "titulo": "IPASGO",
+            "convenio": "",
+            "nome": "",
+            "data": "02/22",
+            "parte": "PAG 10"
+          },
+          "sourcePage": 10,
+          "sourcePosition": 18
+        }
+      ]
+    },
+    {
+      "id": "11",
+      "positions": [
+        {
+          "id": "01",
+          "raw": {
+            "titulo": "IPASGO",
+            "convenio": "",
+            "nome": "",
+            "data": "06/2023",
+            "parte": ""
+          },
+          "sourcePage": 11,
+          "sourcePosition": 1
+        },
+        {
+          "id": "02",
+          "raw": {
+            "titulo": "IPASGO",
+            "convenio": "",
+            "nome": "",
+            "data": "05/2023",
+            "parte": ""
+          },
+          "sourcePage": 11,
+          "sourcePosition": 2
+        },
+        {
+          "id": "03",
+          "raw": {
+            "titulo": "IPASGO",
+            "convenio": "",
+            "nome": "",
+            "data": "04/2023",
+            "parte": ""
+          },
+          "sourcePage": 11,
+          "sourcePosition": 3
+        },
+        {
+          "id": "04",
+          "raw": {
+            "titulo": "IPASGO",
+            "convenio": "",
+            "nome": "",
+            "data": "08/2023",
+            "parte": ""
+          },
+          "sourcePage": 11,
+          "sourcePosition": 4
+        },
+        {
+          "id": "05",
+          "raw": {
+            "titulo": "IPASGO",
+            "convenio": "",
+            "nome": "",
+            "data": "07/2023",
+            "parte": "PARTE 2"
+          },
+          "sourcePage": 11,
+          "sourcePosition": 5
+        },
+        {
+          "id": "06",
+          "raw": {
+            "titulo": "IPASGO",
+            "convenio": "",
+            "nome": "",
+            "data": "07/2023",
+            "parte": "Parte 01"
+          },
+          "sourcePage": 11,
+          "sourcePosition": 6
+        },
+        {
+          "id": "07",
+          "raw": {
+            "titulo": "IPASGO",
+            "convenio": "",
+            "nome": "",
+            "data": "09/2023",
+            "parte": "Parte 02"
+          },
+          "sourcePage": 11,
+          "sourcePosition": 7
+        },
+        {
+          "id": "08",
+          "raw": {
+            "titulo": "IPASGO",
+            "convenio": "",
+            "nome": "",
+            "data": "09/2023",
+            "parte": "Parte 01"
+          },
+          "sourcePage": 11,
+          "sourcePosition": 8
+        },
+        {
+          "id": "09",
+          "raw": {
+            "titulo": "IPASGO",
+            "convenio": "",
+            "nome": "",
+            "data": "08/2023",
+            "parte": "M até Z"
+          },
+          "sourcePage": 11,
+          "sourcePosition": 9
+        },
+        {
+          "id": "10",
+          "raw": {
+            "titulo": "IPASGO",
+            "convenio": "",
+            "nome": "",
+            "data": "11/2023",
+            "parte": ""
+          },
+          "sourcePage": 11,
+          "sourcePosition": 10
+        },
+        {
+          "id": "11",
+          "raw": {
+            "titulo": "IPASGO",
+            "convenio": "",
+            "nome": "",
+            "data": "10/23",
+            "parte": ""
+          },
+          "sourcePage": 11,
+          "sourcePosition": 11
+        },
+        {
+          "id": "12",
+          "raw": {
+            "titulo": "IPASGO",
+            "convenio": "",
+            "nome": "",
+            "data": "10/2023",
+            "parte": ""
+          },
+          "sourcePage": 11,
+          "sourcePosition": 12
+        },
+        {
+          "id": "13",
+          "raw": {
+            "titulo": "IPASGO",
+            "convenio": "",
+            "nome": "",
+            "data": "12/2023",
+            "parte": "M até Z"
+          },
+          "sourcePage": 11,
+          "sourcePosition": 13
+        },
+        {
+          "id": "14",
+          "raw": {
+            "titulo": "IPASGO",
+            "convenio": "",
+            "nome": "",
+            "data": "12/2023",
+            "parte": "A até G"
+          },
+          "sourcePage": 11,
+          "sourcePosition": 14
+        },
+        {
+          "id": "15",
+          "raw": {
+            "titulo": "IPASGO",
+            "convenio": "",
+            "nome": "",
+            "data": "11/2023",
+            "parte": ""
+          },
+          "sourcePage": 11,
+          "sourcePosition": 15
+        },
+        {
+          "id": "16",
+          "raw": {
+            "titulo": "",
+            "convenio": "Convenios",
+            "nome": "Diversos",
+            "data": "08/2023 a 10/2023",
+            "parte": ""
+          },
+          "sourcePage": 11,
+          "sourcePosition": 16
+        },
+        {
+          "id": "17",
+          "raw": {
+            "titulo": "",
+            "convenio": "Convenio",
+            "nome": "",
+            "data": "12/2022",
+            "parte": "PAG 11"
+          },
+          "sourcePage": 11,
+          "sourcePosition": 17
+        },
+        {
+          "id": "18",
+          "raw": {
+            "titulo": "",
+            "convenio": "Convenio",
+            "nome": "Faturados",
+            "data": "05/2023 a 06/2023",
+            "parte": ""
+          },
+          "sourcePage": 11,
+          "sourcePosition": 18
+        }
+      ]
+    },
+    {
+      "id": "12",
+      "positions": [
+        {
+          "id": "01",
+          "raw": {
+            "titulo": "",
+            "convenio": "Convenios",
+            "nome": "Diversos",
+            "data": "05/2024",
+            "parte": "até X"
+          },
+          "sourcePage": 12,
+          "sourcePosition": 1
+        },
+        {
+          "id": "02",
+          "raw": {
+            "titulo": "",
+            "convenio": "Convenios",
+            "nome": "Diversos",
+            "data": "04/2024",
+            "parte": "até X"
+          },
+          "sourcePage": 12,
+          "sourcePosition": 2
+        },
+        {
+          "id": "03",
+          "raw": {
+            "titulo": "",
+            "convenio": "Convenios",
+            "nome": "Diversos",
+            "data": "02/2024",
+            "parte": "até X"
+          },
+          "sourcePage": 12,
+          "sourcePosition": 3
+        },
+        {
+          "id": "04",
+          "raw": {
+            "titulo": "",
+            "convenio": "Particular",
+            "nome": "",
+            "data": "2024",
+            "parte": ""
+          },
+          "sourcePage": 12,
+          "sourcePosition": 4
+        },
+        {
+          "id": "05",
+          "raw": {
+            "titulo": "",
+            "convenio": "Convenios",
+            "nome": "Diversos",
+            "data": "11/2023 a 01/2024",
+            "parte": ""
+          },
+          "sourcePage": 12,
+          "sourcePosition": 5
+        },
+        {
+          "id": "06",
+          "raw": {
+            "titulo": "",
+            "convenio": "Convenios",
+            "nome": "Diversos",
+            "data": "",
+            "parte": "Geap [ILEGÍVEL]"
+          },
+          "sourcePage": 12,
+          "sourcePosition": 6
+        },
+        {
+          "id": "07",
+          "raw": {
+            "titulo": "",
+            "convenio": "",
+            "nome": "",
+            "data": "",
+            "parte": "Tira Foto"
+          },
+          "sourcePage": 12,
+          "sourcePosition": 7
+        },
+        {
+          "id": "08",
+          "raw": {
+            "titulo": "IMAS",
+            "convenio": "",
+            "nome": "",
+            "data": "02/2023 a 03/2023",
+            "parte": ""
+          },
+          "sourcePage": 12,
+          "sourcePosition": 8
+        },
+        {
+          "id": "09",
+          "raw": {
+            "titulo": "IMAS",
+            "convenio": "",
+            "nome": "",
+            "data": "12/2022 e 01/2023",
+            "parte": ""
+          },
+          "sourcePage": 12,
+          "sourcePosition": 9
+        },
+        {
+          "id": "10",
+          "raw": {
+            "titulo": "",
+            "convenio": "Particular",
+            "nome": "",
+            "data": "2024",
+            "parte": ""
+          },
+          "sourcePage": 12,
+          "sourcePosition": 10
+        },
+        {
+          "id": "11",
+          "raw": {
+            "titulo": "IMAS",
+            "convenio": "",
+            "nome": "",
+            "data": "08/2023",
+            "parte": ""
+          },
+          "sourcePage": 12,
+          "sourcePosition": 11
+        },
+        {
+          "id": "12",
+          "raw": {
+            "titulo": "IMAS",
+            "convenio": "",
+            "nome": "",
+            "data": "06/2023 e 07/2023",
+            "parte": ""
+          },
+          "sourcePage": 12,
+          "sourcePosition": 12
+        },
+        {
+          "id": "13",
+          "raw": {
+            "titulo": "IMAS",
+            "convenio": "",
+            "nome": "",
+            "data": "04/2023 e 05/2023",
+            "parte": ""
+          },
+          "sourcePage": 12,
+          "sourcePosition": 13
+        },
+        {
+          "id": "14",
+          "raw": {
+            "titulo": "IMAS",
+            "convenio": "",
+            "nome": "",
+            "data": "12/2023",
+            "parte": ""
+          },
+          "sourcePage": 12,
+          "sourcePosition": 14
+        },
+        {
+          "id": "15",
+          "raw": {
+            "titulo": "IMAS",
+            "convenio": "",
+            "nome": "",
+            "data": "11/2023",
+            "parte": ""
+          },
+          "sourcePage": 12,
+          "sourcePosition": 15
+        },
+        {
+          "id": "16",
+          "raw": {
+            "titulo": "IMAS",
+            "convenio": "",
+            "nome": "",
+            "data": "09/2023",
+            "parte": ""
+          },
+          "sourcePage": 12,
+          "sourcePosition": 16
+        },
+        {
+          "id": "17",
+          "raw": {
+            "titulo": "IPASGO",
+            "convenio": "",
+            "nome": "",
+            "data": "03/23",
+            "parte": ""
+          },
+          "sourcePage": 12,
+          "sourcePosition": 17
+        },
+        {
+          "id": "18",
+          "raw": {
+            "titulo": "IPASGO",
+            "convenio": "",
+            "nome": "",
+            "data": "02/2023",
+            "parte": ""
+          },
+          "sourcePage": 12,
+          "sourcePosition": 18
+        },
+        {
+          "id": "19",
+          "raw": {
+            "titulo": "IPASGO",
+            "convenio": "",
+            "nome": "",
+            "data": "01/2023",
+            "parte": ""
+          },
+          "sourcePage": 12,
+          "sourcePosition": 19
+        }
+      ]
+    },
+    {
+      "id": "13",
+      "positions": [
+        {
+          "id": "01",
+          "raw": {
+            "titulo": "Prescrições",
+            "convenio": "",
+            "nome": "",
+            "data": "02/2021",
+            "parte": ""
+          },
+          "sourcePage": 13,
+          "sourcePosition": 1
+        },
+        {
+          "id": "02",
+          "raw": {
+            "titulo": "Prescrições",
+            "convenio": "",
+            "nome": "",
+            "data": "01/2021",
+            "parte": ""
+          },
+          "sourcePage": 13,
+          "sourcePosition": 2
+        },
+        {
+          "id": "03",
+          "raw": {
+            "titulo": "Guias Faturadas",
+            "convenio": "",
+            "nome": "",
+            "data": "01/2021 a 12/2021",
+            "parte": ""
+          },
+          "sourcePage": 13,
+          "sourcePosition": 3
+        },
+        {
+          "id": "04",
+          "raw": {
+            "titulo": "Prescrições",
+            "convenio": "",
+            "nome": "",
+            "data": "05/2021",
+            "parte": ""
+          },
+          "sourcePage": 13,
+          "sourcePosition": 4
+        },
+        {
+          "id": "05",
+          "raw": {
+            "titulo": "Prescrição",
+            "convenio": "",
+            "nome": "",
+            "data": "04/2021",
+            "parte": ""
+          },
+          "sourcePage": 13,
+          "sourcePosition": 5
+        },
+        {
+          "id": "06",
+          "raw": {
+            "titulo": "Prescrição",
+            "convenio": "",
+            "nome": "",
+            "data": "03/2021",
+            "parte": ""
+          },
+          "sourcePage": 13,
+          "sourcePosition": 6
+        },
+        {
+          "id": "07",
+          "raw": {
+            "titulo": "Prescrições",
+            "convenio": "",
+            "nome": "",
+            "data": "01/2020",
+            "parte": ""
+          },
+          "sourcePage": 13,
+          "sourcePosition": 7
+        },
+        {
+          "id": "08",
+          "raw": {
+            "titulo": "Prescrição",
+            "convenio": "",
+            "nome": "",
+            "data": "07/2021",
+            "parte": ""
+          },
+          "sourcePage": 13,
+          "sourcePosition": 8
+        },
+        {
+          "id": "09",
+          "raw": {
+            "titulo": "Prescrição",
+            "convenio": "",
+            "nome": "",
+            "data": "06/2021",
+            "parte": ""
+          },
+          "sourcePage": 13,
+          "sourcePosition": 9
+        },
+        {
+          "id": "10",
+          "raw": {
+            "titulo": "Prescrição",
+            "convenio": "",
+            "nome": "",
+            "data": "04/2020",
+            "parte": ""
+          },
+          "sourcePage": 13,
+          "sourcePosition": 10
+        },
+        {
+          "id": "11",
+          "raw": {
+            "titulo": "Prescrição",
+            "convenio": "",
+            "nome": "",
+            "data": "03/2020",
+            "parte": ""
+          },
+          "sourcePage": 13,
+          "sourcePosition": 11
+        },
+        {
+          "id": "12",
+          "raw": {
+            "titulo": "Prescrição",
+            "convenio": "",
+            "nome": "",
+            "data": "02/2020",
+            "parte": ""
+          },
+          "sourcePage": 13,
+          "sourcePosition": 12
+        },
+        {
+          "id": "13",
+          "raw": {
+            "titulo": "Prescrição",
+            "convenio": "",
+            "nome": "",
+            "data": "07/2020",
+            "parte": ""
+          },
+          "sourcePage": 13,
+          "sourcePosition": 13
+        },
+        {
+          "id": "14",
+          "raw": {
+            "titulo": "Prescrição",
+            "convenio": "",
+            "nome": "",
+            "data": "06/2020",
+            "parte": ""
+          },
+          "sourcePage": 13,
+          "sourcePosition": 14
+        },
+        {
+          "id": "15",
+          "raw": {
+            "titulo": "Prescrição",
+            "convenio": "",
+            "nome": "",
+            "data": "05/2020",
+            "parte": ""
+          },
+          "sourcePage": 13,
+          "sourcePosition": 15
+        },
+        {
+          "id": "16",
+          "raw": {
+            "titulo": "Prescrição",
+            "convenio": "",
+            "nome": "",
+            "data": "10/2020",
+            "parte": ""
+          },
+          "sourcePage": 13,
+          "sourcePosition": 16
+        },
+        {
+          "id": "17",
+          "raw": {
+            "titulo": "Prescrição",
+            "convenio": "",
+            "nome": "",
+            "data": "09/2020",
+            "parte": "PAG 13"
+          },
+          "sourcePage": 13,
+          "sourcePosition": 17
+        },
+        {
+          "id": "18",
+          "raw": {
+            "titulo": "Prescrição",
+            "convenio": "",
+            "nome": "",
+            "data": "08/2020",
+            "parte": ""
+          },
+          "sourcePage": 13,
+          "sourcePosition": 18
+        }
+      ]
+    },
+    {
+      "id": "14",
+      "positions": [
+        {
+          "id": "01",
+          "raw": {
+            "titulo": "IMAS",
+            "convenio": "",
+            "nome": "",
+            "data": "02/2020 a 07/2020",
+            "parte": ""
+          },
+          "sourcePage": 14,
+          "sourcePosition": 1
+        },
+        {
+          "id": "02",
+          "raw": {
+            "titulo": "Prescrições",
+            "convenio": "",
+            "nome": "",
+            "data": "12/2020",
+            "parte": ""
+          },
+          "sourcePage": 14,
+          "sourcePosition": 2
+        },
+        {
+          "id": "03",
+          "raw": {
+            "titulo": "Prescrições",
+            "convenio": "",
+            "nome": "",
+            "data": "11/2020",
+            "parte": ""
+          },
+          "sourcePage": 14,
+          "sourcePosition": 3
+        },
+        {
+          "id": "04",
+          "raw": {
+            "titulo": "IPASGO",
+            "convenio": "",
+            "nome": "",
+            "data": "09/2020 a 12/2020",
+            "parte": ""
+          },
+          "sourcePage": 14,
+          "sourcePosition": 4
+        },
+        {
+          "id": "05",
+          "raw": {
+            "titulo": "IPASGO",
+            "convenio": "",
+            "nome": "",
+            "data": "05/2020 a 08/2020",
+            "parte": ""
+          },
+          "sourcePage": 14,
+          "sourcePosition": 5
+        },
+        {
+          "id": "06",
+          "raw": {
+            "titulo": "IMAS",
+            "convenio": "",
+            "nome": "",
+            "data": "08/2020 a 12/2020",
+            "parte": ""
+          },
+          "sourcePage": 14,
+          "sourcePosition": 6
+        },
+        {
+          "id": "07",
+          "raw": {
+            "titulo": "Guias Faturadas",
+            "convenio": "",
+            "nome": "",
+            "data": "08/2020 a 12/2020",
+            "parte": ""
+          },
+          "sourcePage": 14,
+          "sourcePosition": 7
+        },
+        {
+          "id": "08",
+          "raw": {
+            "titulo": "Guias Faturadas",
+            "convenio": "",
+            "nome": "",
+            "data": "01/2020 a 07/2020",
+            "parte": ""
+          },
+          "sourcePage": 14,
+          "sourcePosition": 8
+        },
+        {
+          "id": "09",
+          "raw": {
+            "titulo": "IPASGO",
+            "convenio": "",
+            "nome": "",
+            "data": "12/2019 a 04/2020",
+            "parte": ""
+          },
+          "sourcePage": 14,
+          "sourcePosition": 9
+        },
+        {
+          "id": "10",
+          "raw": {
+            "titulo": "Demonstrativo de Pagamento",
+            "convenio": "convenio",
+            "nome": "",
+            "data": "",
+            "parte": ""
+          },
+          "sourcePage": 14,
+          "sourcePosition": 10
+        },
+        {
+          "id": "11",
+          "raw": {
+            "titulo": "Devolução Prontuario",
+            "convenio": "",
+            "nome": "multi Saude",
+            "data": "09/2020",
+            "parte": ""
+          },
+          "sourcePage": 14,
+          "sourcePosition": 11
+        },
+        {
+          "id": "12",
+          "raw": {
+            "titulo": "Prescrições",
+            "convenio": "",
+            "nome": "Particular",
+            "data": "2019 a 2021",
+            "parte": ""
+          },
+          "sourcePage": 14,
+          "sourcePosition": 12
+        },
+        {
+          "id": "13",
+          "raw": {
+            "titulo": "IMAS",
+            "convenio": "",
+            "nome": "",
+            "data": "06/2019 01/2020",
+            "parte": ""
+          },
+          "sourcePage": 14,
+          "sourcePosition": 13
+        },
+        {
+          "id": "14",
+          "raw": {
+            "titulo": "IPASGO",
+            "convenio": "",
+            "nome": "",
+            "data": "05/2019 a 08/2019",
+            "parte": ""
+          },
+          "sourcePage": 14,
+          "sourcePosition": 14
+        },
+        {
+          "id": "15",
+          "raw": {
+            "titulo": "IPASGO",
+            "convenio": "",
+            "nome": "",
+            "data": "01/2019 a 04/2019",
+            "parte": ""
+          },
+          "sourcePage": 14,
+          "sourcePosition": 15
+        },
+        {
+          "id": "16",
+          "raw": {
+            "titulo": "Faturamento",
+            "convenio": "",
+            "nome": "competencia",
+            "data": "01/2019 - 02/2019",
+            "parte": ""
+          },
+          "sourcePage": 14,
+          "sourcePosition": 16
+        },
+        {
+          "id": "17",
+          "raw": {
+            "titulo": "IPASGO",
+            "convenio": "",
+            "nome": "",
+            "data": "09/2019 - 10/2019 a 11/2019",
+            "parte": ""
+          },
+          "sourcePage": 14,
+          "sourcePosition": 17
+        },
+        {
+          "id": "18",
+          "raw": {
+            "titulo": "Unimed",
+            "convenio": "",
+            "nome": "",
+            "data": "07/2019 a 04/2020",
+            "parte": "PAR14"
+          },
+          "sourcePage": 14,
+          "sourcePosition": 18
+        }
+      ]
+    },
+    {
+      "id": "15",
+      "positions": [
+        {
+          "id": "01",
+          "raw": {
+            "titulo": "Faturamento",
+            "convenio": "",
+            "nome": "",
+            "data": "08/2019 a 10/2019",
+            "parte": ""
+          },
+          "sourcePage": 15,
+          "sourcePosition": 1
+        },
+        {
+          "id": "02",
+          "raw": {
+            "titulo": "Faturamento",
+            "convenio": "",
+            "nome": "",
+            "data": "05/2019 a 07/2019",
+            "parte": ""
+          },
+          "sourcePage": 15,
+          "sourcePosition": 2
+        },
+        {
+          "id": "03",
+          "raw": {
+            "titulo": "Faturamento",
+            "convenio": "",
+            "nome": "",
+            "data": "03/2019 a 04/2019",
+            "parte": ""
+          },
+          "sourcePage": 15,
+          "sourcePosition": 3
+        },
+        {
+          "id": "04",
+          "raw": {
+            "titulo": "Prescrição",
+            "convenio": "",
+            "nome": "",
+            "data": "02/2019 e 03/2019",
+            "parte": ""
+          },
+          "sourcePage": 15,
+          "sourcePosition": 4
+        },
+        {
+          "id": "05",
+          "raw": {
+            "titulo": "Prescrições",
+            "convenio": "",
+            "nome": "",
+            "data": "12/2018 e 01/2019",
+            "parte": ""
+          },
+          "sourcePage": 15,
+          "sourcePosition": 5
+        },
+        {
+          "id": "06",
+          "raw": {
+            "titulo": "Faturamento",
+            "convenio": "",
+            "nome": "",
+            "data": "11/2018 12/2018",
+            "parte": ""
+          },
+          "sourcePage": 15,
+          "sourcePosition": 6
+        },
+        {
+          "id": "07",
+          "raw": {
+            "titulo": "Prescrições",
+            "convenio": "",
+            "nome": "",
+            "data": "12/2019",
+            "parte": ""
+          },
+          "sourcePage": 15,
+          "sourcePosition": 7
+        },
+        {
+          "id": "08",
+          "raw": {
+            "titulo": "Prescrições",
+            "convenio": "",
+            "nome": "",
+            "data": "06/2019 e 07/2019",
+            "parte": ""
+          },
+          "sourcePage": 15,
+          "sourcePosition": 8
+        },
+        {
+          "id": "09",
+          "raw": {
+            "titulo": "Prescrições",
+            "convenio": "",
+            "nome": "",
+            "data": "04/2019 e 05/2019",
+            "parte": ""
+          },
+          "sourcePage": 15,
+          "sourcePosition": 9
+        },
+        {
+          "id": "10",
+          "raw": {
+            "titulo": "Convênio",
+            "convenio": "",
+            "nome": "",
+            "data": "02/2018",
+            "parte": ""
+          },
+          "sourcePage": 15,
+          "sourcePosition": 10
+        },
+        {
+          "id": "11",
+          "raw": {
+            "titulo": "Convênio",
+            "convenio": "",
+            "nome": "",
+            "data": "01/2018",
+            "parte": ""
+          },
+          "sourcePage": 15,
+          "sourcePosition": 11
+        },
+        {
+          "id": "12",
+          "raw": {
+            "titulo": "Devolução",
+            "convenio": "Unimed",
+            "nome": "",
+            "data": "01/2018 a 06/2018",
+            "parte": ""
+          },
+          "sourcePage": 15,
+          "sourcePosition": 12
+        },
+        {
+          "id": "13",
+          "raw": {
+            "titulo": "Convênio",
+            "convenio": "",
+            "nome": "",
+            "data": "05/18",
+            "parte": ""
+          },
+          "sourcePage": 15,
+          "sourcePosition": 13
+        },
+        {
+          "id": "14",
+          "raw": {
+            "titulo": "Convênio",
+            "convenio": "",
+            "nome": "",
+            "data": "04/2018",
+            "parte": ""
+          },
+          "sourcePage": 15,
+          "sourcePosition": 14
+        },
+        {
+          "id": "15",
+          "raw": {
+            "titulo": "Convênio",
+            "convenio": "",
+            "nome": "",
+            "data": "03/2018",
+            "parte": ""
+          },
+          "sourcePage": 15,
+          "sourcePosition": 15
+        },
+        {
+          "id": "16",
+          "raw": {
+            "titulo": "Convênio",
+            "convenio": "",
+            "nome": "",
+            "data": "08/18",
+            "parte": ""
+          },
+          "sourcePage": 15,
+          "sourcePosition": 16
+        },
+        {
+          "id": "17",
+          "raw": {
+            "titulo": "Convênio",
+            "convenio": "",
+            "nome": "",
+            "data": "07/18",
+            "parte": ""
+          },
+          "sourcePage": 15,
+          "sourcePosition": 17
+        },
+        {
+          "id": "18",
+          "raw": {
+            "titulo": "Convênio",
+            "convenio": "",
+            "nome": "",
+            "data": "06/18",
+            "parte": "PAG 15"
+          },
+          "sourcePage": 15,
+          "sourcePosition": 18
+        }
+      ]
+    },
+    {
+      "id": "16",
+      "positions": [
+        {
+          "id": "01",
+          "raw": {
+            "titulo": "",
+            "convenio": "Convenio",
+            "nome": "",
+            "data": "12/2017",
+            "parte": ""
+          },
+          "sourcePage": 16,
+          "sourcePosition": 1
+        },
+        {
+          "id": "02",
+          "raw": {
+            "titulo": "",
+            "convenio": "Convenio",
+            "nome": "",
+            "data": "2018",
+            "parte": ""
+          },
+          "sourcePage": 16,
+          "sourcePosition": 2
+        },
+        {
+          "id": "03",
+          "raw": {
+            "titulo": "",
+            "convenio": "Convenio",
+            "nome": "",
+            "data": "09 e 10 2018",
+            "parte": ""
+          },
+          "sourcePage": 16,
+          "sourcePosition": 3
+        },
+        {
+          "id": "04",
+          "raw": {
+            "titulo": "IPASGO",
+            "convenio": "",
+            "nome": "",
+            "data": "07/28",
+            "parte": ""
+          },
+          "sourcePage": 16,
+          "sourcePosition": 4
+        },
+        {
+          "id": "05",
+          "raw": {
+            "titulo": "IPASGO",
+            "convenio": "",
+            "nome": "",
+            "data": "03/2018 a 05/2018",
+            "parte": ""
+          },
+          "sourcePage": 16,
+          "sourcePosition": 5
+        },
+        {
+          "id": "06",
+          "raw": {
+            "titulo": "Protocolo",
+            "convenio": "IPASGO",
+            "nome": "",
+            "data": "2018",
+            "parte": ""
+          },
+          "sourcePage": 16,
+          "sourcePosition": 6
+        },
+        {
+          "id": "07",
+          "raw": {
+            "titulo": "IPASGO",
+            "convenio": "",
+            "nome": "",
+            "data": "11/2017",
+            "parte": ""
+          },
+          "sourcePage": 16,
+          "sourcePosition": 7
+        },
+        {
+          "id": "08",
+          "raw": {
+            "titulo": "Faturas",
+            "convenio": "",
+            "nome": "",
+            "data": "05/2018",
+            "parte": ""
+          },
+          "sourcePage": 16,
+          "sourcePosition": 8
+        },
+        {
+          "id": "09",
+          "raw": {
+            "titulo": "IPASGO",
+            "convenio": "",
+            "nome": "",
+            "data": "11/2018 12/2018",
+            "parte": ""
+          },
+          "sourcePage": 16,
+          "sourcePosition": 9
+        },
+        {
+          "id": "10",
+          "raw": {
+            "titulo": "IPASGO",
+            "convenio": "",
+            "nome": "",
+            "data": "07 a 10 2017",
+            "parte": ""
+          },
+          "sourcePage": 16,
+          "sourcePosition": 10
+        },
+        {
+          "id": "11",
+          "raw": {
+            "titulo": "IPAGO",
+            "convenio": "",
+            "nome": "",
+            "data": "06/2017",
+            "parte": ""
+          },
+          "sourcePage": 16,
+          "sourcePosition": 11
+        },
+        {
+          "id": "12",
+          "raw": {
+            "titulo": "IPASGO",
+            "convenio": "",
+            "nome": "",
+            "data": "05/2017",
+            "parte": ""
+          },
+          "sourcePage": 16,
+          "sourcePosition": 12
+        },
+        {
+          "id": "13",
+          "raw": {
+            "titulo": "[ILEGÍVEL]",
+            "convenio": "Convenio",
+            "nome": "",
+            "data": "2017",
+            "parte": "Tira Foto"
+          },
+          "sourcePage": 16,
+          "sourcePosition": 13
+        },
+        {
+          "id": "14",
+          "raw": {
+            "titulo": "",
+            "convenio": "",
+            "nome": "",
+            "data": "2017",
+            "parte": "?"
+          },
+          "sourcePage": 16,
+          "sourcePosition": 14
+        },
+        {
+          "id": "15",
+          "raw": {
+            "titulo": "Exames",
+            "convenio": "IPASGO",
+            "nome": "",
+            "data": "2017",
+            "parte": ""
+          },
+          "sourcePage": 16,
+          "sourcePosition": 15
+        },
+        {
+          "id": "16",
+          "raw": {
+            "titulo": "",
+            "convenio": "Convenio",
+            "nome": "",
+            "data": "[ILEGÍVEL]/2017",
+            "parte": ""
+          },
+          "sourcePage": 16,
+          "sourcePosition": 16
+        },
+        {
+          "id": "17",
+          "raw": {
+            "titulo": "",
+            "convenio": "Convenio",
+            "nome": "",
+            "data": "06/2017",
+            "parte": ""
+          },
+          "sourcePage": 16,
+          "sourcePosition": 17
+        },
+        {
+          "id": "18",
+          "raw": {
+            "titulo": "",
+            "convenio": "Convenio",
+            "nome": "",
+            "data": "05/2017",
+            "parte": "PAG 16"
+          },
+          "sourcePage": 16,
+          "sourcePosition": 18
+        }
+      ]
+    },
+    {
+      "id": "17",
+      "positions": [
+        {
+          "id": "01",
+          "raw": {
+            "titulo": "IPASGO",
+            "convenio": "",
+            "nome": "",
+            "data": "2017",
+            "parte": ""
+          },
+          "sourcePage": 17,
+          "sourcePosition": 1
+        },
+        {
+          "id": "02",
+          "raw": {
+            "titulo": "Faturamento",
+            "convenio": "Convênio",
+            "nome": "",
+            "data": "10/2017",
+            "parte": ""
+          },
+          "sourcePage": 17,
+          "sourcePosition": 2
+        },
+        {
+          "id": "03",
+          "raw": {
+            "titulo": "Faturamento",
+            "convenio": "",
+            "nome": "",
+            "data": "08/2017",
+            "parte": ""
+          },
+          "sourcePage": 17,
+          "sourcePosition": 3
+        },
+        {
+          "id": "04",
+          "raw": {
+            "titulo": "",
+            "convenio": "Convênio",
+            "nome": "",
+            "data": "12/2017",
+            "parte": ""
+          },
+          "sourcePage": 17,
+          "sourcePosition": 4
+        },
+        {
+          "id": "05",
+          "raw": {
+            "titulo": "IPASGO",
+            "convenio": "",
+            "nome": "",
+            "data": "03/2016 a 06/2016",
+            "parte": ""
+          },
+          "sourcePage": 17,
+          "sourcePosition": 5
+        },
+        {
+          "id": "06",
+          "raw": {
+            "titulo": "IPASGO",
+            "convenio": "",
+            "nome": "",
+            "data": "01/2016; 02/2016",
+            "parte": ""
+          },
+          "sourcePage": 17,
+          "sourcePosition": 6
+        },
+        {
+          "id": "07",
+          "raw": {
+            "titulo": "",
+            "convenio": "Unimed",
+            "nome": "",
+            "data": "07/2017; 05/2017",
+            "parte": ""
+          },
+          "sourcePage": 17,
+          "sourcePosition": 7
+        },
+        {
+          "id": "08",
+          "raw": {
+            "titulo": "IMAS",
+            "convenio": "",
+            "nome": "",
+            "data": "11/2017; 12/2017; 01/2018; 03/2018",
+            "parte": ""
+          },
+          "sourcePage": 17,
+          "sourcePosition": 8
+        },
+        {
+          "id": "09",
+          "raw": {
+            "titulo": "IMAS",
+            "convenio": "",
+            "nome": "",
+            "data": "07 a 09 de 2016; 03 a 08 de 2017",
+            "parte": ""
+          },
+          "sourcePage": 17,
+          "sourcePosition": 9
+        },
+        {
+          "id": "10",
+          "raw": {
+            "titulo": "",
+            "convenio": "Unimed",
+            "nome": "Celson",
+            "data": "",
+            "parte": ""
+          },
+          "sourcePage": 17,
+          "sourcePosition": 10
+        },
+        {
+          "id": "11",
+          "raw": {
+            "titulo": "Tiro Foto",
+            "convenio": "",
+            "nome": "",
+            "data": "",
+            "parte": ""
+          },
+          "sourcePage": 17,
+          "sourcePosition": 11
+        },
+        {
+          "id": "12",
+          "raw": {
+            "titulo": "IPASGO",
+            "convenio": "",
+            "nome": "",
+            "data": "2016",
+            "parte": "Parte 3"
+          },
+          "sourcePage": 17,
+          "sourcePosition": 12
+        },
+        {
+          "id": "13",
+          "raw": {
+            "titulo": "",
+            "convenio": "Convênio",
+            "nome": "",
+            "data": "03/2016",
+            "parte": ""
+          },
+          "sourcePage": 17,
+          "sourcePosition": 13
+        },
+        {
+          "id": "14",
+          "raw": {
+            "titulo": "",
+            "convenio": "Particular",
+            "nome": "",
+            "data": "2013/2014; 2017/2018; 2019",
+            "parte": ""
+          },
+          "sourcePage": 17,
+          "sourcePosition": 14
+        },
+        {
+          "id": "15",
+          "raw": {
+            "titulo": "IPASGO",
+            "convenio": "",
+            "nome": "",
+            "data": "06/2015 a 07/2015",
+            "parte": ""
+          },
+          "sourcePage": 17,
+          "sourcePosition": 15
+        },
+        {
+          "id": "16",
+          "raw": {
+            "titulo": "IPASGO",
+            "convenio": "",
+            "nome": "",
+            "data": "07/2016 a 11/2016",
+            "parte": ""
+          },
+          "sourcePage": 17,
+          "sourcePosition": 16
+        },
+        {
+          "id": "17",
+          "raw": {
+            "titulo": "IPASGO",
+            "convenio": "",
+            "nome": "",
+            "data": "2016",
+            "parte": "Parte 3"
+          },
+          "sourcePage": 17,
+          "sourcePosition": 17
+        },
+        {
+          "id": "18",
+          "raw": {
+            "titulo": "",
+            "convenio": "Convênio",
+            "nome": "",
+            "data": "01/2015 a 08/2015",
+            "parte": ""
+          },
+          "sourcePage": 17,
+          "sourcePosition": 18
+        },
+        {
+          "id": "19",
+          "raw": {
+            "titulo": "IPASGO",
+            "convenio": "",
+            "nome": "",
+            "data": "10/2015 a 1/2015",
+            "parte": ""
+          },
+          "sourcePage": 17,
+          "sourcePosition": 19
+        },
+        {
+          "id": "20",
+          "raw": {
+            "titulo": "IPASGO",
+            "convenio": "",
+            "nome": "",
+            "data": "08/2015 a 09/2015",
+            "parte": "PAG 17"
+          },
+          "sourcePage": 17,
+          "sourcePosition": 20
+        }
+      ]
+    },
+    {
+      "id": "18",
+      "positions": [
+        {
+          "id": "01",
+          "raw": {
+            "titulo": "IMG",
+            "convenio": "",
+            "nome": "",
+            "data": "05/2016 a 08/2016",
+            "parte": ""
+          },
+          "sourcePage": 18,
+          "sourcePosition": 1
+        },
+        {
+          "id": "02",
+          "raw": {
+            "titulo": "Prescrições",
+            "convenio": "",
+            "nome": "CGO",
+            "data": "01/2017 a 07/2017",
+            "parte": ""
+          },
+          "sourcePage": 18,
+          "sourcePosition": 2
+        },
+        {
+          "id": "03",
+          "raw": {
+            "titulo": "",
+            "convenio": "Unimed",
+            "nome": "",
+            "data": "JAN - 2015 / FEV - 2016",
+            "parte": ""
+          },
+          "sourcePage": 18,
+          "sourcePosition": 3
+        },
+        {
+          "id": "04",
+          "raw": {
+            "titulo": "TIRA FOTO",
+            "convenio": "",
+            "nome": "",
+            "data": "",
+            "parte": ""
+          },
+          "sourcePage": 18,
+          "sourcePosition": 4
+        },
+        {
+          "id": "05",
+          "raw": {
+            "titulo": "TIRA FOTO",
+            "convenio": "",
+            "nome": "",
+            "data": "",
+            "parte": ""
+          },
+          "sourcePage": 18,
+          "sourcePosition": 5
+        },
+        {
+          "id": "06",
+          "raw": {
+            "titulo": "Prontuário",
+            "convenio": "",
+            "nome": "QT [ILEGÍVEL]",
+            "data": "2016",
+            "parte": ""
+          },
+          "sourcePage": 18,
+          "sourcePosition": 6
+        },
+        {
+          "id": "07",
+          "raw": {
+            "titulo": "",
+            "convenio": "",
+            "nome": "CGO",
+            "data": "02/2015 a 04/2015",
+            "parte": ""
+          },
+          "sourcePage": 18,
+          "sourcePosition": 7
+        },
+        {
+          "id": "08",
+          "raw": {
+            "titulo": "",
+            "convenio": "",
+            "nome": "CGO",
+            "data": "05/2015 a 09/2015",
+            "parte": ""
+          },
+          "sourcePage": 18,
+          "sourcePosition": 8
+        },
+        {
+          "id": "09",
+          "raw": {
+            "titulo": "",
+            "convenio": "",
+            "nome": "CGO",
+            "data": "10/2015 a 12/2015",
+            "parte": ""
+          },
+          "sourcePage": 18,
+          "sourcePosition": 9
+        },
+        {
+          "id": "10",
+          "raw": {
+            "titulo": "",
+            "convenio": "Particular",
+            "nome": "",
+            "data": "01/2009 / 2010 / 2011 / 2012 e 2014",
+            "parte": ""
+          },
+          "sourcePage": 18,
+          "sourcePosition": 10
+        },
+        {
+          "id": "11",
+          "raw": {
+            "titulo": "",
+            "convenio": "",
+            "nome": "CGO",
+            "data": "06/2013 a 11/2014",
+            "parte": ""
+          },
+          "sourcePage": 18,
+          "sourcePosition": 11
+        },
+        {
+          "id": "12",
+          "raw": {
+            "titulo": "",
+            "convenio": "",
+            "nome": "CGO",
+            "data": "12/2014 a 01/2014",
+            "parte": ""
+          },
+          "sourcePage": 18,
+          "sourcePosition": 12
+        },
+        {
+          "id": "13",
+          "raw": {
+            "titulo": "Devolução Prontuário",
+            "convenio": "IPASGO",
+            "nome": "",
+            "data": "2013",
+            "parte": ""
+          },
+          "sourcePage": 18,
+          "sourcePosition": 13
+        },
+        {
+          "id": "14",
+          "raw": {
+            "titulo": "Devolução Prontuário",
+            "convenio": "Unimed",
+            "nome": "",
+            "data": "2014",
+            "parte": ""
+          },
+          "sourcePage": 18,
+          "sourcePosition": 14
+        },
+        {
+          "id": "15",
+          "raw": {
+            "titulo": "Devolução Prontuário",
+            "convenio": "IPASGO",
+            "nome": "",
+            "data": "2014",
+            "parte": ""
+          },
+          "sourcePage": 18,
+          "sourcePosition": 15
+        },
+        {
+          "id": "16",
+          "raw": {
+            "titulo": "",
+            "convenio": "Convênios",
+            "nome": "",
+            "data": "2010 a 2013",
+            "parte": ""
+          },
+          "sourcePage": 18,
+          "sourcePosition": 16
+        },
+        {
+          "id": "17",
+          "raw": {
+            "titulo": "",
+            "convenio": "Convênio",
+            "nome": "",
+            "data": "2013",
+            "parte": ""
+          },
+          "sourcePage": 18,
+          "sourcePosition": 17
+        },
+        {
+          "id": "18",
+          "raw": {
+            "titulo": "Devolução",
+            "convenio": "IPASGO",
+            "nome": "",
+            "data": "2013",
+            "parte": "pag 19"
+          },
+          "sourcePage": 18,
+          "sourcePosition": 18
+        }
+      ]
+    },
+    {
+      "id": "19",
+      "positions": [
+        {
+          "id": "01",
+          "raw": {
+            "titulo": "IPASGO",
+            "convenio": "",
+            "nome": "Devolução",
+            "data": "2012",
+            "parte": ""
+          },
+          "sourcePage": 19,
+          "sourcePosition": 1
+        },
+        {
+          "id": "02",
+          "raw": {
+            "titulo": "UNIMED",
+            "convenio": "",
+            "nome": "Devolução",
+            "data": "2013",
+            "parte": ""
+          },
+          "sourcePage": 19,
+          "sourcePosition": 2
+        },
+        {
+          "id": "03",
+          "raw": {
+            "titulo": "Convenios",
+            "convenio": "",
+            "nome": "",
+            "data": "2010 a 2013",
+            "parte": ""
+          },
+          "sourcePage": 19,
+          "sourcePosition": 3
+        },
+        {
+          "id": "04",
+          "raw": {
+            "titulo": "IPASGO",
+            "convenio": "",
+            "nome": "Devolução",
+            "data": "2011",
+            "parte": ""
+          },
+          "sourcePage": 19,
+          "sourcePosition": 4
+        },
+        {
+          "id": "05",
+          "raw": {
+            "titulo": "IMAS",
+            "convenio": "",
+            "nome": "Devolução",
+            "data": "02,03,08,10,11/2011; 03/06/08,09,10/2012",
+            "parte": ""
+          },
+          "sourcePage": 19,
+          "sourcePosition": 5
+        },
+        {
+          "id": "06",
+          "raw": {
+            "titulo": "IPASGO",
+            "convenio": "",
+            "nome": "",
+            "data": "2012",
+            "parte": ""
+          },
+          "sourcePage": 19,
+          "sourcePosition": 6
+        },
+        {
+          "id": "07",
+          "raw": {
+            "titulo": "",
+            "convenio": "",
+            "nome": "",
+            "data": "",
+            "parte": "X"
+          },
+          "sourcePage": 19,
+          "sourcePosition": 7
+        },
+        {
+          "id": "08",
+          "raw": {
+            "titulo": "IPASGO",
+            "convenio": "",
+            "nome": "Devolução",
+            "data": "02,05,06,10,11,12-2009; 01,02,07 - 2010",
+            "parte": ""
+          },
+          "sourcePage": 19,
+          "sourcePosition": 8
+        },
+        {
+          "id": "09",
+          "raw": {
+            "titulo": "IPASGO",
+            "convenio": "",
+            "nome": "Devolução",
+            "data": "2011",
+            "parte": ""
+          },
+          "sourcePage": 19,
+          "sourcePosition": 9
+        },
+        {
+          "id": "10",
+          "raw": {
+            "titulo": "IPASGO",
+            "convenio": "",
+            "nome": "",
+            "data": "2005 a 2006",
+            "parte": ""
+          },
+          "sourcePage": 19,
+          "sourcePosition": 10
+        },
+        {
+          "id": "11",
+          "raw": {
+            "titulo": "IPASGO",
+            "convenio": "",
+            "nome": "",
+            "data": "2005 a 2006",
+            "parte": ""
+          },
+          "sourcePage": 19,
+          "sourcePosition": 11
+        },
+        {
+          "id": "12",
+          "raw": {
+            "titulo": "IPASGO",
+            "convenio": "",
+            "nome": "Devolução",
+            "data": "05,06,08,11,12-2018",
+            "parte": "[ILEGÍVEL]"
+          },
+          "sourcePage": 19,
+          "sourcePosition": 12
+        },
+        {
+          "id": "13",
+          "raw": {
+            "titulo": "",
+            "convenio": "",
+            "nome": "",
+            "data": "01 a 02 2019",
+            "parte": ""
+          },
+          "sourcePage": 19,
+          "sourcePosition": 13
+        },
+        {
+          "id": "14",
+          "raw": {
+            "titulo": "IPASGO",
+            "convenio": "",
+            "nome": "Devolução",
+            "data": "2007 a 2008",
+            "parte": ""
+          },
+          "sourcePage": 19,
+          "sourcePosition": 14
+        },
+        {
+          "id": "15",
+          "raw": {
+            "titulo": "",
+            "convenio": "",
+            "nome": "",
+            "data": "",
+            "parte": "PAG-[ILEGÍVEL]"
+          },
+          "sourcePage": 19,
+          "sourcePosition": 15
+        }
+      ]
+    }
+  ]
+}
