@@ -97,6 +97,22 @@ app.get('/api/inventory', async (_req, res) => {
   } catch (error) { res.status(500).json({ error: error.message }) }
 })
 
+app.get('/api/admin/diagnostics', requireAdmin, async (_req, res) => {
+  try {
+    const [[database]] = await pool.query('SELECT 1 AS ready')
+    const [[summary]] = await pool.query('SELECT COUNT(*) AS records, COUNT(DISTINCT armario) AS armarios, MAX(updated_at) AS last_update FROM boxes')
+    res.json({
+      ok: true,
+      checkedAt: new Date().toISOString(),
+      authentication: 'ok',
+      database: database.ready === 1 ? 'ok' : 'error',
+      inventory: { records: Number(summary.records), armarios: Number(summary.armarios), lastUpdate: summary.last_update },
+      movement: 'endpoint disponível; destinos ocupados retornam 409',
+      serverUptimeSeconds: Math.round(process.uptime())
+    })
+  } catch (error) { res.status(503).json({ ok: false, authentication: 'ok', database: 'error', error: error.message }) }
+})
+
 app.post('/api/admin/login', (req, res) => {
   if (!usernameMatches(req.body?.username) || !passwordMatches(req.body?.password)) return res.status(401).json({ error: 'Nome de usuário ou senha inválidos.' })
   const secure = req.secure || req.headers['x-forwarded-proto'] === 'https'

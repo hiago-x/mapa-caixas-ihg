@@ -265,7 +265,7 @@ function adminPage() {
     return
   }
   const duplicateSlots = [...new Set(allBoxes().filter(({ position }) => position.duplicateIndex > 1).map(({ armario, position }) => `${armario.id}-${position.id}`))].length
-  shell(`<section class="page-intro admin-intro"><div><span class="section-kicker">ÁREA RESTRITA</span><h2>Administração do inventário</h2><p>Gerencie o conteúdo e a localização física das caixas. Para mover, abra o mapa e arraste uma caixa para uma posição livre.</p></div><div class="admin-actions"><a class="solid-button" href="#/mapa">Abrir mapa da sala →</a><button class="outline-button" id="admin-logout">Sair</button></div></section><section class="stats-grid admin-stats">${statCard(formatCount(allBoxes().length), 'registros cadastrados', 'stat-blue')}${statCard(formatCount(inventory.armarios.length), 'armários', 'stat-orange')}${statCard(formatCount(duplicateSlots), 'posições com mais de um registro', 'stat-green')}</section><section class="admin-workspace"><div class="section-heading"><div><span class="section-kicker">GESTÃO RÁPIDA</span><h2>Localizar registro para editar</h2></div><span class="results-count" id="admin-count"></span></div><div class="search-field admin-search"><span class="search-icon">⌕</span><input id="admin-search" type="search" placeholder="Buscar por armário, posição, convênio, período ou conteúdo..." /></div><div class="admin-list" id="admin-list"></div></section>`, 'admin')
+  shell(`<section class="page-intro admin-intro"><div><span class="section-kicker">ÁREA RESTRITA</span><h2>Administração do inventário</h2><p>Gerencie o conteúdo e a localização física das caixas. Para mover, abra o mapa e arraste uma caixa para uma posição livre.</p></div><div class="admin-actions"><a class="solid-button" href="#/mapa">Abrir mapa da sala →</a><button class="outline-button" id="admin-logout">Sair</button></div></section><section class="stats-grid admin-stats">${statCard(formatCount(allBoxes().length), 'registros cadastrados', 'stat-blue')}${statCard(formatCount(inventory.armarios.length), 'armários', 'stat-orange')}${statCard(formatCount(duplicateSlots), 'posições com mais de um registro', 'stat-green')}</section><section class="diagnostic-panel"><div><span class="section-kicker">VERIFICAÇÃO DO SISTEMA</span><h2>Diagnóstico do site</h2><p id="diagnostic-status">Clique para verificar login, banco, inventário e movimentação.</p></div><button class="outline-button" id="run-diagnostics">Verificar agora</button><div id="diagnostic-details" class="diagnostic-details"></div></section><section class="admin-workspace"><div class="section-heading"><div><span class="section-kicker">GESTÃO RÁPIDA</span><h2>Localizar registro para editar</h2></div><span class="results-count" id="admin-count"></span></div><div class="search-field admin-search"><span class="search-icon">⌕</span><input id="admin-search" type="search" placeholder="Buscar por armário, posição, convênio, período ou conteúdo..." /></div><div class="admin-list" id="admin-list"></div></section>`, 'admin')
   const list = document.querySelector('#admin-list'); const count = document.querySelector('#admin-count')
   const draw = () => {
     const q = (document.querySelector('#admin-search')?.value || '').toLocaleLowerCase('pt-BR').trim()
@@ -275,6 +275,17 @@ function adminPage() {
   }
   document.querySelector('#admin-search')?.addEventListener('input', draw)
   document.querySelector('#admin-logout')?.addEventListener('click', async () => { try { await api('/api/admin/logout', { method: 'POST' }) } finally { adminSessionValid = false; adminPage() } })
+  const runDiagnostics = async () => {
+    const status = document.querySelector('#diagnostic-status'); const details = document.querySelector('#diagnostic-details')
+    status.textContent = 'Verificando...'; details.innerHTML = ''
+    try {
+      const data = await api('/api/admin/diagnostics')
+      status.textContent = `Tudo certo · verificado em ${new Date(data.checkedAt).toLocaleString('pt-BR')}`
+      details.innerHTML = `<span class="diagnostic-ok">Autenticação: ${escapeHtml(data.authentication)}</span><span class="diagnostic-ok">Banco: ${escapeHtml(data.database)}</span><span class="diagnostic-ok">Inventário: ${formatCount(data.inventory.records)} registros em ${formatCount(data.inventory.armarios)} armários</span><span class="diagnostic-ok">Movimentação: ${escapeHtml(data.movement)}</span>`
+    } catch (error) { status.textContent = 'Foi encontrado um erro'; details.innerHTML = `<span class="diagnostic-error">${escapeHtml(error.message)}</span>` }
+  }
+  document.querySelector('#run-diagnostics')?.addEventListener('click', runDiagnostics)
+  runDiagnostics()
   draw()
 }
 
