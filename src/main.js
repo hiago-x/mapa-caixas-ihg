@@ -5,6 +5,7 @@ const app = document.querySelector('#app')
 let inventory = { armarios: [] }
 let homeState = { q: '', armario: 'todos', filtro: 'todos', periodo: '' }
 let adminSessionValid = false
+let adminToken = ''
 
 const escapeHtml = (value = '') => String(value)
   .replaceAll('&', '&amp;')
@@ -37,9 +38,9 @@ const boxRoute = (armId, recordId) => route(`/caixa/${recordId}`)
 const formatCount = value => new Intl.NumberFormat('pt-BR').format(value)
 
 async function api(path, options = {}) {
-  const response = await fetch(path, { credentials: 'include', headers: { 'Content-Type': 'application/json', ...(options.headers || {}) }, ...options })
+  const response = await fetch(path, { credentials: 'include', headers: { 'Content-Type': 'application/json', ...(adminToken ? { Authorization: `Bearer ${adminToken}` } : {}), ...(options.headers || {}) }, ...options })
   const data = await response.json().catch(() => ({}))
-  if (response.status === 401) adminSessionValid = false
+  if (response.status === 401) { adminSessionValid = false; adminToken = '' }
   if (!response.ok) { const error = new Error(data.error || 'Não foi possível concluir a operação.'); error.status = response.status; error.code = data.code; throw error }
   return data
 }
@@ -51,10 +52,12 @@ async function ensureAdmin() {
   const password = window.prompt('Digite a senha de administrador para editar o inventário:')
   if (!password) return false
   try {
-    await api('/api/admin/login', { method: 'POST', body: JSON.stringify({ username: username.trim(), password }) })
+    const result = await api('/api/admin/login', { method: 'POST', body: JSON.stringify({ username: username.trim(), password }) })
+    adminToken = result.token || ''
+    if (!adminToken) throw new Error('O servidor não retornou uma sessão administrativa válida.')
     adminSessionValid = true
     return true
-  } catch (error) { adminSessionValid = false; window.alert(error.message); return false }
+  } catch (error) { adminSessionValid = false; adminToken = ''; window.alert(error.message); return false }
 }
 
 function shell(content, active = 'inicio') {
@@ -304,7 +307,7 @@ function adminPage() {
     list.innerHTML = results.length ? results.map(({ armario, position }) => `<div class="admin-list-row"><span class="admin-location">Armário ${armario.id}<b>Posição ${position.id}</b></span><span class="admin-record"><strong>${escapeHtml(shortLabel(position))}</strong><small>${escapeHtml(categoryText(position) || 'Sem categoria')} · ${escapeHtml(position.raw.data || 'Sem data')}</small></span><a class="outline-button compact-button" href="${boxRoute(armario.id, position.recordId)}">Abrir ficha →</a></div>`).join('') : '<div class="empty-state"><strong>Nenhum registro encontrado.</strong><span>Faça uma nova busca.</span></div>'
   }
   document.querySelector('#admin-search')?.addEventListener('input', draw)
-  document.querySelector('#admin-logout')?.addEventListener('click', async () => { try { await api('/api/admin/logout', { method: 'POST' }) } finally { adminSessionValid = false; adminPage() } })
+  document.querySelector('#admin-logout')?.addEventListener('click', async () => { try { await api('/api/admin/logout', { method: 'POST' }) } finally { adminSessionValid = false; adminToken = ''; adminPage() } })
   const runDiagnostics = async () => {
     const status = document.querySelector('#diagnostic-status'); const details = document.querySelector('#diagnostic-details')
     status.textContent = 'Verificando...'; details.innerHTML = ''

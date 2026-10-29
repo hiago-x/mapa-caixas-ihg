@@ -65,8 +65,12 @@ function cookieValue(req, name) {
   const item = String(req.headers.cookie || '').split(';').map(value => value.trim()).find(value => value.startsWith(`${name}=`))
   return item ? decodeURIComponent(item.slice(name.length + 1)) : ''
 }
+function bearerValue(req) {
+  const value = String(req.headers.authorization || '')
+  return value.startsWith('Bearer ') ? value.slice(7).trim() : ''
+}
 function requireAdmin(req, res, next) {
-  if (cookieValue(req, adminCookie) === sessionToken()) return next()
+  if (cookieValue(req, adminCookie) === sessionToken() || bearerValue(req) === sessionToken()) return next()
   return res.status(401).json({ error: 'Faça login de administrador para alterar o inventário.' })
 }
 function passwordMatches(value) {
@@ -117,7 +121,7 @@ app.post('/api/admin/login', (req, res) => {
   if (!usernameMatches(req.body?.username) || !passwordMatches(req.body?.password)) return res.status(401).json({ error: 'Nome de usuário ou senha inválidos.' })
   const secure = req.secure || req.headers['x-forwarded-proto'] === 'https'
   res.setHeader('Set-Cookie', `${adminCookie}=${encodeURIComponent(sessionToken())}; Path=/; HttpOnly; Max-Age=28800; SameSite=${secure ? 'None' : 'Lax'}${secure ? '; Secure' : ''}`)
-  res.json({ ok: true })
+  res.json({ ok: true, token: sessionToken() })
 })
 
 app.post('/api/admin/logout', (req, res) => {
