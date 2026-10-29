@@ -120,8 +120,9 @@ app.post('/api/admin/login', (req, res) => {
   res.json({ ok: true })
 })
 
-app.post('/api/admin/logout', (_req, res) => {
-  res.setHeader('Set-Cookie', `${adminCookie}=; Path=/; HttpOnly; Max-Age=0; SameSite=Lax`)
+app.post('/api/admin/logout', (req, res) => {
+  const secure = req.secure || req.headers['x-forwarded-proto'] === 'https'
+  res.setHeader('Set-Cookie', `${adminCookie}=; Path=/; HttpOnly; Max-Age=0; SameSite=${secure ? 'None' : 'Lax'}${secure ? '; Secure' : ''}`)
   res.json({ ok: true })
 })
 
@@ -137,16 +138,35 @@ app.put('/api/boxes/:recordId', requireAdmin, async (req, res) => {
   } catch (error) { res.status(500).json({ error: error.message }) }
 })
 
+app.post('/api/boxes', requireAdmin, async (req, res) => {
+  const body = req.body || {}
+  const rawArmario = String(body.armario || '').replace(/\D/g, ''); const rawPosicao = String(body.posicao || '').replace(/\D/g, '')
+  if (!/^\d{1,2}$/.test(rawArmario) || !/^\d{1,2}$/.test(rawPosicao)) return res.status(400).json({ error: 'Informe armário e posição com um ou dois números.' })
+  const armario = rawArmario.padStart(2, '0'); const posicao = rawPosicao.padStart(2, '0')
+  const recordId = `${armario}-${posicao}-m${Date.now()}`
+  const connection = await pool.getConnection()
+  try {
+    await connection.beginTransaction()
+    const [[occupied]] = await connection.query('SELECT record_id FROM boxes WHERE armario = ? AND posicao = ? LIMIT 1', [armario, posicao])
+    if (occupied && !body.replace) { await connection.rollback(); return res.status(409).json({ code: 'occupied', occupiedRecordId: occupied.record_id, error: `Destino ocupado: armário ${armario}, posição ${posicao}.` }) }
+    if (occupied) await connection.query('DELETE FROM boxes WHERE record_id = ?', [occupied.record_id])
+    await connection.query(`INSERT INTO boxes (record_id, armario, posicao, duplicate_index, titulo, convenio, nome, data_text, parte, raw_text, source_page, source_position) VALUES (?, ?, ?, 1, ?, ?, ?, ?, ?, ?, ?, ?)`, [recordId, armario, posicao, String(body.titulo || ''), String(body.convenio || ''), String(body.nome || ''), String(body.data || ''), String(body.parte || ''), String(body.rawText || ''), Number(armario), Number(posicao)])
+    await connection.commit(); res.json({ ok: true, recordId, armario, posicao })
+  } catch (error) { await connection.rollback(); res.status(500).json({ error: error.message }) } finally { connection.release() }
+})
+
 app.post('/api/boxes/:recordId/move', requireAdmin, async (req, res) => {
-  const armario = String(req.body?.armario || '').replace(/\D/g, '').padStart(2, '0'); const posicao = String(req.body?.posicao || '').replace(/\D/g, '').padStart(2, '0')
-  if (!/^\d{2}$/.test(armario) || !/^\d{2}$/.test(posicao)) return res.status(400).json({ error: 'Informe armário e posição com dois números.' })
+  const rawArmario = String(req.body?.armario || '').replace(/\D/g, ''); const rawPosicao = String(req.body?.posicao || '').replace(/\D/g, '')
+  if (!/^\d{1,2}$/.test(rawArmario) || !/^\d{1,2}$/.test(rawPosicao)) return res.status(400).json({ error: 'Informe armário e posição com um ou dois números.' })
+  const armario = rawArmario.padStart(2, '0'); const posicao = rawPosicao.padStart(2, '0')
   try {
     const [[current]] = await pool.query('SELECT record_id, armario, posicao FROM boxes WHERE record_id = ?', [req.params.recordId])
     if (!current) return res.status(404).json({ error: 'Registro não encontrado.' })
     if (String(current.armario).padStart(2, '0') === armario && String(current.posicao).padStart(2, '0') === posicao) return res.json({ ok: true, armario, posicao })
     const [[occupied]] = await pool.query('SELECT record_id FROM boxes WHERE armario = ? AND posicao = ? AND record_id <> ? LIMIT 1', [armario, posicao, req.params.recordId])
-    if (occupied) return res.status(409).json({ code: 'occupied', error: `Destino ocupado: armário ${armario}, posição ${posicao}. Escolha outra posição.` })
-    await pool.query('UPDATE boxes SET armario = ?, posicao = ?, duplicate_index = 1 WHERE record_id = ?', [armario, posicao, req.params.recordId])
+    if (occupied && !req.body?.replace) return res.status(409).json({ code: 'occupied', occupiedRecordId: occupied.record_id, error: `Destino ocupado: armário ${armario}, posição ${posicao}.` })
+    const connection = await pool.getConnection()
+    try { await connection.beginTransaction(); if (occupied) await connection.query('DELETE FROM boxes WHERE record_id = ?', [occupied.record_id]); await connection.query('UPDATE boxes SET armario = ?, posicao = ?, duplicate_index = 1 WHERE record_id = ?', [armario, posicao, req.params.recordId]); await connection.commit() } catch (error) { await connection.rollback(); throw error } finally { connection.release() }
     res.json({ ok: true, armario, posicao })
   } catch (error) { res.status(500).json({ error: error.message }) }
 })

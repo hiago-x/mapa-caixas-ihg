@@ -37,7 +37,7 @@ const boxRoute = (armId, recordId) => route(`/caixa/${recordId}`)
 const formatCount = value => new Intl.NumberFormat('pt-BR').format(value)
 
 async function api(path, options = {}) {
-  const response = await fetch(path, { headers: { 'Content-Type': 'application/json', ...(options.headers || {}) }, ...options })
+  const response = await fetch(path, { credentials: 'include', headers: { 'Content-Type': 'application/json', ...(options.headers || {}) }, ...options })
   const data = await response.json().catch(() => ({}))
   if (response.status === 401) adminSessionValid = false
   if (!response.ok) { const error = new Error(data.error || 'Não foi possível concluir a operação.'); error.status = response.status; error.code = data.code; throw error }
@@ -193,7 +193,11 @@ function enableDragAndDrop() {
       try {
         await api(`/api/boxes/${encodeURIComponent(recordId)}/move`, { method: 'POST', body: JSON.stringify({ armario: card.dataset.armId, posicao: card.dataset.positionId }) })
         await reloadInventory(); render()
-      } catch (error) { window.alert(error.status === 409 ? error.message : `Não foi possível mover: ${error.message}`) }
+      } catch (error) {
+        if (error.status === 409 && window.confirm(`${error.message}\n\nDeseja substituir a caixa que já está nessa posição?`)) {
+          try { await api(`/api/boxes/${encodeURIComponent(recordId)}/move`, { method: 'POST', body: JSON.stringify({ armario: card.dataset.armId, posicao: card.dataset.positionId, replace: true }) }); await reloadInventory(); render() } catch (replaceError) { window.alert(`Não foi possível substituir: ${replaceError.message}`) }
+        } else if (error.status !== 409) window.alert(`Não foi possível mover: ${error.message}`)
+      }
     })
   })
 }
@@ -231,7 +235,12 @@ function openEditDialog(armId, box) {
       await api(`/api/boxes/${encodeURIComponent(box.recordId)}`, { method: 'PUT', body: JSON.stringify({ titulo: form.get('titulo'), convenio: form.get('convenio'), nome: form.get('nome'), data: form.get('data'), parte: form.get('parte'), rawText: form.get('rawText') }) })
       const newArmario = form.get('moveArmario')
       const newPosition = String(form.get('movePosicao')).padStart(2, '0')
-      if (newArmario !== armId || newPosition !== box.id) await api(`/api/boxes/${encodeURIComponent(box.recordId)}/move`, { method: 'POST', body: JSON.stringify({ armario: newArmario, posicao: newPosition }) })
+      if (newArmario !== armId || newPosition !== box.id) {
+        try { await api(`/api/boxes/${encodeURIComponent(box.recordId)}/move`, { method: 'POST', body: JSON.stringify({ armario: newArmario, posicao: newPosition }) }) } catch (moveError) {
+          if (moveError.status !== 409 || !window.confirm(`${moveError.message}\n\nDeseja substituir a caixa que já está nessa posição?`)) throw moveError
+          await api(`/api/boxes/${encodeURIComponent(box.recordId)}/move`, { method: 'POST', body: JSON.stringify({ armario: newArmario, posicao: newPosition, replace: true }) })
+        }
+      }
       await reloadInventory()
       close()
       const updated = getBox(newArmario, box.recordId)
@@ -245,8 +254,28 @@ async function deleteBox(armId, box) {
   try { await api(`/api/boxes/${encodeURIComponent(box.recordId)}`, { method: 'DELETE' }); await reloadInventory(); location.hash = armRoute(armId) } catch (error) { window.alert(error.message) }
 }
 
+function openAddDialog() {
+  const options = inventory.armarios.map(arm => `<option value="${arm.id}">Armário ${arm.id}</option>`).join('')
+  const modal = document.createElement('div'); modal.className = 'modal-backdrop'
+  modal.innerHTML = `<form class="edit-modal" id="add-form"><div class="modal-head"><div><span class="section-kicker">NOVA CAIXA</span><h3>Adicionar registro ao inventário</h3></div><button type="button" class="modal-close" id="close-modal">×</button></div><label>Armário<select name="armario">${options}</select></label><label>Posição<input name="posicao" inputmode="numeric" maxlength="2" value="01" required /></label><label>Categoria / título<input name="titulo" /></label><label>Convênio<input name="convenio" /></label><label>Nome<input name="nome" /></label><label>Período / data<input name="data" /></label><label>Parte<input name="parte" /></label><label>Texto completo<textarea name="rawText" rows="4"></textarea></label><div class="modal-actions"><button type="button" class="outline-button" id="cancel-modal">Cancelar</button><button type="submit" class="solid-button">Adicionar caixa</button></div><p class="modal-status" id="modal-status"></p></form>`
+  document.body.appendChild(modal)
+  const close = () => modal.remove(); modal.querySelector('#close-modal').addEventListener('click', close); modal.querySelector('#cancel-modal').addEventListener('click', close); modal.addEventListener('click', event => { if (event.target === modal) close() })
+  modal.querySelector('#add-form').addEventListener('submit', async event => {
+    event.preventDefault(); const form = new FormData(event.target); const status = modal.querySelector('#modal-status'); status.textContent = 'Salvando...'
+    const payload = { armario: form.get('armario'), posicao: form.get('posicao'), titulo: form.get('titulo'), convenio: form.get('convenio'), nome: form.get('nome'), data: form.get('data'), parte: form.get('parte'), rawText: form.get('rawText') }
+    try {
+      let result
+      try { result = await api('/api/boxes', { method: 'POST', body: JSON.stringify(payload) }) } catch (error) {
+        if (error.status !== 409 || !window.confirm(`${error.message}\n\nDeseja substituir a caixa que já está nessa posição?`)) throw error
+        result = await api('/api/boxes', { method: 'POST', body: JSON.stringify({ ...payload, replace: true }) })
+      }
+      await reloadInventory(); close(); location.hash = `/caixa/${result.recordId}`
+    } catch (error) { status.textContent = error.message; status.className = 'modal-status error' }
+  })
+}
+
 async function reloadInventory() {
-  const response = await fetch('/api/inventory')
+  const response = await fetch('/api/inventory', { credentials: 'include' })
   if (!response.ok) throw new Error('Não foi possível atualizar o inventário compartilhado.')
   inventory = await response.json()
 }
@@ -265,8 +294,9 @@ function adminPage() {
     return
   }
   const duplicateSlots = [...new Set(allBoxes().filter(({ position }) => position.duplicateIndex > 1).map(({ armario, position }) => `${armario.id}-${position.id}`))].length
-  shell(`<section class="page-intro admin-intro"><div><span class="section-kicker">ÁREA RESTRITA</span><h2>Administração do inventário</h2><p>Gerencie o conteúdo e a localização física das caixas. Para mover, abra o mapa e arraste uma caixa para uma posição livre.</p></div><div class="admin-actions"><a class="solid-button" href="#/mapa">Abrir mapa da sala →</a><button class="outline-button" id="admin-logout">Sair</button></div></section><section class="stats-grid admin-stats">${statCard(formatCount(allBoxes().length), 'registros cadastrados', 'stat-blue')}${statCard(formatCount(inventory.armarios.length), 'armários', 'stat-orange')}${statCard(formatCount(duplicateSlots), 'posições com mais de um registro', 'stat-green')}</section><section class="diagnostic-panel"><div><span class="section-kicker">VERIFICAÇÃO DO SISTEMA</span><h2>Diagnóstico do site</h2><p id="diagnostic-status">Clique para verificar login, banco, inventário e movimentação.</p></div><button class="outline-button" id="run-diagnostics">Verificar agora</button><div id="diagnostic-details" class="diagnostic-details"></div></section><section class="admin-workspace"><div class="section-heading"><div><span class="section-kicker">GESTÃO RÁPIDA</span><h2>Localizar registro para editar</h2></div><span class="results-count" id="admin-count"></span></div><div class="search-field admin-search"><span class="search-icon">⌕</span><input id="admin-search" type="search" placeholder="Buscar por armário, posição, convênio, período ou conteúdo..." /></div><div class="admin-list" id="admin-list"></div></section>`, 'admin')
+  shell(`<section class="page-intro admin-intro"><div><span class="section-kicker">ÁREA RESTRITA</span><h2>Administração do inventário</h2><p>Gerencie o conteúdo e a localização física das caixas. Para mover, abra o mapa e arraste uma caixa para uma posição livre.</p></div><div class="admin-actions"><button class="solid-button" id="add-box">Adicionar caixa</button><a class="solid-button" href="#/mapa">Abrir mapa da sala →</a><button class="outline-button" id="admin-logout">Sair</button></div></section><section class="stats-grid admin-stats">${statCard(formatCount(allBoxes().length), 'registros cadastrados', 'stat-blue')}${statCard(formatCount(inventory.armarios.length), 'armários', 'stat-orange')}${statCard(formatCount(duplicateSlots), 'posições com mais de um registro', 'stat-green')}</section><section class="diagnostic-panel"><div><span class="section-kicker">VERIFICAÇÃO DO SISTEMA</span><h2>Diagnóstico do site</h2><p id="diagnostic-status">Clique para verificar login, banco, inventário e movimentação.</p></div><button class="outline-button" id="run-diagnostics">Verificar agora</button><div id="diagnostic-details" class="diagnostic-details"></div></section><section class="admin-workspace"><div class="section-heading"><div><span class="section-kicker">GESTÃO RÁPIDA</span><h2>Localizar registro para editar</h2></div><span class="results-count" id="admin-count"></span></div><div class="search-field admin-search"><span class="search-icon">⌕</span><input id="admin-search" type="search" placeholder="Buscar por armário, posição, convênio, período ou conteúdo..." /></div><div class="admin-list" id="admin-list"></div></section>`, 'admin')
   const list = document.querySelector('#admin-list'); const count = document.querySelector('#admin-count')
+  document.querySelector('#add-box')?.addEventListener('click', openAddDialog)
   const draw = () => {
     const q = (document.querySelector('#admin-search')?.value || '').toLocaleLowerCase('pt-BR').trim()
     const results = allBoxes().filter(({ armario, position }) => !q || `${armario.id} ${position.id} ${rawText(position)}`.toLocaleLowerCase('pt-BR').includes(q)).slice(0, 120)
@@ -296,7 +326,7 @@ function notFound() {
 function render() {
   const value = location.hash.replace(/^#/, '') || '/'
   if (value.startsWith('/qrcodes')) return renderQrCodes()
-  const boxMatch = value.match(/^\/caixa\/(\d+)-(\d+)-(\d+)/)
+  const boxMatch = value.match(/^\/caixa\/(\d+)-(\d+)-([A-Za-z0-9_-]+)/)
   if (boxMatch) return boxPage(boxMatch[1], boxMatch[0].slice('/caixa/'.length))
   const armMatch = value.match(/^\/armario\/(\d+)/)
   if (armMatch) return armarioPage(armMatch[1])
