@@ -19,3 +19,6 @@
 - [x] Arrastar e soltar uma caixa entre posições no mapa e na página do armário.
 - [x] Atualização automática do armário e da posição de destino após movimentação.
 - [x] Aviso e bloqueio quando a posição de destino já estiver ocupada.
+- [x] Área administrativa própria com autenticação, resumo do inventário, busca rápida e saída segura.
+- [x] Sessão administrativa mantida apenas durante a sessão atual, sem reaproveitar credenciais antigas do navegador.
+- [x] Nome de usuário aceita espaços acidentais nas extremidades e o erro de destino ocupado é exibido claramente.

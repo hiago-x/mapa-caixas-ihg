@@ -4,6 +4,7 @@ import './styles.css'
 const app = document.querySelector('#app')
 let inventory = { armarios: [] }
 let homeState = { q: '', armario: 'todos', filtro: 'todos', periodo: '' }
+let adminSessionValid = false
 
 const escapeHtml = (value = '') => String(value)
   .replaceAll('&', '&amp;')
@@ -38,20 +39,22 @@ const formatCount = value => new Intl.NumberFormat('pt-BR').format(value)
 async function api(path, options = {}) {
   const response = await fetch(path, { headers: { 'Content-Type': 'application/json', ...(options.headers || {}) }, ...options })
   const data = await response.json().catch(() => ({}))
-  if (response.status === 401) sessionStorage.removeItem('ihg_admin_authenticated')
+  if (response.status === 401) adminSessionValid = false
   if (!response.ok) { const error = new Error(data.error || 'Não foi possível concluir a operação.'); error.status = response.status; error.code = data.code; throw error }
   return data
 }
 
 async function ensureAdmin() {
+  if (adminSessionValid) return true
   const username = window.prompt('Digite o nome de usuário de administrador:')
   if (!username) return false
   const password = window.prompt('Digite a senha de administrador para editar o inventário:')
   if (!password) return false
   try {
     await api('/api/admin/login', { method: 'POST', body: JSON.stringify({ username: username.trim(), password }) })
+    adminSessionValid = true
     return true
-  } catch (error) { window.alert(error.message); return false }
+  } catch (error) { adminSessionValid = false; window.alert(error.message); return false }
 }
 
 function shell(content, active = 'inicio') {
@@ -69,6 +72,7 @@ function shell(content, active = 'inicio') {
         <a class="nav-link ${active === 'inicio' ? 'active' : ''}" href="#/">Visão geral</a>
         <a class="nav-link ${active === 'mapa' ? 'active' : ''}" href="#/mapa">Mapa dos armários</a>
         <a class="nav-link ${active === 'qr' ? 'active' : ''}" href="#/qrcodes">QR Codes</a>
+        <a class="nav-link ${active === 'admin' ? 'active' : ''}" href="#/admin">Administração</a>
       </nav>
     </header>
     <main class="page-content">${content}</main>
@@ -254,6 +258,26 @@ async function renderQrCodes() {
   if (canvas) await QRCode.toCanvas(canvas, `${location.origin}${location.pathname}#/`, { width: 280, margin: 2, color: { dark: '#17365d', light: '#ffffff' } })
 }
 
+function adminPage() {
+  if (!adminSessionValid) {
+    shell(`<section class="page-intro admin-intro"><span class="section-kicker">ÁREA RESTRITA</span><h2>Administração do inventário</h2><p>Entre com o usuário e a senha de administrador para editar informações, excluir registros ou mover caixas no mapa.</p><button class="solid-button" id="admin-login">Entrar na administração</button></section><section class="admin-security-note"><strong>Proteção ativa</strong><span>O site pede autenticação antes de cada sessão administrativa e as alterações ficam salvas para todos os usuários.</span></section>`, 'admin')
+    document.querySelector('#admin-login')?.addEventListener('click', async () => { if (await ensureAdmin()) adminPage() })
+    return
+  }
+  const duplicateSlots = [...new Set(allBoxes().filter(({ position }) => position.duplicateIndex > 1).map(({ armario, position }) => `${armario.id}-${position.id}`))].length
+  shell(`<section class="page-intro admin-intro"><div><span class="section-kicker">ÁREA RESTRITA</span><h2>Administração do inventário</h2><p>Gerencie o conteúdo e a localização física das caixas. Para mover, abra o mapa e arraste uma caixa para uma posição livre.</p></div><div class="admin-actions"><a class="solid-button" href="#/mapa">Abrir mapa da sala →</a><button class="outline-button" id="admin-logout">Sair</button></div></section><section class="stats-grid admin-stats">${statCard(formatCount(allBoxes().length), 'registros cadastrados', 'stat-blue')}${statCard(formatCount(inventory.armarios.length), 'armários', 'stat-orange')}${statCard(formatCount(duplicateSlots), 'posições com mais de um registro', 'stat-green')}</section><section class="admin-workspace"><div class="section-heading"><div><span class="section-kicker">GESTÃO RÁPIDA</span><h2>Localizar registro para editar</h2></div><span class="results-count" id="admin-count"></span></div><div class="search-field admin-search"><span class="search-icon">⌕</span><input id="admin-search" type="search" placeholder="Buscar por armário, posição, convênio, período ou conteúdo..." /></div><div class="admin-list" id="admin-list"></div></section>`, 'admin')
+  const list = document.querySelector('#admin-list'); const count = document.querySelector('#admin-count')
+  const draw = () => {
+    const q = (document.querySelector('#admin-search')?.value || '').toLocaleLowerCase('pt-BR').trim()
+    const results = allBoxes().filter(({ armario, position }) => !q || `${armario.id} ${position.id} ${rawText(position)}`.toLocaleLowerCase('pt-BR').includes(q)).slice(0, 120)
+    count.textContent = `${formatCount(results.length)} registro${results.length === 1 ? '' : 's'}`
+    list.innerHTML = results.length ? results.map(({ armario, position }) => `<div class="admin-list-row"><span class="admin-location">Armário ${armario.id}<b>Posição ${position.id}</b></span><span class="admin-record"><strong>${escapeHtml(shortLabel(position))}</strong><small>${escapeHtml(categoryText(position) || 'Sem categoria')} · ${escapeHtml(position.raw.data || 'Sem data')}</small></span><a class="outline-button compact-button" href="${boxRoute(armario.id, position.recordId)}">Abrir ficha →</a></div>`).join('') : '<div class="empty-state"><strong>Nenhum registro encontrado.</strong><span>Faça uma nova busca.</span></div>'
+  }
+  document.querySelector('#admin-search')?.addEventListener('input', draw)
+  document.querySelector('#admin-logout')?.addEventListener('click', async () => { try { await api('/api/admin/logout', { method: 'POST' }) } finally { adminSessionValid = false; adminPage() } })
+  draw()
+}
+
 function notFound() {
   shell(`<section class="empty-page"><span class="section-kicker">NÃO ENCONTRADO</span><h2>Esta posição não foi localizada.</h2><p>Verifique o QR Code ou volte para a visão geral.</p><a class="solid-button" href="#/">Voltar ao início</a></section>`)
 }
@@ -266,6 +290,7 @@ function render() {
   const armMatch = value.match(/^\/armario\/(\d+)/)
   if (armMatch) return armarioPage(armMatch[1])
   if (value === '/mapa') return mapPage()
+  if (value === '/admin') return adminPage()
   return homePage()
 }
 

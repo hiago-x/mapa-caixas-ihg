@@ -1,1 +1,1 @@
-{"routes":[{"path":"/","title":"Mapa de Caixas — Centro de Oncologia IHG"},{"path":"/armario/:id","title":"Armário"},{"path":"/caixa/:id","title":"Caixa"},{"path":"/qrcodes","title":"QR Codes"}]}
+{"routes":[{"path":"/","title":"Mapa de Caixas — Centro de Oncologia IHG"},{"path":"/armario/:id","title":"Armário"},{"path":"/caixa/:id","title":"Caixa"},{"path":"/qrcodes","title":"QR Codes"},{"path":"/admin","title":"Administração"}]}
