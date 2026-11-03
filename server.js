@@ -3,9 +3,12 @@ import mysql from 'mysql2/promise'
 import fs from 'node:fs/promises'
 import path from 'node:path'
 import crypto from 'node:crypto'
+import { execFile } from 'node:child_process'
+import { promisify } from 'node:util'
 import { fileURLToPath } from 'node:url'
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url))
+const execFileAsync = promisify(execFile)
 const app = express()
 const port = Number(process.env.PORT || 3000)
 const pool = mysql.createPool(process.env.DATABASE_URL || process.env.DRIZZLE_DATABASE_URL || '')
@@ -14,7 +17,7 @@ const adminPassword = process.env.ADMIN_PASSWORD || ''
 const adminCookie = 'ihg_admin_session'
 
 app.set('trust proxy', 1)
-app.use(express.json({ limit: '100kb' }))
+app.use(express.json({ limit: '25mb' }))
 
 async function ensureSchema() {
   if (!process.env.DATABASE_URL && !process.env.DRIZZLE_DATABASE_URL) throw new Error('DATABASE_URL não configurada')
@@ -37,6 +40,12 @@ async function ensureSchema() {
     INDEX idx_armario (armario),
     INDEX idx_posicao (posicao)
   )`)
+  await pool.query(`CREATE TABLE IF NOT EXISTS cabinets (
+    armario VARCHAR(8) PRIMARY KEY,
+    nome VARCHAR(255) NOT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+  )`)
   const [[count]] = await pool.query('SELECT COUNT(*) AS count FROM boxes')
   if (Number(count.count) === 0) {
     const source = await fs.readFile(path.join(__dirname, 'public', 'inventory.json'), 'utf8')
@@ -50,6 +59,8 @@ async function ensureSchema() {
       (record_id, armario, posicao, duplicate_index, titulo, convenio, nome, data_text, parte, raw_text, source_page, source_position)
       VALUES ?`, [rows])
   }
+  await pool.query(`INSERT IGNORE INTO cabinets (armario, nome)
+    SELECT DISTINCT armario, CONCAT('Armário ', armario) FROM boxes`)
 }
 
 function normalize(row) {
@@ -84,20 +95,62 @@ function usernameMatches(value) {
   return crypto.timingSafeEqual(received, expected)
 }
 
+function parseImportedPdf(text, armario, startPosition = 1) {
+  const pages = String(text).split('\f')
+  const records = []
+  let fallbackPosition = Math.max(0, Number(startPosition || 1) - 1)
+  for (const pageText of pages) {
+    const footer = pageText.match(/Origem:\s*p[áa]gina\s*(\d+)\s*,\s*quadrado\s*(\d+)/i)
+    const beforeFooter = footer ? pageText.slice(0, footer.index) : pageText
+    const lines = beforeFooter.split(/\r?\n/).map(line => line.replace(/\s+/g, ' ').trim()).filter(Boolean)
+    if (!lines.length) continue
+    const convIndex = lines.findIndex(line => /^CONV[ÊE]NIO\s*:/i.test(line))
+    const dataIndex = lines.findIndex(line => /^DATA\b/i.test(line))
+    const parteIndex = lines.findIndex(line => /^PARTE\s*:/i.test(line))
+    const stops = [convIndex, dataIndex, parteIndex].filter(index => index >= 0)
+    const firstStop = stops.length ? Math.min(...stops) : lines.length
+    const titulo = lines.slice(0, firstStop).join(' ').trim()
+    const nextAfter = index => [dataIndex, parteIndex].filter(value => value > index).sort((a, b) => a - b)[0] ?? lines.length
+    const convenio = convIndex >= 0 ? lines.slice(convIndex + 1, nextAfter(convIndex)).join(' ').trim().replace(/^:\s*/, '') : ''
+    const dataLine = dataIndex >= 0 ? lines[dataIndex].replace(/^DATA\s*:?\s*/i, '').trim() : ''
+    const parte = parteIndex >= 0 ? [lines[parteIndex].replace(/^PARTE\s*:?\s*/i, '').trim(), ...lines.slice(parteIndex + 1)].filter(Boolean).join(' ').trim() : ''
+    const sourcePage = footer ? Number(footer[1]) : Number(armario)
+    const sourcePosition = footer ? Number(footer[2]) : ++fallbackPosition
+    records.push({ armario, posicao: String(sourcePosition).padStart(2, '0'), titulo, convenio, nome: '', data: dataLine, parte, rawText: lines.join('\n'), sourcePage, sourcePosition })
+  }
+  return records
+}
+
+async function extractPdfText(base64) {
+  const match = String(base64 || '').match(/^data:application\/pdf;base64,(.+)$/s)
+  const encoded = match ? match[1] : String(base64 || '')
+  if (!encoded || encoded.length > 24 * 1024 * 1024) throw new Error('PDF ausente ou maior que o limite de 18 MB.')
+  const tempPath = path.join('/tmp', `ihg-import-${crypto.randomUUID()}.pdf`)
+  try {
+    await fs.writeFile(tempPath, Buffer.from(encoded, 'base64'))
+    const result = await execFileAsync('pdftotext', ['-layout', tempPath, '-'], { maxBuffer: 20 * 1024 * 1024 })
+    return result.stdout
+  } finally {
+    await fs.rm(tempPath, { force: true }).catch(() => {})
+  }
+}
+
 app.get('/_app/health', async (_req, res) => {
   try { await pool.query('SELECT 1'); res.json({ ok: true }) } catch (error) { res.status(503).json({ ok: false, error: error.message }) }
 })
 
 app.get('/api/inventory', async (_req, res) => {
   try {
-    const [rows] = await pool.query('SELECT * FROM boxes ORDER BY armario, posicao, duplicate_index, record_id')
+    const [rows] = await pool.query(`SELECT c.armario AS cabinet_armario, c.nome AS cabinet_name,
+      b.* FROM cabinets c LEFT JOIN boxes b ON b.armario = c.armario
+      ORDER BY c.armario, b.posicao, b.duplicate_index, b.record_id`)
     const grouped = new Map()
     for (const row of rows) {
-      const armario = String(row.armario).padStart(2, '0')
-      if (!grouped.has(armario)) grouped.set(armario, { id: armario, positions: [] })
-      grouped.get(armario).positions.push(normalize(row))
+      const armario = String(row.cabinet_armario).padStart(2, '0')
+      if (!grouped.has(armario)) grouped.set(armario, { id: armario, name: row.cabinet_name || `Armário ${armario}`, positions: [] })
+      if (row.record_id) grouped.get(armario).positions.push(normalize(row))
     }
-    res.json({ version: 3, source: 'caixa5anda-verificadas.pdf', locationRule: 'página = armário; quadrado = posição', armarios: [...grouped.values()] })
+    res.json({ version: 4, source: 'caixa5anda-verificadas.pdf', locationRule: 'página = armário; quadrado = posição', armarios: [...grouped.values()] })
   } catch (error) { res.status(500).json({ error: error.message }) }
 })
 
@@ -128,6 +181,69 @@ app.post('/api/admin/logout', (req, res) => {
   const secure = req.secure || req.headers['x-forwarded-proto'] === 'https'
   res.setHeader('Set-Cookie', `${adminCookie}=; Path=/; HttpOnly; Max-Age=0; SameSite=${secure ? 'None' : 'Lax'}${secure ? '; Secure' : ''}`)
   res.json({ ok: true })
+})
+
+app.post('/api/armarios', requireAdmin, async (req, res) => {
+  const rawId = String(req.body?.id || '').replace(/\D/g, '')
+  const name = String(req.body?.name || '').trim()
+  if (!/^\d{1,3}$/.test(rawId) || !name) return res.status(400).json({ error: 'Informe o número e o nome do armário.' })
+  const id = rawId.padStart(2, '0')
+  try {
+    await pool.query('INSERT INTO cabinets (armario, nome) VALUES (?, ?)', [id, name])
+    res.status(201).json({ ok: true, armario: { id, name, positions: [] } })
+  } catch (error) {
+    res.status(error.code === 'ER_DUP_ENTRY' ? 409 : 500).json({ error: error.code === 'ER_DUP_ENTRY' ? `O armário ${id} já existe.` : error.message })
+  }
+})
+
+app.put('/api/armarios/:id', requireAdmin, async (req, res) => {
+  const id = String(req.params.id).replace(/\D/g, '').padStart(2, '0')
+  const name = String(req.body?.name || '').trim()
+  if (!name) return res.status(400).json({ error: 'Informe o nome do armário.' })
+  try {
+    const [result] = await pool.query('UPDATE cabinets SET nome = ? WHERE armario = ?', [name, id])
+    if (!result.affectedRows) return res.status(404).json({ error: 'Armário não encontrado.' })
+    res.json({ ok: true, id, name })
+  } catch (error) { res.status(500).json({ error: error.message }) }
+})
+
+app.delete('/api/armarios/:id', requireAdmin, async (req, res) => {
+  const id = String(req.params.id).replace(/\D/g, '').padStart(2, '0')
+  try {
+    const [[count]] = await pool.query('SELECT COUNT(*) AS total FROM boxes WHERE armario = ?', [id])
+    if (Number(count.total)) return res.status(409).json({ error: 'Não é possível excluir um armário que ainda possui caixas.' })
+    const [result] = await pool.query('DELETE FROM cabinets WHERE armario = ?', [id])
+    if (!result.affectedRows) return res.status(404).json({ error: 'Armário não encontrado.' })
+    res.json({ ok: true })
+  } catch (error) { res.status(500).json({ error: error.message }) }
+})
+
+app.post('/api/armarios/:id/import-pdf', requireAdmin, async (req, res) => {
+  const armario = String(req.params.id).replace(/\D/g, '').padStart(2, '0')
+  try {
+    const [[cabinet]] = await pool.query('SELECT armario FROM cabinets WHERE armario = ?', [armario])
+    if (!cabinet) return res.status(404).json({ error: 'Armário não encontrado. Crie o armário antes de importar o PDF.' })
+    const text = await extractPdfText(req.body?.data)
+    const parsed = parseImportedPdf(text, armario, req.body?.startPosition)
+    if (!parsed.length) return res.status(422).json({ error: 'Não encontrei páginas com conteúdo no PDF.' })
+    const positions = [...new Set(parsed.map(item => item.posicao))]
+    const [occupiedRows] = await pool.query(`SELECT record_id, posicao FROM boxes WHERE armario = ? AND posicao IN (${positions.map(() => '?').join(',')})`, [armario, ...positions])
+    if (occupiedRows.length && !req.body?.replace) return res.status(409).json({ code: 'occupied', conflicts: occupiedRows.map(row => row.posicao), error: `Já existem caixas nas posições: ${occupiedRows.map(row => row.posicao).join(', ')}. Marque substituir para importar por cima.` })
+    const connection = await pool.getConnection()
+    try {
+      await connection.beginTransaction()
+      if (req.body?.replace && occupiedRows.length) await connection.query(`DELETE FROM boxes WHERE armario = ? AND posicao IN (${positions.map(() => '?').join(',')})`, [armario, ...positions])
+      const indexes = new Map()
+      for (const item of parsed) {
+        const next = (indexes.get(item.posicao) || 0) + 1
+        indexes.set(item.posicao, next)
+        const recordId = `${armario}-${item.posicao}-imp-${crypto.randomUUID().slice(0, 8)}`
+        await connection.query(`INSERT INTO boxes (record_id, armario, posicao, duplicate_index, titulo, convenio, nome, data_text, parte, raw_text, source_page, source_position) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`, [recordId, armario, item.posicao, next, item.titulo, item.convenio, item.nome, item.data, item.parte, item.rawText, item.sourcePage, item.sourcePosition])
+      }
+      await connection.commit()
+      res.json({ ok: true, imported: parsed.length, positions: positions.length, armario })
+    } catch (error) { await connection.rollback(); throw error } finally { connection.release() }
+  } catch (error) { res.status(error.statusCode || 500).json({ error: error.message }) }
 })
 
 app.put('/api/boxes/:recordId', requireAdmin, async (req, res) => {

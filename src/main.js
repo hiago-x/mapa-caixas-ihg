@@ -36,6 +36,7 @@ const tone = box => {
 }
 const shortLabel = box => box.raw.nome || box.raw.convenio || box.raw.titulo || 'Sem identificação'
 const assetUrl = name => `${ASSET_BASE}${name}`
+const armarioName = armario => armario?.name || `Armário ${armario?.id || ''}`
 const route = path => `#${path}`
 const armRoute = id => route(`/armario/${id}`)
 const boxRoute = (armId, recordId) => route(`/caixa/${recordId}`)
@@ -83,7 +84,7 @@ function shell(content, active = 'inicio') {
       </nav>
     </header>
     <main class="page-content">${content}</main>
-    <footer class="footer"><span>Inventário verificado do 5º andar · <a href="${assetUrl('caixa5anda-verificadas.pdf')}" target="_blank" rel="noreferrer">PDF-base</a></span><span>19 armários · ${formatCount(allBoxes().length)} registros</span></footer>
+    <footer class="footer"><span>Inventário verificado do 5º andar · <a href="${assetUrl('caixa5anda-verificadas.pdf')}" target="_blank" rel="noreferrer">PDF-base</a></span><span>${formatCount(inventory.armarios.length)} armários · ${formatCount(allBoxes().length)} registros</span></footer>
   `
 }
 
@@ -107,7 +108,7 @@ function armarioCard(armario, full = false) {
   const preview = (full ? armario.positions : armario.positions.slice(0, 8)).map(box => positionCard(armario.id, box, full)).join('')
   return `<section class="armario-card">
     <div class="armario-card-head">
-      <div><span class="section-kicker">ARMÁRIO</span><h3>${armario.id}</h3></div>
+      <div><span class="section-kicker">ARMÁRIO ${armario.id}</span><h3>${escapeHtml(armarioName(armario))}</h3></div>
       <div class="armario-meta"><strong>${armario.positions.length}</strong><span>registros</span></div>
     </div>
     <div class="mini-grid">${preview}</div>
@@ -117,7 +118,7 @@ function armarioCard(armario, full = false) {
 
 function filters() {
   const categories = [...new Set(allBoxes().flatMap(({ position }) => [position.raw.titulo, position.raw.convenio, position.raw.nome]).filter(Boolean))].sort((a, b) => a.localeCompare(b, 'pt-BR'))
-  const arms = inventory.armarios.map(item => `<option value="${item.id}" ${homeState.armario === item.id ? 'selected' : ''}>Armário ${item.id}</option>`).join('')
+  const arms = inventory.armarios.map(item => `<option value="${item.id}" ${homeState.armario === item.id ? 'selected' : ''}>${escapeHtml(armarioName(item))}</option>`).join('')
   const categoryOptions = categories.map(item => `<option value="${escapeHtml(item)}" ${homeState.filtro === item ? 'selected' : ''}>${escapeHtml(item)}</option>`).join('')
   return `<div class="filters-panel">
     <div class="search-field"><span class="search-icon">⌕</span><input id="search-input" type="search" placeholder="Buscar por convênio, ano, parte, categoria ou palavra..." value="${escapeHtml(homeState.q)}" /></div>
@@ -130,7 +131,7 @@ function filters() {
 function resultCard(item) {
   const { armario, position } = item
   return `<a class="result-row ${tone(position)}" href="${boxRoute(armario.id, position.recordId)}">
-    <span class="result-location"><b>Armário ${armario.id}</b><em>Posição ${position.id}</em></span>
+    <span class="result-location"><b>${escapeHtml(armarioName(armario))}</b><em>Posição ${position.id}</em></span>
     <span class="result-main"><strong>${escapeHtml(shortLabel(position))}</strong><span>${escapeHtml(categoryText(position) || 'Sem categoria')}</span></span>
     <span class="result-period">${escapeHtml(position.raw.data || 'Sem data')}</span>
     <span class="result-part">${escapeHtml(position.raw.parte || '—')}</span><span class="result-arrow">→</span>
@@ -163,7 +164,7 @@ function homePage() {
     <div class="hero-copy"><span class="section-kicker">CONSULTA RÁPIDA</span><h2>Encontre qualquer caixa<br /><em>em poucos segundos.</em></h2><p>Pesquise o conteúdo do inventário e descubra exatamente em qual armário e posição a caixa está guardada.</p></div>
     <div class="hero-note"><span class="hero-note-icon">⌖</span><strong>Como usar</strong><span>Pesquise abaixo ou use o único QR Code geral para abrir o site completo no celular.</span><a class="text-link" href="/caixa5anda-verificadas.pdf" target="_blank" rel="noreferrer">Abrir PDF verificado →</a></div>
   </section>
-  <section class="stats-grid">${statCard('19', 'armários cadastrados', 'stat-blue')}${statCard(formatCount(total), 'registros verificados', 'stat-orange')}${statCard('1', 'QR Code geral', 'stat-green')}</section>
+  <section class="stats-grid">${statCard(formatCount(inventory.armarios.length), 'armários cadastrados', 'stat-blue')}${statCard(formatCount(total), 'registros verificados', 'stat-orange')}${statCard('1', 'QR Code geral', 'stat-green')}</section>
   <section class="search-section"><div class="section-heading"><div><span class="section-kicker">INVENTÁRIO DIGITAL</span><h2>Buscar uma caixa</h2></div><span id="results-count" class="results-count"></span></div>${filters()}<div id="results" class="results-list"></div></section>
   <section class="armario-overview"><div class="section-heading"><div><span class="section-kicker">VISÃO ESPACIAL</span><h2>Mapa dos armários</h2></div><a class="outline-button" href="#/mapa">Ver mapa completo →</a></div><div class="armario-grid">${inventory.armarios.slice(0, 6).map(armarioCard).join('')}</div></section>`, 'inicio')
   renderResults()
@@ -181,7 +182,7 @@ function mapPage() {
 function armarioPage(id) {
   const armario = getArmario(id)
   if (!armario) return notFound()
-  shell(`<div class="breadcrumbs"><a href="#/">Visão geral</a><span>/</span><span>Armário ${armario.id}</span></div><section class="page-intro split-intro"><div><span class="section-kicker">ARMÁRIO ${armario.id}</span><h2>Posições do armário</h2><p>Selecione uma posição ou arraste uma caixa para outra posição.</p></div><a class="outline-button" href="#/qrcodes">QR Code geral</a></section><div class="armario-stats"><strong>${armario.positions.length}</strong><span>registros neste armário</span></div><div class="drag-help">Arraste uma caixa para uma posição livre. Para mover entre armários, use o mapa da sala.</div><div class="position-grid large-grid">${armario.positions.map(box => positionCard(armario.id, box, true)).join('')}</div>`, 'mapa')
+  shell(`<div class="breadcrumbs"><a href="#/">Visão geral</a><span>/</span><span>${escapeHtml(armarioName(armario))}</span></div><section class="page-intro split-intro"><div><span class="section-kicker">ARMÁRIO ${armario.id}</span><h2>${escapeHtml(armarioName(armario))}</h2><p>Selecione uma posição ou arraste uma caixa para outra posição.</p></div><a class="outline-button" href="#/qrcodes">QR Code geral</a></section><div class="armario-stats"><strong>${armario.positions.length}</strong><span>registros neste armário</span></div><div class="drag-help">Arraste uma caixa para uma posição livre. Para mover entre armários, use o mapa da sala.</div><div class="position-grid large-grid">${armario.positions.map(box => positionCard(armario.id, box, true)).join('') || '<div class="empty-state"><strong>Armário sem caixas.</strong><span>Entre na Administração para importar um PDF para este armário.</span></div>'}</div>`, 'mapa')
   enableDragAndDrop()
 }
 
@@ -288,8 +289,38 @@ async function reloadInventory() {
   inventory = await response.json()
 }
 
+function openCabinetDialog() {
+  const modal = document.createElement('div'); modal.className = 'modal-backdrop'
+  modal.innerHTML = `<form class="edit-modal import-modal" id="cabinet-form"><div class="modal-head"><div><span class="section-kicker">NOVO ARMÁRIO</span><h3>Criar armário e importar PDF</h3></div><button type="button" class="modal-close" id="close-modal">×</button></div><p class="modal-intro">Informe o número e o nome do armário. O sistema lê cada página, reconhece o rodapé <strong>Origem: página X, quadrado Y</strong> e coloca as caixas na posição do quadrado, em ordem.</p><label>Número do armário<input name="id" inputmode="numeric" maxlength="3" placeholder="Ex.: 20" required /></label><label>Nome do armário<input name="name" maxlength="255" placeholder="Ex.: Arquivo de prontuários" required /></label><label>PDF deste armário<input name="pdf" type="file" accept="application/pdf,.pdf" /></label><label>Posição inicial se o PDF não tiver rodapé<input name="startPosition" type="number" min="1" value="1" /></label><label class="check-row"><input name="replace" type="checkbox" /> Substituir caixas que já estiverem nas posições encontradas</label><p class="file-hint">O PDF pode ter uma etiqueta por página. Com o rodapé de origem, o sistema usa automaticamente o número do quadrado como posição.</p><div class="modal-actions"><button type="button" class="outline-button" id="cancel-modal">Cancelar</button><button type="submit" class="solid-button">Criar e importar</button></div><p class="modal-status" id="modal-status"></p></form>`
+  document.body.appendChild(modal)
+  const close = () => modal.remove()
+  modal.querySelector('#close-modal').addEventListener('click', close)
+  modal.querySelector('#cancel-modal').addEventListener('click', close)
+  modal.addEventListener('click', event => { if (event.target === modal) close() })
+  modal.querySelector('#cabinet-form').addEventListener('submit', async event => {
+    event.preventDefault()
+    const form = new FormData(event.target); const status = modal.querySelector('#modal-status'); status.textContent = 'Criando armário...'; status.className = 'modal-status'
+    const id = String(form.get('id') || '').trim(); const name = String(form.get('name') || '').trim(); const file = form.get('pdf')
+    try {
+      try { await api('/api/armarios', { method: 'POST', body: JSON.stringify({ id, name }) }) } catch (error) {
+        if (error.status !== 409 || !file?.size) throw error
+      }
+      if (file?.size) {
+        status.textContent = 'Lendo e organizando o PDF...'
+        const buffer = await file.arrayBuffer()
+        let binary = ''; const bytes = new Uint8Array(buffer); const chunkSize = 0x8000
+        for (let index = 0; index < bytes.length; index += chunkSize) binary += String.fromCharCode(...bytes.subarray(index, index + chunkSize))
+        const data = `data:application/pdf;base64,${btoa(binary)}`
+        const result = await api(`/api/armarios/${encodeURIComponent(id)}/import-pdf`, { method: 'POST', body: JSON.stringify({ data, filename: file.name, startPosition: form.get('startPosition'), replace: form.get('replace') === 'on' }) })
+        status.textContent = `${result.imported} caixa(s) importada(s) em ${result.positions} posição(ões).`
+      }
+      await reloadInventory(); close(); location.hash = `/armario/${String(id).replace(/\D/g, '').padStart(2, '0')}`; render()
+    } catch (error) { status.textContent = error.message; status.className = 'modal-status error' }
+  })
+}
+
 async function renderQrCodes() {
-  shell(`<section class="page-intro"><span class="section-kicker">ACESSO RÁPIDO</span><h2>QR Code geral do inventário</h2><p>Este é o único QR Code do sistema. Coloque-o em um local visível: ele abre o site completo, onde é possível pesquisar qualquer armário, posição ou conteúdo.</p></section><div class="qr-toolbar"><span>Endereço do site: ${escapeHtml(location.origin)}${escapeHtml(location.pathname)}</span><button class="outline-button" id="print-qr">Imprimir QR Code</button></div><div class="single-qr-layout"><article class="single-qr-card"><span class="section-kicker">MAPA DIGITAL · 5º ANDAR</span><h3>Escaneie para consultar</h3><canvas id="global-qr"></canvas><strong>19 armários · ${formatCount(allBoxes().length)} registros</strong><span>Busca por armário, posição, convênio, data e parte.</span></article><div class="qr-instructions"><span class="section-kicker">COMO USAR</span><h3>Um QR. Todo o inventário.</h3><p>Após escanear, use a busca na página inicial ou abra o mapa dos armários. Cada posição leva à ficha detalhada com o texto do PDF verificado.</p><a class="solid-button" href="#/">Abrir o site agora →</a></div></div>`, 'qr')
+  shell(`<section class="page-intro"><span class="section-kicker">ACESSO RÁPIDO</span><h2>QR Code geral do inventário</h2><p>Este é o único QR Code do sistema. Coloque-o em um local visível: ele abre o site completo, onde é possível pesquisar qualquer armário, posição ou conteúdo.</p></section><div class="qr-toolbar"><span>Endereço do site: ${escapeHtml(location.origin)}${escapeHtml(location.pathname)}</span><button class="outline-button" id="print-qr">Imprimir QR Code</button></div><div class="single-qr-layout"><article class="single-qr-card"><span class="section-kicker">MAPA DIGITAL · 5º ANDAR</span><h3>Escaneie para consultar</h3><canvas id="global-qr"></canvas><strong>${formatCount(inventory.armarios.length)} armários · ${formatCount(allBoxes().length)} registros</strong><span>Busca por armário, posição, convênio, data e parte.</span></article><div class="qr-instructions"><span class="section-kicker">COMO USAR</span><h3>Um QR. Todo o inventário.</h3><p>Após escanear, use a busca na página inicial ou abra o mapa dos armários. Cada posição leva à ficha detalhada com o texto do PDF verificado.</p><a class="solid-button" href="#/">Abrir o site agora →</a></div></div>`, 'qr')
   document.querySelector('#print-qr')?.addEventListener('click', () => window.print())
   const canvas = document.querySelector('#global-qr')
   if (canvas) await QRCode.toCanvas(canvas, `${location.origin}${location.pathname}#/`, { width: 280, margin: 2, color: { dark: '#17365d', light: '#ffffff' } })
@@ -306,8 +337,9 @@ function adminPage() {
     return
   }
   const duplicateSlots = [...new Set(allBoxes().filter(({ position }) => position.duplicateIndex > 1).map(({ armario, position }) => `${armario.id}-${position.id}`))].length
-  shell(`<section class="page-intro admin-intro"><div><span class="section-kicker">ÁREA RESTRITA</span><h2>Administração do inventário</h2><p>Gerencie o conteúdo e a localização física das caixas. Para mover, abra o mapa e arraste uma caixa para uma posição livre.</p></div><div class="admin-actions"><button class="solid-button" id="add-box">Adicionar caixa</button><a class="solid-button" href="#/mapa">Abrir mapa da sala →</a><button class="outline-button" id="admin-logout">Sair</button></div></section><section class="stats-grid admin-stats">${statCard(formatCount(allBoxes().length), 'registros cadastrados', 'stat-blue')}${statCard(formatCount(inventory.armarios.length), 'armários', 'stat-orange')}${statCard(formatCount(duplicateSlots), 'posições com mais de um registro', 'stat-green')}</section><section class="diagnostic-panel"><div><span class="section-kicker">VERIFICAÇÃO DO SISTEMA</span><h2>Diagnóstico do site</h2><p id="diagnostic-status">Clique para verificar login, banco, inventário e movimentação.</p></div><button class="outline-button" id="run-diagnostics">Verificar agora</button><div id="diagnostic-details" class="diagnostic-details"></div></section><section class="admin-workspace"><div class="section-heading"><div><span class="section-kicker">GESTÃO RÁPIDA</span><h2>Localizar registro para editar</h2></div><span class="results-count" id="admin-count"></span></div><div class="search-field admin-search"><span class="search-icon">⌕</span><input id="admin-search" type="search" placeholder="Buscar por armário, posição, convênio, período ou conteúdo..." /></div><div class="admin-list" id="admin-list"></div></section>`, 'admin')
+  shell(`<section class="page-intro admin-intro"><div><span class="section-kicker">ÁREA RESTRITA</span><h2>Administração do inventário</h2><p>Crie armários, importe um PDF por armário e gerencie as caixas. O sistema lê os quadrados do PDF e organiza as posições automaticamente.</p></div><div class="admin-actions"><button class="solid-button" id="add-cabinet">Criar armário / importar PDF</button><button class="outline-button" id="add-box">Adicionar caixa</button><a class="solid-button" href="#/mapa">Abrir mapa da sala →</a><button class="outline-button" id="admin-logout">Sair</button></div></section><section class="stats-grid admin-stats">${statCard(formatCount(allBoxes().length), 'registros cadastrados', 'stat-blue')}${statCard(formatCount(inventory.armarios.length), 'armários', 'stat-orange')}${statCard(formatCount(duplicateSlots), 'posições com mais de um registro', 'stat-green')}</section><section class="diagnostic-panel"><div><span class="section-kicker">VERIFICAÇÃO DO SISTEMA</span><h2>Diagnóstico do site</h2><p id="diagnostic-status">Clique para verificar login, banco, inventário e movimentação.</p></div><button class="outline-button" id="run-diagnostics">Verificar agora</button><div id="diagnostic-details" class="diagnostic-details"></div></section><section class="admin-workspace"><div class="section-heading"><div><span class="section-kicker">GESTÃO RÁPIDA</span><h2>Localizar registro para editar</h2></div><span class="results-count" id="admin-count"></span></div><div class="search-field admin-search"><span class="search-icon">⌕</span><input id="admin-search" type="search" placeholder="Buscar por armário, posição, convênio, período ou conteúdo..." /></div><div class="admin-list" id="admin-list"></div></section>`, 'admin')
   const list = document.querySelector('#admin-list'); const count = document.querySelector('#admin-count')
+  document.querySelector('#add-cabinet')?.addEventListener('click', openCabinetDialog)
   document.querySelector('#add-box')?.addEventListener('click', openAddDialog)
   const draw = () => {
     const q = (document.querySelector('#admin-search')?.value || '').toLocaleLowerCase('pt-BR').trim()

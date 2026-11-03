@@ -22,3 +22,8 @@
 - [x] Área administrativa própria com autenticação, resumo do inventário, busca rápida e saída segura.
 - [x] Sessão administrativa mantida apenas durante a sessão atual, sem reaproveitar credenciais antigas do navegador.
 - [x] Nome de usuário aceita espaços acidentais nas extremidades e o erro de destino ocupado é exibido claramente.
+- [x] Criação de armários com número, nome personalizado e suporte a armários vazios no mapa.
+- [x] Importação de PDF por armário com leitura automática do rodapé `Origem: página X, quadrado Y`.
+- [x] Organização automática das caixas pela posição do quadrado e preservação da ordem de origem.
+- [x] Campo de posição inicial para PDFs que não tenham rodapé de origem.
+- [x] Aviso de conflito e opção administrativa para substituir caixas já ocupadas durante a importação.
