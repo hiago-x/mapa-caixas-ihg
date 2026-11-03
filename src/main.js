@@ -2,6 +2,9 @@ import QRCode from 'qrcode'
 import './styles.css'
 
 const app = document.querySelector('#app')
+const ASSET_BASE = import.meta.env.BASE_URL
+const isStaticPages = window.location.hostname.endsWith('.github.io')
+const primarySite = 'https://mapacaixas-2hg8dwsy.manus.space'
 let inventory = { armarios: [] }
 let homeState = { q: '', armario: 'todos', filtro: 'todos', periodo: '' }
 let adminSessionValid = false
@@ -32,6 +35,7 @@ const tone = box => {
   return 'tone-neutral'
 }
 const shortLabel = box => box.raw.nome || box.raw.convenio || box.raw.titulo || 'Sem identificação'
+const assetUrl = name => `${ASSET_BASE}${name}`
 const route = path => `#${path}`
 const armRoute = id => route(`/armario/${id}`)
 const boxRoute = (armId, recordId) => route(`/caixa/${recordId}`)
@@ -64,7 +68,7 @@ function shell(content, active = 'inicio') {
   app.innerHTML = `
     <header class="topbar">
       <div class="brand-wrap">
-        <img src="/logo_ihg.png" alt="Centro de Oncologia IHG" class="brand-logo" />
+        <img src="${assetUrl('logo_ihg.png')}" alt="Centro de Oncologia IHG" class="brand-logo" />
         <div>
           <p class="eyebrow">CENTRO DE ONCOLOGIA IHG</p>
           <h1>Mapa de caixas</h1>
@@ -75,11 +79,11 @@ function shell(content, active = 'inicio') {
         <a class="nav-link ${active === 'inicio' ? 'active' : ''}" href="#/">Visão geral</a>
         <a class="nav-link ${active === 'mapa' ? 'active' : ''}" href="#/mapa">Mapa dos armários</a>
         <a class="nav-link ${active === 'qr' ? 'active' : ''}" href="#/qrcodes">QR Codes</a>
-        <a class="nav-link ${active === 'admin' ? 'active' : ''}" href="#/admin">Administração</a>
+        <a class="nav-link ${active === 'admin' ? 'active' : ''}" href="${isStaticPages ? `${primarySite}/#/admin` : '#/admin'}" ${isStaticPages ? 'target="_blank" rel="noreferrer"' : ''}>Administração${isStaticPages ? ' (site principal)' : ''}</a>
       </nav>
     </header>
     <main class="page-content">${content}</main>
-    <footer class="footer"><span>Inventário verificado do 5º andar · <a href="/caixa5anda-verificadas.pdf" target="_blank" rel="noreferrer">PDF-base</a></span><span>19 armários · ${formatCount(allBoxes().length)} registros</span></footer>
+    <footer class="footer"><span>Inventário verificado do 5º andar · <a href="${assetUrl('caixa5anda-verificadas.pdf')}" target="_blank" rel="noreferrer">PDF-base</a></span><span>19 armários · ${formatCount(allBoxes().length)} registros</span></footer>
   `
 }
 
@@ -214,7 +218,8 @@ function boxPage(armId, recordId) {
   const box = getBox(armId, recordId)
   if (!armario || !box) return notFound()
   const rawLines = escapeHtml(box.rawText || '').replaceAll('\n', '<br/>')
-  shell(`<div class="breadcrumbs"><a href="#/">Visão geral</a><span>/</span><a href="${armRoute(armId)}">Armário ${armId}</a><span>/</span><span>Posição ${box.id}</span></div><section class="detail-header"><div><span class="section-kicker">LOCALIZAÇÃO DA CAIXA</span><h2>Armário ${armId} · Posição ${box.id}</h2><p>Esta é a ficha detalhada da posição selecionada.</p></div><div class="location-badge ${tone(box)}"><span>POSIÇÃO</span><strong>${box.id}</strong></div></section><div class="detail-layout"><article class="detail-card"><div class="detail-card-title"><span class="box-mark ${tone(box)}">${box.id}</span><div><span class="section-kicker">CONTEÚDO VERIFICADO</span><h3>${escapeHtml(shortLabel(box))}</h3></div></div><dl>${detailRow('Categoria / título', box.raw.titulo)}${detailRow('Convênio', box.raw.convenio)}${detailRow('Nome', box.raw.nome)}${detailRow('Período / data', box.raw.data)}${detailRow('Parte', box.raw.parte)}</dl><div class="raw-transcription"><span class="section-kicker">TEXTO DO PDF VERIFICADO</span><div>${rawLines || '<span>Sem texto identificado.</span>'}</div></div><div class="source-note">Localização no PDF: página ${box.sourcePage} = armário ${armId} · quadrado ${box.sourcePosition} = posição ${box.id}${box.duplicateIndex > 1 ? ` · registro ${box.duplicateIndex}` : ''}</div></article><aside class="detail-aside"><div class="aside-card"><span class="section-kicker">CAMINHO FÍSICO</span><strong>5º andar</strong><span>Armário ${armId}</span><span>Posição ${box.id}</span></div><div class="aside-card"><span class="section-kicker">QR CODE</span><strong>1 QR geral</strong><span>Use o QR Code geral para abrir o site e pesquisar esta posição.</span><a class="text-link" href="#/qrcodes">Abrir QR geral →</a></div><div class="aside-card admin-card"><span class="section-kicker">GESTÃO DO INVENTÁRIO</span><button class="solid-button full-button" id="edit-box">Editar informações</button><button class="outline-button full-button danger-button" id="delete-box">Excluir este registro</button><span class="admin-hint">As alterações ficam salvas para todos no site.</span></div></aside></div>`, 'mapa')
+  const adminCard = isStaticPages ? `<div class="aside-card"><span class="section-kicker">MODO CONSULTA</span><strong>GitHub Pages</strong><span>Esta versão é somente para consulta. Para editar, excluir ou mover caixas, use o site principal.</span><a class="text-link" href="${primarySite}/#/admin" target="_blank" rel="noreferrer">Abrir administração →</a></div>` : `<div class="aside-card admin-card"><span class="section-kicker">GESTÃO DO INVENTÁRIO</span><button class="solid-button full-button" id="edit-box">Editar informações</button><button class="outline-button full-button danger-button" id="delete-box">Excluir este registro</button><span class="admin-hint">As alterações ficam salvas para todos no site.</span></div>`
+  shell(`<div class="breadcrumbs"><a href="#/">Visão geral</a><span>/</span><a href="${armRoute(armId)}">Armário ${armId}</a><span>/</span><span>Posição ${box.id}</span></div><section class="detail-header"><div><span class="section-kicker">LOCALIZAÇÃO DA CAIXA</span><h2>Armário ${armId} · Posição ${box.id}</h2><p>Esta é a ficha detalhada da posição selecionada.</p></div><div class="location-badge ${tone(box)}"><span>POSIÇÃO</span><strong>${box.id}</strong></div></section><div class="detail-layout"><article class="detail-card"><div class="detail-card-title"><span class="box-mark ${tone(box)}">${box.id}</span><div><span class="section-kicker">CONTEÚDO VERIFICADO</span><h3>${escapeHtml(shortLabel(box))}</h3></div></div><dl>${detailRow('Categoria / título', box.raw.titulo)}${detailRow('Convênio', box.raw.convenio)}${detailRow('Nome', box.raw.nome)}${detailRow('Período / data', box.raw.data)}${detailRow('Parte', box.raw.parte)}</dl><div class="raw-transcription"><span class="section-kicker">TEXTO DO PDF VERIFICADO</span><div>${rawLines || '<span>Sem texto identificado.</span>'}</div></div><div class="source-note">Localização no PDF: página ${box.sourcePage} = armário ${armId} · quadrado ${box.sourcePosition} = posição ${box.id}${box.duplicateIndex > 1 ? ` · registro ${box.duplicateIndex}` : ''}</div></article><aside class="detail-aside"><div class="aside-card"><span class="section-kicker">CAMINHO FÍSICO</span><strong>5º andar</strong><span>Armário ${armId}</span><span>Posição ${box.id}</span></div><div class="aside-card"><span class="section-kicker">QR CODE</span><strong>1 QR geral</strong><span>Use o QR Code geral para abrir o site e pesquisar esta posição.</span><a class="text-link" href="#/qrcodes">Abrir QR geral →</a></div>${adminCard}</aside></div>`, 'mapa')
   document.querySelector('#edit-box')?.addEventListener('click', async () => { if (await ensureAdmin()) openEditDialog(armId, box) })
   document.querySelector('#delete-box')?.addEventListener('click', async () => { if (await ensureAdmin()) deleteBox(armId, box) })
 }
@@ -291,6 +296,10 @@ async function renderQrCodes() {
 }
 
 function adminPage() {
+  if (isStaticPages) {
+    shell(`<section class="page-intro admin-intro"><span class="section-kicker">MODO CONSULTA</span><h2>Administração no site principal</h2><p>O GitHub Pages hospeda a versão pública de consulta. Para adicionar, editar, excluir ou mover caixas, use o site principal com banco e login administrativo.</p><a class="solid-button" href="${primarySite}/#/admin" target="_blank" rel="noreferrer">Abrir administração →</a></section>`, 'admin')
+    return
+  }
   if (!adminSessionValid) {
     shell(`<section class="page-intro admin-intro"><span class="section-kicker">ÁREA RESTRITA</span><h2>Administração do inventário</h2><p>Entre com o usuário e a senha de administrador para editar informações, excluir registros ou mover caixas no mapa.</p><button class="solid-button" id="admin-login">Entrar na administração</button></section><section class="admin-security-note"><strong>Proteção ativa</strong><span>O site pede autenticação antes de cada sessão administrativa e as alterações ficam salvas para todos os usuários.</span></section>`, 'admin')
     document.querySelector('#admin-login')?.addEventListener('click', async () => { if (await ensureAdmin()) adminPage() })
@@ -339,4 +348,4 @@ function render() {
 }
 
 window.addEventListener('hashchange', render)
-fetch('/api/inventory').then(response => { if (!response.ok) throw new Error('API indisponível'); return response.json() }).catch(() => fetch('/inventory.json').then(response => response.json())).then(data => { inventory = data; render() }).catch(() => { app.innerHTML = '<div class="loading-error">Não foi possível carregar o inventário.</div>' })
+fetch('/api/inventory').then(response => { if (!response.ok) throw new Error('API indisponível'); return response.json() }).catch(() => fetch(assetUrl('inventory.json')).then(response => response.json())).then(data => { inventory = data; render() }).catch(() => { app.innerHTML = '<div class="loading-error">Não foi possível carregar o inventário.</div>' })
