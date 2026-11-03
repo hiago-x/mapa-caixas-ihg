@@ -289,6 +289,35 @@ async function reloadInventory() {
   inventory = await response.json()
 }
 
+function openEditCabinetDialog(armario) {
+  const modal = document.createElement('div'); modal.className = 'modal-backdrop'
+  modal.innerHTML = `<form class="edit-modal import-modal" id="edit-cabinet-form"><div class="modal-head"><div><span class="section-kicker">EDITAR ARMÁRIO</span><h3>${escapeHtml(armarioName(armario))}</h3></div><button type="button" class="modal-close" id="close-modal">×</button></div><p class="modal-intro">Altere o número ou o nome. As caixas deste armário acompanharão automaticamente a mudança de número.</p><label>Número do armário<input name="id" inputmode="numeric" maxlength="3" value="${escapeHtml(armario.id)}" required /></label><label>Nome do armário<input name="name" maxlength="255" value="${escapeHtml(armarioName(armario))}" required /></label><div class="modal-actions"><button type="button" class="outline-button" id="cancel-modal">Cancelar</button><button type="submit" class="solid-button">Salvar alterações</button></div><p class="modal-status" id="modal-status"></p></form>`
+  document.body.appendChild(modal)
+  const close = () => modal.remove()
+  modal.querySelector('#close-modal').addEventListener('click', close)
+  modal.querySelector('#cancel-modal').addEventListener('click', close)
+  modal.addEventListener('click', event => { if (event.target === modal) close() })
+  modal.querySelector('#edit-cabinet-form').addEventListener('submit', async event => {
+    event.preventDefault()
+    const form = new FormData(event.target); const status = modal.querySelector('#modal-status'); status.textContent = 'Salvando...'; status.className = 'modal-status'
+    try {
+      await api(`/api/armarios/${encodeURIComponent(armario.id)}`, { method: 'PUT', body: JSON.stringify({ id: form.get('id'), name: form.get('name') }) })
+      await reloadInventory(); close(); adminPage()
+    } catch (error) { status.textContent = error.message; status.className = 'modal-status error' }
+  })
+}
+
+async function deleteCabinet(armario) {
+  if (!window.confirm(`Excluir o armário ${armario.id} — ${armarioName(armario)}?`)) return
+  try {
+    await api(`/api/armarios/${encodeURIComponent(armario.id)}`, { method: 'DELETE', body: JSON.stringify({ deleteBoxes: false }) })
+  } catch (error) {
+    if (error.status !== 409 || !window.confirm(`${error.message}\n\nDeseja excluir o armário e também as ${armario.positions.length} caixa(s) dele? Esta ação não pode ser desfeita.`)) return
+    try { await api(`/api/armarios/${encodeURIComponent(armario.id)}`, { method: 'DELETE', body: JSON.stringify({ deleteBoxes: true }) }) } catch (deleteError) { window.alert(deleteError.message); return }
+  }
+  await reloadInventory(); adminPage()
+}
+
 function openCabinetDialog() {
   const modal = document.createElement('div'); modal.className = 'modal-backdrop'
   modal.innerHTML = `<form class="edit-modal import-modal" id="cabinet-form"><div class="modal-head"><div><span class="section-kicker">NOVO ARMÁRIO</span><h3>Criar armário e importar PDF</h3></div><button type="button" class="modal-close" id="close-modal">×</button></div><p class="modal-intro">Informe o número e o nome do armário. O sistema lê cada página, reconhece o rodapé <strong>Origem: página X, quadrado Y</strong> e coloca as caixas na posição do quadrado, em ordem.</p><label>Número do armário<input name="id" inputmode="numeric" maxlength="3" placeholder="Ex.: 20" required /></label><label>Nome do armário<input name="name" maxlength="255" placeholder="Ex.: Arquivo de prontuários" required /></label><label>PDF deste armário<input name="pdf" type="file" accept="application/pdf,.pdf" /></label><label>Posição inicial se o PDF não tiver rodapé<input name="startPosition" type="number" min="1" value="1" /></label><label class="check-row"><input name="replace" type="checkbox" /> Substituir caixas que já estiverem nas posições encontradas</label><p class="file-hint">O PDF pode ter uma etiqueta por página. Com o rodapé de origem, o sistema usa automaticamente o número do quadrado como posição.</p><div class="modal-actions"><button type="button" class="outline-button" id="cancel-modal">Cancelar</button><button type="submit" class="solid-button">Criar e importar</button></div><p class="modal-status" id="modal-status"></p></form>`
@@ -337,10 +366,12 @@ function adminPage() {
     return
   }
   const duplicateSlots = [...new Set(allBoxes().filter(({ position }) => position.duplicateIndex > 1).map(({ armario, position }) => `${armario.id}-${position.id}`))].length
-  shell(`<section class="page-intro admin-intro"><div><span class="section-kicker">ÁREA RESTRITA</span><h2>Administração do inventário</h2><p>Crie armários, importe um PDF por armário e gerencie as caixas. O sistema lê os quadrados do PDF e organiza as posições automaticamente.</p></div><div class="admin-actions"><button class="solid-button" id="add-cabinet">Criar armário / importar PDF</button><button class="outline-button" id="add-box">Adicionar caixa</button><a class="solid-button" href="#/mapa">Abrir mapa da sala →</a><button class="outline-button" id="admin-logout">Sair</button></div></section><section class="stats-grid admin-stats">${statCard(formatCount(allBoxes().length), 'registros cadastrados', 'stat-blue')}${statCard(formatCount(inventory.armarios.length), 'armários', 'stat-orange')}${statCard(formatCount(duplicateSlots), 'posições com mais de um registro', 'stat-green')}</section><section class="diagnostic-panel"><div><span class="section-kicker">VERIFICAÇÃO DO SISTEMA</span><h2>Diagnóstico do site</h2><p id="diagnostic-status">Clique para verificar login, banco, inventário e movimentação.</p></div><button class="outline-button" id="run-diagnostics">Verificar agora</button><div id="diagnostic-details" class="diagnostic-details"></div></section><section class="admin-workspace"><div class="section-heading"><div><span class="section-kicker">GESTÃO RÁPIDA</span><h2>Localizar registro para editar</h2></div><span class="results-count" id="admin-count"></span></div><div class="search-field admin-search"><span class="search-icon">⌕</span><input id="admin-search" type="search" placeholder="Buscar por armário, posição, convênio, período ou conteúdo..." /></div><div class="admin-list" id="admin-list"></div></section>`, 'admin')
+  shell(`<section class="page-intro admin-intro"><div><span class="section-kicker">ÁREA RESTRITA</span><h2>Administração do inventário</h2><p>Crie, edite e exclua armários; importe um PDF por armário e gerencie todas as caixas. O sistema lê os quadrados do PDF e organiza as posições automaticamente.</p></div><div class="admin-actions"><button class="solid-button" id="add-cabinet">Criar armário / importar PDF</button><button class="outline-button" id="add-box">Adicionar caixa</button><a class="solid-button" href="#/mapa">Abrir mapa da sala →</a><button class="outline-button" id="admin-logout">Sair</button></div></section><section class="stats-grid admin-stats">${statCard(formatCount(allBoxes().length), 'registros cadastrados', 'stat-blue')}${statCard(formatCount(inventory.armarios.length), 'armários', 'stat-orange')}${statCard(formatCount(duplicateSlots), 'posições com mais de um registro', 'stat-green')}</section><section class="cabinet-management"><div class="section-heading"><div><span class="section-kicker">GESTÃO DE ARMÁRIOS</span><h2>Armários cadastrados</h2></div><span class="results-count">${formatCount(inventory.armarios.length)} armários</span></div><div class="cabinet-admin-list">${inventory.armarios.map(armario => `<div class="cabinet-admin-row"><span><b>Armário ${escapeHtml(armario.id)}</b><strong>${escapeHtml(armarioName(armario))}</strong><small>${formatCount(armario.positions.length)} caixa(s) vinculada(s)</small></span><span class="cabinet-admin-actions"><button class="outline-button compact-button edit-cabinet" data-arm-id="${escapeHtml(armario.id)}">Editar</button><button class="danger-button compact-button delete-cabinet" data-arm-id="${escapeHtml(armario.id)}">Excluir</button></span></div>`).join('')}</div></section><section class="diagnostic-panel"><div><span class="section-kicker">VERIFICAÇÃO DO SISTEMA</span><h2>Diagnóstico do site</h2><p id="diagnostic-status">Clique para verificar login, banco, inventário e movimentação.</p></div><button class="outline-button" id="run-diagnostics">Verificar agora</button><div id="diagnostic-details" class="diagnostic-details"></div></section><section class="admin-workspace"><div class="section-heading"><div><span class="section-kicker">GESTÃO RÁPIDA</span><h2>Localizar registro para editar</h2></div><span class="results-count" id="admin-count"></span></div><div class="search-field admin-search"><span class="search-icon">⌕</span><input id="admin-search" type="search" placeholder="Buscar por armário, posição, convênio, período ou conteúdo..." /></div><div class="admin-list" id="admin-list"></div></section>`, 'admin')
   const list = document.querySelector('#admin-list'); const count = document.querySelector('#admin-count')
   document.querySelector('#add-cabinet')?.addEventListener('click', openCabinetDialog)
   document.querySelector('#add-box')?.addEventListener('click', openAddDialog)
+  document.querySelectorAll('.edit-cabinet').forEach(button => button.addEventListener('click', () => openEditCabinetDialog(getArmario(button.dataset.armId))))
+  document.querySelectorAll('.delete-cabinet').forEach(button => button.addEventListener('click', () => { const armario = getArmario(button.dataset.armId); if (armario) deleteCabinet(armario) }))
   const draw = () => {
     const q = (document.querySelector('#admin-search')?.value || '').toLocaleLowerCase('pt-BR').trim()
     const results = allBoxes().filter(({ armario, position }) => !q || `${armario.id} ${position.id} ${rawText(position)}`.toLocaleLowerCase('pt-BR').includes(q)).slice(0, 120)

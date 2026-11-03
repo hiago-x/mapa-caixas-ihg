@@ -197,25 +197,46 @@ app.post('/api/armarios', requireAdmin, async (req, res) => {
 })
 
 app.put('/api/armarios/:id', requireAdmin, async (req, res) => {
-  const id = String(req.params.id).replace(/\D/g, '').padStart(2, '0')
+  const oldId = String(req.params.id).replace(/\D/g, '').padStart(2, '0')
+  const rawNewId = String(req.body?.id ?? oldId).replace(/\D/g, '')
+  const newId = rawNewId.padStart(2, '0')
   const name = String(req.body?.name || '').trim()
-  if (!name) return res.status(400).json({ error: 'Informe o nome do armário.' })
+  if (!/^\d{1,3}$/.test(rawNewId) || !name) return res.status(400).json({ error: 'Informe um número e o nome do armário.' })
+  if (newId === oldId) {
+    try {
+      const [result] = await pool.query('UPDATE cabinets SET nome = ? WHERE armario = ?', [name, oldId])
+      if (!result.affectedRows) return res.status(404).json({ error: 'Armário não encontrado.' })
+      return res.json({ ok: true, id: newId, name })
+    } catch (error) { return res.status(500).json({ error: error.message }) }
+  }
+  const connection = await pool.getConnection()
   try {
-    const [result] = await pool.query('UPDATE cabinets SET nome = ? WHERE armario = ?', [name, id])
-    if (!result.affectedRows) return res.status(404).json({ error: 'Armário não encontrado.' })
-    res.json({ ok: true, id, name })
-  } catch (error) { res.status(500).json({ error: error.message }) }
+    await connection.beginTransaction()
+    const [[existing]] = await connection.query('SELECT armario FROM cabinets WHERE armario = ?', [oldId])
+    if (!existing) { await connection.rollback(); return res.status(404).json({ error: 'Armário não encontrado.' }) }
+    const [[conflict]] = await connection.query('SELECT armario FROM cabinets WHERE armario = ?', [newId])
+    if (conflict) { await connection.rollback(); return res.status(409).json({ error: `O armário ${newId} já existe.` }) }
+    await connection.query('UPDATE cabinets SET armario = ?, nome = ? WHERE armario = ?', [newId, name, oldId])
+    await connection.query('UPDATE boxes SET armario = ?, source_page = ? WHERE armario = ?', [newId, Number(newId), oldId])
+    await connection.commit()
+    res.json({ ok: true, id: newId, name })
+  } catch (error) { await connection.rollback(); res.status(500).json({ error: error.message }) } finally { connection.release() }
 })
 
 app.delete('/api/armarios/:id', requireAdmin, async (req, res) => {
   const id = String(req.params.id).replace(/\D/g, '').padStart(2, '0')
+  const deleteBoxes = req.body?.deleteBoxes === true
+  const connection = await pool.getConnection()
   try {
-    const [[count]] = await pool.query('SELECT COUNT(*) AS total FROM boxes WHERE armario = ?', [id])
-    if (Number(count.total)) return res.status(409).json({ error: 'Não é possível excluir um armário que ainda possui caixas.' })
-    const [result] = await pool.query('DELETE FROM cabinets WHERE armario = ?', [id])
-    if (!result.affectedRows) return res.status(404).json({ error: 'Armário não encontrado.' })
-    res.json({ ok: true })
-  } catch (error) { res.status(500).json({ error: error.message }) }
+    await connection.beginTransaction()
+    const [[count]] = await connection.query('SELECT COUNT(*) AS total FROM boxes WHERE armario = ?', [id])
+    if (Number(count.total) && !deleteBoxes) { await connection.rollback(); return res.status(409).json({ code: 'has_boxes', boxes: Number(count.total), error: `Este armário possui ${count.total} caixa(s). Confirme a exclusão do armário e de todas as caixas.` }) }
+    if (deleteBoxes) await connection.query('DELETE FROM boxes WHERE armario = ?', [id])
+    const [result] = await connection.query('DELETE FROM cabinets WHERE armario = ?', [id])
+    if (!result.affectedRows) { await connection.rollback(); return res.status(404).json({ error: 'Armário não encontrado.' }) }
+    await connection.commit()
+    res.json({ ok: true, deletedBoxes: Number(count.total) })
+  } catch (error) { await connection.rollback(); res.status(500).json({ error: error.message }) } finally { connection.release() }
 })
 
 app.post('/api/armarios/:id/import-pdf', requireAdmin, async (req, res) => {
