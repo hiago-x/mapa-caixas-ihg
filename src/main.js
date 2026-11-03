@@ -9,6 +9,7 @@ let inventory = { armarios: [] }
 let homeState = { q: '', armario: 'todos', filtro: 'todos', periodo: '' }
 let adminSessionValid = false
 let adminToken = ''
+let adminUsername = ''
 
 const escapeHtml = (value = '') => String(value)
   .replaceAll('&', '&amp;')
@@ -59,10 +60,22 @@ async function ensureAdmin() {
   try {
     const result = await api('/api/admin/login', { method: 'POST', body: JSON.stringify({ username: username.trim(), password }) })
     adminToken = result.token || ''
+    adminUsername = username.trim()
     if (!adminToken) throw new Error('O servidor não retornou uma sessão administrativa válida.')
     adminSessionValid = true
     return true
-  } catch (error) { adminSessionValid = false; adminToken = ''; window.alert(error.message); return false }
+  } catch (error) { adminSessionValid = false; adminToken = ''; adminUsername = ''; window.alert(error.message); return false }
+}
+
+async function confirmAdminPassword() {
+  const password = window.prompt('Digite novamente a senha de administrador para confirmar a exclusão:')
+  if (!password) return false
+  try {
+    const result = await api('/api/admin/login', { method: 'POST', body: JSON.stringify({ username: adminUsername, password }) })
+    adminToken = result.token || adminToken
+    adminSessionValid = true
+    return true
+  } catch (error) { window.alert(error.message); return false }
 }
 
 function shell(content, active = 'inicio') {
@@ -309,11 +322,14 @@ function openEditCabinetDialog(armario) {
 
 async function deleteCabinet(armario) {
   if (!window.confirm(`Excluir o armário ${armario.id} — ${armarioName(armario)}?`)) return
+  let deleteBoxes = false
   try {
     await api(`/api/armarios/${encodeURIComponent(armario.id)}`, { method: 'DELETE', body: JSON.stringify({ deleteBoxes: false }) })
   } catch (error) {
-    if (error.status !== 409 || !window.confirm(`${error.message}\n\nDeseja excluir o armário e também as ${armario.positions.length} caixa(s) dele? Esta ação não pode ser desfeita.`)) return
-    try { await api(`/api/armarios/${encodeURIComponent(armario.id)}`, { method: 'DELETE', body: JSON.stringify({ deleteBoxes: true }) }) } catch (deleteError) { window.alert(deleteError.message); return }
+    if (error.status !== 409 || !window.confirm(`${error.message}\n\nPara excluir este armário, será necessário confirmar a senha novamente e apagar também as ${armario.positions.length} caixa(s). Continuar?`)) return
+    if (!(await confirmAdminPassword())) return
+    deleteBoxes = true
+    try { await api(`/api/armarios/${encodeURIComponent(armario.id)}`, { method: 'DELETE', body: JSON.stringify({ deleteBoxes }) }) } catch (deleteError) { window.alert(deleteError.message); return }
   }
   await reloadInventory(); adminPage()
 }
@@ -379,7 +395,7 @@ function adminPage() {
     list.innerHTML = results.length ? results.map(({ armario, position }) => `<div class="admin-list-row"><span class="admin-location">Armário ${armario.id}<b>Posição ${position.id}</b></span><span class="admin-record"><strong>${escapeHtml(shortLabel(position))}</strong><small>${escapeHtml(categoryText(position) || 'Sem categoria')} · ${escapeHtml(position.raw.data || 'Sem data')}</small></span><a class="outline-button compact-button" href="${boxRoute(armario.id, position.recordId)}">Abrir ficha →</a></div>`).join('') : '<div class="empty-state"><strong>Nenhum registro encontrado.</strong><span>Faça uma nova busca.</span></div>'
   }
   document.querySelector('#admin-search')?.addEventListener('input', draw)
-  document.querySelector('#admin-logout')?.addEventListener('click', async () => { try { await api('/api/admin/logout', { method: 'POST' }) } finally { adminSessionValid = false; adminToken = ''; adminPage() } })
+  document.querySelector('#admin-logout')?.addEventListener('click', async () => { try { await api('/api/admin/logout', { method: 'POST' }) } finally { adminSessionValid = false; adminToken = ''; adminUsername = ''; adminPage() } })
   const runDiagnostics = async () => {
     const status = document.querySelector('#diagnostic-status'); const details = document.querySelector('#diagnostic-details')
     status.textContent = 'Verificando...'; details.innerHTML = ''
