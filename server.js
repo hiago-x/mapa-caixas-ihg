@@ -230,7 +230,7 @@ app.delete('/api/armarios/:id', requireAdmin, async (req, res) => {
   try {
     await connection.beginTransaction()
     const [[count]] = await connection.query('SELECT COUNT(*) AS total FROM boxes WHERE armario = ?', [id])
-    if (Number(count.total) && !deleteBoxes) { await connection.rollback(); return res.status(409).json({ code: 'has_boxes', boxes: Number(count.total), error: `Este armário possui ${count.total} caixa(s). Confirme a exclusão do armário e de todas as caixas.` }) }
+    if (Number(count.total) && !deleteBoxes) { await connection.rollback(); return res.json({ ok: false, confirmationRequired: true, code: 'has_boxes', boxes: Number(count.total), message: `Este armário possui ${count.total} caixa(s).` }) }
     if (deleteBoxes) await connection.query('DELETE FROM boxes WHERE armario = ?', [id])
     const [result] = await connection.query('DELETE FROM cabinets WHERE armario = ?', [id])
     if (!result.affectedRows) { await connection.rollback(); return res.status(404).json({ error: 'Armário não encontrado.' }) }

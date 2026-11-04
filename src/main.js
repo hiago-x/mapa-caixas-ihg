@@ -322,14 +322,16 @@ function openEditCabinetDialog(armario) {
 
 async function deleteCabinet(armario) {
   if (!window.confirm(`Excluir o armário ${armario.id} — ${armarioName(armario)}?`)) return
-  let deleteBoxes = false
   try {
-    await api(`/api/armarios/${encodeURIComponent(armario.id)}`, { method: 'DELETE', body: JSON.stringify({ deleteBoxes: false }) })
+    const result = await api(`/api/armarios/${encodeURIComponent(armario.id)}`, { method: 'DELETE', body: JSON.stringify({ deleteBoxes: false }) })
+    if (result.confirmationRequired) {
+      if (!window.confirm(`${result.message}\n\nPara excluir este armário, será necessário confirmar a senha novamente e apagar também as ${result.boxes} caixa(s). Continuar?`)) return
+      if (!(await confirmAdminPassword())) return
+      await api(`/api/armarios/${encodeURIComponent(armario.id)}`, { method: 'DELETE', body: JSON.stringify({ deleteBoxes: true }) })
+    }
   } catch (error) {
-    if (error.status !== 409 || !window.confirm(`${error.message}\n\nPara excluir este armário, será necessário confirmar a senha novamente e apagar também as ${armario.positions.length} caixa(s). Continuar?`)) return
-    if (!(await confirmAdminPassword())) return
-    deleteBoxes = true
-    try { await api(`/api/armarios/${encodeURIComponent(armario.id)}`, { method: 'DELETE', body: JSON.stringify({ deleteBoxes }) }) } catch (deleteError) { window.alert(deleteError.message); return }
+    window.alert(error.message)
+    return
   }
   await reloadInventory(); adminPage()
 }
