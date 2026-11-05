@@ -5,6 +5,7 @@ const app = document.querySelector('#app')
 const ASSET_BASE = import.meta.env.BASE_URL
 const isStaticPages = window.location.hostname.endsWith('.github.io')
 const primarySite = 'https://mapacaixas-2hg8dwsy.manus.space'
+const backendPath = path => `${isStaticPages ? primarySite : ''}${path}`
 let inventory = { armarios: [] }
 let homeState = { q: '', armario: 'todos', filtro: 'todos', periodo: '' }
 let adminSessionValid = false
@@ -297,7 +298,7 @@ function openAddDialog() {
 }
 
 async function reloadInventory() {
-  const response = await fetch('/api/inventory', { credentials: 'include' })
+  const response = await fetch(backendPath('/api/inventory'), { credentials: 'include' })
   if (!response.ok) throw new Error('Não foi possível atualizar o inventário compartilhado.')
   inventory = await response.json()
 }
@@ -429,4 +430,4 @@ function render() {
 }
 
 window.addEventListener('hashchange', render)
-fetch('/api/inventory').then(response => { if (!response.ok) throw new Error('API indisponível'); return response.json() }).catch(() => fetch(assetUrl('inventory.json')).then(response => response.json())).then(data => { inventory = data; render() }).catch(() => { app.innerHTML = '<div class="loading-error">Não foi possível carregar o inventário.</div>' })
+fetch(backendPath('/api/inventory')).then(response => { if (!response.ok) throw new Error('API indisponível'); return response.json() }).catch(() => fetch(assetUrl('inventory.json')).then(response => response.json())).then(data => { inventory = data; render() }).catch(() => { app.innerHTML = '<div class="loading-error">Não foi possível carregar o inventário.</div>' })

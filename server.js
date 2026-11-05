@@ -18,6 +18,16 @@ const adminCookie = 'ihg_admin_session'
 
 app.set('trust proxy', 1)
 app.use(express.json({ limit: '25mb' }))
+app.use((req, res, next) => {
+  const origin = String(req.headers.origin || '')
+  if (origin === 'https://hiago-x.github.io') {
+    res.setHeader('Access-Control-Allow-Origin', origin)
+    res.setHeader('Access-Control-Allow-Methods', 'GET, OPTIONS')
+    res.setHeader('Access-Control-Allow-Headers', 'Content-Type')
+  }
+  if (req.method === 'OPTIONS') return res.sendStatus(204)
+  next()
+})
 
 async function ensureSchema() {
   if (!process.env.DATABASE_URL && !process.env.DRIZZLE_DATABASE_URL) throw new Error('DATABASE_URL não configurada')
@@ -144,6 +154,10 @@ app.get('/api/inventory', async (_req, res) => {
     const [rows] = await pool.query(`SELECT c.armario AS cabinet_armario, c.nome AS cabinet_name,
       b.* FROM cabinets c LEFT JOIN boxes b ON b.armario = c.armario
       ORDER BY c.armario, b.posicao, b.duplicate_index, b.record_id`)
+    if (!rows.length) {
+      const source = await fs.readFile(path.join(__dirname, 'public', 'inventory.json'), 'utf8')
+      return res.json(JSON.parse(source))
+    }
     const grouped = new Map()
     for (const row of rows) {
       const armario = String(row.cabinet_armario).padStart(2, '0')
